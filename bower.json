@@ -1,0 +1,29 @@
+{
+  "name": "angular2-starter",
+  "description": "Angular 2 Starter",
+  "main": "index.js",
+  "authors": [
+    "Antony Budianto <antonybudianto@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootswatch-dist": "paper"
+  },
+  "overrides": {
+    "bootswatch-dist": {
+      "main": [
+        "css/bootstrap.css",
+        "js/bootstrap.js"
+      ]
+    }
+  }
+}

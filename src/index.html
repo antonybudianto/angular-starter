@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Angular 2 QuickStart</title>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/build/assets/lib.css">
+    <!-- endinject -->
+  </head>
+  <body>
+    <main-app>loading...</main-app>
+
+    <script src="../node_modules/systemjs/dist/system.src.js"></script>
+    <script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script>
+      System.config({
+        packages: {'app': {defaultExtension: 'js'}}
+      });
+      System.import('app/boot');
+    </script>
+    <!-- inject:js -->
+    <script src="/build/assets/lib.js"></script>
+    <!-- endinject -->
+  </body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "angular2-starter",
+  "version": "1.0.0",
+  "description": "Angular 2 Starter",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antonybudianto/angular2-starter.git"
+  },
+  "scripts": {
+    "install": "bower install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc -p src -w",
+    "start": "live-server --open=src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular2": "2.0.0-alpha.50",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.13",
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "^5.0.0-alpha.14",
+    "systemjs": "0.19.2",
+    "zone.js": "^0.5.8"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-inject": "^3.0.0",
+    "gulp-minify-css": "^1.2.2",
+    "gulp-uglify": "^1.5.1",
+    "live-server": "^0.8.2",
+    "main-bower-files": "^2.9.0",
+    "wiredep": "^2.2.2"
+  }
+}

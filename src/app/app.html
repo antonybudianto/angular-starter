@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="col-md-12">
+		<h1>Angular 2</h1>
+		<p>Hello, {{name}}</p>
+		<div class="form-group">
+			<label for="name">Name</label>  <label class="label label-info">[(ng-model)] 2-way binding</label>
+			<input class="form-control" type="text" [(ng-model)]="name" id="name">
+		</div>
+		<div class="form-group">
+			<label for="name">Name</label>  <label class="label label-info">[ng-model] 1-way binding</label>
+			<input class="form-control" type="text" [ng-model]="name" id="name">
+		</div>
+		<button class="btn btn-primary" (click)="clickMe()">Click me!</button>
+		<br>
+		<likebox [count]="myCount" (like)="likeSuccess($event)">Loading...</likebox>
+		<likebox count="0">Loading...</likebox>
+		<div>Mycount: {{myCount}}</div>
+	</div>
+</div>
