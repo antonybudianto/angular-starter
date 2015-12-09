@@ -8,31 +8,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var LikeboxComponent = (function () {
-    function LikeboxComponent() {
-        this.like = new angular2_1.EventEmitter();
+var TodolistComponent = (function () {
+    function TodolistComponent() {
+        this.list = [
+            'Angular 2', 'is', 'cool'
+        ];
     }
-    LikeboxComponent.prototype.addLike = function () {
-        this.count++;
-        this.like.next(this.count);
+    TodolistComponent.prototype.addTodo = function () {
+        this.list.push(this.todoValue);
     };
-    __decorate([
-        angular2_1.Input(), 
-        __metadata('design:type', Number)
-    ], LikeboxComponent.prototype, "count", void 0);
-    __decorate([
-        angular2_1.Output(), 
-        __metadata('design:type', angular2_1.EventEmitter)
-    ], LikeboxComponent.prototype, "like", void 0);
-    LikeboxComponent = __decorate([
+    TodolistComponent.prototype.delTodo = function (index) {
+        this.list.splice(index, 1);
+    };
+    TodolistComponent = __decorate([
         angular2_1.Component({
-            selector: 'likebox',
-            templateUrl: 'app/widgets/likebox/likebox.html',
-            styleUrls: ['app/widgets/likebox/likebox.css']
+            selector: 'todolist',
+            templateUrl: 'app/todolist/todolist.html',
+            directives: angular2_1.CORE_DIRECTIVES
         }), 
         __metadata('design:paramtypes', [])
-    ], LikeboxComponent);
-    return LikeboxComponent;
+    ], TodolistComponent);
+    return TodolistComponent;
 })();
-exports.LikeboxComponent = LikeboxComponent;
-//# sourceMappingURL=likebox.component.js.map
+exports.TodolistComponent = TodolistComponent;
+//# sourceMappingURL=todolist.component.js.map

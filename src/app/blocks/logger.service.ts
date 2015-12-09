@@ -1,6 +1,6 @@
-//import {Injectable} from 'angular2/angular2';
+import {Injectable} from 'angular2/angular2';
 
-//@Injectable()
+@Injectable()
 export class LoggerService {
 	log(message: string): void {
 		console.log(message);

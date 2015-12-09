@@ -8,26 +8,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var likebox_component_1 = require('./widgets/likebox/likebox.component');
+var todolist_component_1 = require('./todolist/todolist.component');
 var logger_service_1 = require('./blocks/logger.service');
 var AppComponent = (function () {
     function AppComponent(logger) {
         this.name = 'Antony';
-        this.myCount = 100;
         this.logger = logger;
     }
-    AppComponent.prototype.clickMe = function () {
-        this.myCount++;
-    };
-    AppComponent.prototype.likeSuccess = function (event) {
-        this.logger.log('Like triggered');
-        this.myCount = event;
-    };
     AppComponent = __decorate([
         angular2_1.Component({
             selector: 'main-app',
             templateUrl: 'app/app.html',
-            directives: [angular2_1.FORM_DIRECTIVES, likebox_component_1.LikeboxComponent]
+            directives: [angular2_1.FORM_DIRECTIVES, todolist_component_1.TodolistComponent]
         }), 
         __metadata('design:paramtypes', [logger_service_1.LoggerService])
     ], AppComponent);

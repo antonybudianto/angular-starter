@@ -1,0 +1,35 @@
+<style>
+	.badge:hover {
+		background-color: orangered;
+	}
+</style>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">To Do List ({{list.length}} todos)</h3>
+  </div>
+  <div class="panel-body">
+  	<div class="row">
+  		<div class="col-md-12">
+			<div class="form-group">
+				<form (submit)="addTodo()">
+					<label for="todo">To Do</label>
+					<div class="form-inline">
+						<input [(ng-model)]="todoValue" id="todo" type="text" class="form-control" size="50">
+						<button type="submit" class="btn btn-primary">Add</button>
+					</div>
+				</form>
+			</div>
+  		</div>
+  	</div>
+    <div class="row">
+    	<div class="col-md-5">
+    		<ul class="list-group">
+				<li *ng-for="#todo of list; #i=index" class="list-group-item">
+				<span title="Remove todo" class="badge" (click)="delTodo(i) ">x</span>
+				{{todo}}
+				</li>
+			</ul>
+    	</div>
+    </div>
+  </div>
+</div>
