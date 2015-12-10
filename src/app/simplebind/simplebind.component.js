@@ -8,23 +8,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var todolist_component_1 = require('./todolist/todolist.component');
-var simplebind_component_1 = require('./simplebind/simplebind.component');
-var logger_service_1 = require('./blocks/logger.service');
-var AppComponent = (function () {
-    function AppComponent(logger) {
-        this.name = 'Antony';
-        this.logger = logger;
+var SimplebindComponent = (function () {
+    function SimplebindComponent() {
+        this.count = 0;
     }
-    AppComponent = __decorate([
+    SimplebindComponent.prototype.changeCount = function () {
+        this.count++;
+    };
+    __decorate([
+        angular2_1.Input(), 
+        __metadata('design:type', String)
+    ], SimplebindComponent.prototype, "myname", void 0);
+    SimplebindComponent = __decorate([
         angular2_1.Component({
-            selector: 'main-app',
-            templateUrl: 'app/app.html',
-            directives: [angular2_1.FORM_DIRECTIVES, todolist_component_1.TodolistComponent, simplebind_component_1.SimplebindComponent]
+            selector: 'simplebind',
+            templateUrl: 'app/simplebind/simplebind.html'
         }), 
-        __metadata('design:paramtypes', [logger_service_1.LoggerService])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [])
+    ], SimplebindComponent);
+    return SimplebindComponent;
 })();
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.SimplebindComponent = SimplebindComponent;
+//# sourceMappingURL=simplebind.component.js.map

@@ -7,7 +7,7 @@ import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
 })
 export class TodolistComponent {
     public todoValue: string;
-    private list: Array<string> = [
+    private list: string[] = [
         'Angular 2', 'is', 'cool'
     ];
 

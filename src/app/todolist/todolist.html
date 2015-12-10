@@ -5,7 +5,7 @@
 </style>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">To Do List ({{list.length}} todos)</h3>
+    <h3 class="panel-title">To Do List &nbsp;<span class="badge">{{list.length}}</span></h3>
   </div>
   <div class="panel-body">
   	<div class="row">
@@ -14,7 +14,7 @@
 				<form (submit)="addTodo()">
 					<label for="todo">To Do</label>
 					<div class="form-inline">
-						<input [(ng-model)]="todoValue" id="todo" type="text" class="form-control" size="50">
+						<input required [(ng-model)]="todoValue" id="todo" type="text" class="form-control" size="50">
 						<button type="submit" class="btn btn-primary">Add</button>
 					</div>
 				</form>
@@ -26,7 +26,7 @@
     		<ul class="list-group">
 				<li *ng-for="#todo of list; #i=index" class="list-group-item">
 				<span title="Remove todo" class="badge" (click)="delTodo(i) ">x</span>
-				{{todo}}
+				{{todo}} by {{name}}
 				</li>
 			</ul>
     	</div>
