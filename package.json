@@ -34,6 +34,7 @@
     "live-server": "~0.8.2",
     "main-bower-files": "^2.9.0",
     "gulp-live-server": "0.0.29",
-    "gulp-typescript": "~2.10.0"
+    "gulp-typescript": "~2.10.0",
+    "gulp-clean": "~0.3.1"
   }
 }
