@@ -13,7 +13,7 @@ var simplebind_component_1 = require('./simplebind/simplebind.component');
 var logger_service_1 = require('./blocks/logger.service');
 var AppComponent = (function () {
     function AppComponent(logger) {
-        this.name = 'Antony';
+        this.name = 'Antony Budianto';
         this.logger = logger;
     }
     AppComponent = __decorate([
@@ -27,4 +27,3 @@ var AppComponent = (function () {
     return AppComponent;
 })();
 exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map

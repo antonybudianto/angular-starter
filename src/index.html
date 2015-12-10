@@ -1,8 +1,11 @@
 <html>
   <head>
     <title>Angular 2 QuickStart</title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/bower_components/bootswatch-dist/css/bootstrap.css">
+    <!-- endinject -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="/build/assets/lib.css">
     <!-- endinject -->
   </head>
   <body>
@@ -16,8 +19,12 @@
       });
       System.import('app/boot');
     </script>
-    <!-- inject:js -->
-    <script src="/build/assets/lib.js"></script>
-    <!-- endinject -->
+    
+      <!-- bower:js -->
+      <script src="/bower_components/jquery/dist/jquery.js"></script>
+      <script src="/bower_components/bootswatch-dist/js/bootstrap.js"></script>
+      <!-- endinject -->
+      <!-- inject:js -->
+      <!-- endinject -->
   </body>
 </html>

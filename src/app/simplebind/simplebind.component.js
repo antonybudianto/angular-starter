@@ -29,4 +29,3 @@ var SimplebindComponent = (function () {
     return SimplebindComponent;
 })();
 exports.SimplebindComponent = SimplebindComponent;
-//# sourceMappingURL=simplebind.component.js.map

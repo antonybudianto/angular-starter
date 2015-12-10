@@ -10,7 +10,7 @@ import {LoggerService} from './blocks/logger.service';
 })
 export class AppComponent {
 	private logger: LoggerService;
-	public name:string = 'Antony';
+	public name:string = 'Antony Budianto';
 
 	constructor(logger: LoggerService) {
 		this.logger = logger;
