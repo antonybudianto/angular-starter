@@ -8,14 +8,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
+var todolist_model_1 = require('./todolist.model');
 var TodolistComponent = (function () {
     function TodolistComponent() {
         this.list = [
-            'Angular 2', 'is', 'cool'
+            new todolist_model_1.Todolist('Its cool'),
+            new todolist_model_1.Todolist('Hello', true)
         ];
     }
     TodolistComponent.prototype.addTodo = function () {
-        this.list.push(this.todoValue);
+        this.list.push(new todolist_model_1.Todolist(this.todoValue));
     };
     TodolistComponent.prototype.delTodo = function (index) {
         this.list.splice(index, 1);

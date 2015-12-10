@@ -16,7 +16,9 @@
     "tests"
   ],
   "dependencies": {
-    "bootswatch-dist": "paper"
+    "bootswatch-dist": "paper",
+    "font-awesome": "~4.5.0",
+    "components-font-awesome": "~4.5.0"
   },
   "overrides": {
     "bootswatch-dist": {

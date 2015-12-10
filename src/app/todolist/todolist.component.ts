@@ -1,4 +1,5 @@
 import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Todolist} from './todolist.model';
 
 @Component({
     selector: 'todolist',
@@ -7,12 +8,13 @@ import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
 })
 export class TodolistComponent {
     public todoValue: string;
-    private list: string[] = [
-        'Angular 2', 'is', 'cool'
+    private list: Todolist[] = [
+        new Todolist('Its cool'),
+        new Todolist('Hello', true)
     ];
 
     addTodo() {
-        this.list.push(this.todoValue);
+        this.list.push(new Todolist(this.todoValue));
     }
 
     delTodo(index: number) {

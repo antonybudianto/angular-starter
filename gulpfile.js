@@ -13,7 +13,7 @@ gulp.task('wiredep', function () {
 		.pipe(gulp.dest('src/'));
 });
 
-gulp.task('build', ['styles', 'scripts'], function () {
+gulp.task('build', ['styles', 'scripts', 'fonts'], function () {
 	return gulp.src('src/index.html')
 		.pipe(inject(
 			gulp.src([
@@ -34,6 +34,13 @@ gulp.task('styles', function () {
 	.pipe(concat('lib.css'))
 	.pipe(minifyCss())
 	.pipe(gulp.dest('build/assets'));
+});
+
+gulp.task('fonts', function () {
+	return gulp.src(mainBowerFiles({
+		filter: '**/fonts/*.*'
+	}))
+	.pipe(gulp.dest('build/fonts'));
 });
 
 gulp.task('scripts', function () {
