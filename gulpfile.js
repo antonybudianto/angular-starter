@@ -56,7 +56,7 @@ gulp.task('wiredep', function () {
 });
 
 /* Concat and minify/uglify all css, js, and copy fonts */
-gulp.task('build-assets', ['styles', 'scripts', 'fonts'], function () {
+gulp.task('build-assets', ['styles', 'scripts', 'fonts', 'compile-ts'], function () {
     return gulp.src(config.index)
         .pipe(inject(
             gulp.src([], {read:false}), {name: 'bower', empty: true}
