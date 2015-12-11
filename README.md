@@ -1,5 +1,7 @@
 # Angular 2 Starter
 
+[![Build Status](https://travis-ci.org/antonybudianto/angular2-starter.svg?branch=master)](https://travis-ci.org/antonybudianto/angular2-starter)
+
 > Angular 2 is still in Alpha stage, please don't use this in production
 
 ### Installation
