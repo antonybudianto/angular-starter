@@ -1,6 +1,7 @@
 {
   "name": "angular2-starter",
   "version": "1.0.0",
+  "author": "",
   "description": "Angular 2 Starter",
   "main": "index.js",
   "repository": {
@@ -14,10 +15,9 @@
     "start": "live-server --open=src"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular2": "2.0.0-alpha.50",
+    "angular2": "2.0.0-alpha.52",
     "es6-promise": "3.0.2",
     "es6-shim": "0.33.13",
     "reflect-metadata": "^0.1.2",
@@ -34,6 +34,6 @@
     "live-server": "~0.8.2",
     "main-bower-files": "^2.9.0",
     "gulp-typescript": "~2.10.0",
-    "gulp-clean": "~0.3.1"
+    "del": "~2.2.0"
   }
 }

@@ -19,7 +19,7 @@
 				<form (submit)="addTodo()">
 					<label for="todo">To Do</label>
 					<div class="form-inline">
-						<input required [(ng-model)]="todoValue" id="todo" type="text" class="form-control" size="50">
+						<input required [(ngModel)]="todoValue" id="todo" type="text" class="form-control" size="50">
 						<button type="submit" class="btn btn-primary">Add</button>
 					</div>
 				</form>
@@ -29,9 +29,9 @@
     <div class="row">
     	<div class="col-md-5">
     		<ul class="list-group">
-				<li *ng-for="#todo of list; #i=index" class="list-group-item">
+				<li *ngFor="#todo of list; #i=index" class="list-group-item">
 				<span title="Remove todo" class="badge" (click)="delTodo(i) ">x</span>
-				<label><input type="checkbox" [(ng-model)]="todo.done"> {{todo.name}}</label>
+				<label><input type="checkbox" [(ngModel)]="todo.done"> {{todo.name}}</label>
 				</li>
 			</ul>
     	</div>

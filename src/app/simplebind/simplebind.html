@@ -11,13 +11,13 @@
                 </div>
                 <div class="form-group">
                     <label>From parent <span class="label label-success">2 way</span></label>
-                    <input class="form-control" type="text" [(ng-model)]="myname">
+                    <input class="form-control" type="text" [(ngModel)]="myname">
                 </div>
                 <div class="form-group">
                     <label>From this component</label>
                     <div class="form-inline">
                         <div class="form-group">
-                            <input [(ng-model)]="count" type="number" class="form-control">
+                            <input [(ngModel)]="count" type="number" class="form-control">
                             </div>
                             <label>{{count}}</label>
                             <button (click)="changeCount()" class="btn btn-primary">Change</button>

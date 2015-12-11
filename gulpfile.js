@@ -8,7 +8,7 @@ var ts = require('gulp-typescript');
 var liveServer = require('live-server');
 var tsProject = ts.createProject('src/tsconfig.json');
 var config = require('./gulp.config')();
-var clean = require('gulp-clean');
+var del = require('del');
 var params = {
     port: 8181,
     host: "127.0.0.1",
@@ -106,6 +106,5 @@ gulp.task('scripts', function () {
 
 /* Clean build folder */
 gulp.task('clean', function () {
-    return gulp.src(config.build.path, {read: false})
-        .pipe(clean());
+    del([config.build.path]);
 });
