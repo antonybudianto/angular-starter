@@ -1,8 +1,9 @@
 import {Component, Input, CORE_DIRECTIVES} from 'angular2/angular2';
 
 @Component({
+	moduleId: module.id,
 	selector: 'simplebind',
-	templateUrl: 'app/simplebind/simplebind.html'
+	templateUrl: 'simplebind.html'
 })
 export class SimplebindComponent {
 	@Input() myname: string;

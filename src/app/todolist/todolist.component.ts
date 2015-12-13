@@ -2,8 +2,9 @@ import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
 import {Todolist} from './todolist.model';
 
 @Component({
+    moduleId: module.id,
     selector: 'todolist',
-    templateUrl: 'app/todolist/todolist.html',
+    templateUrl: 'todolist.html',
     directives: CORE_DIRECTIVES
 })
 export class TodolistComponent {

@@ -1,5 +1,6 @@
 module.exports = function () {
     var root = 'src/';
+    var app = root + 'app/';
     var index = root + 'index.html';
     var assets = root + 'assets/';
     var tsFiles = root + '**/*.ts';
@@ -22,6 +23,7 @@ module.exports = function () {
 
     var config = {
         root: root,
+        app: app,
         index: index,
         assets: assets,
         build: build,

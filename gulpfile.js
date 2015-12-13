@@ -20,7 +20,7 @@ var params = {
 gulp.task('default', ['serve-dev']);
 
 /* Start live server */
-gulp.task('serve-dev', ['wiredep', 'watch-ts'], function () {  
+gulp.task('serve-dev', ['wiredep', 'compile-ts', 'watch-ts'], function () {  
     liveServer.start(params);
 });
 
@@ -35,7 +35,7 @@ gulp.task('watch-ts', function () {
 });
 
 /* Compile all typescripts */
-gulp.task('compile-ts', function () {
+gulp.task('compile-ts', ['clean-compile'], function () {
     return tsProject.src(config.tsFiles)
         .pipe(ts(tsProject))
         .pipe(gulp.dest(config.root));
@@ -107,4 +107,9 @@ gulp.task('scripts', function () {
 /* Clean build folder */
 gulp.task('clean', function () {
     del([config.build.path]);
+});
+
+/* Clean js and map */
+gulp.task('clean-compile', function () {
+    del([config.app + '**/*.js', config.app + '**/*.js.map']);
 });
