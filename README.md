@@ -19,14 +19,8 @@ It will also run `bower install` after the npm install done
 
 
 ### Start
-Let's start up the server
-```
-gulp
-```
-or
-```
-gulp serve-dev
-```
+Let's start up the server, run:   
+`gulp` or `gulp serve-dev`
 
 and done! The browser will popup and you can start trying Angular 2!   
 Every changes to the file will refresh the browser automatically
