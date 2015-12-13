@@ -20,6 +20,14 @@ module.exports = function () {
         },
         fonts: assets + 'fonts'
     };
+    var liveServer = {
+        port: 8181,
+        host: "127.0.0.1",
+        open: '/src',
+        file: "index.html",
+        wait: 1000
+    };
+
 
     var config = {
         root: root,
@@ -28,7 +36,8 @@ module.exports = function () {
         assets: assets,
         build: build,
         assetPath: assetPath,
-        tsFiles: tsFiles
+        tsFiles: tsFiles,
+        liveServer: liveServer
     };
 
     return config;

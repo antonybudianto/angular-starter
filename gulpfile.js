@@ -9,19 +9,12 @@ var liveServer = require('live-server');
 var tsProject = ts.createProject('src/tsconfig.json');
 var config = require('./gulp.config')();
 var del = require('del');
-var params = {
-    port: 8181,
-    host: "127.0.0.1",
-    open: '/src',
-    file: "index.html",
-    wait: 1000,
-};
 
 gulp.task('default', ['serve-dev']);
 
 /* Start live server */
 gulp.task('serve-dev', ['wiredep', 'compile-ts', 'watch-ts'], function () {  
-    liveServer.start(params);
+    liveServer.start(config.liveServer);
 });
 
 /* Watch changed typescripts file and compile it */
