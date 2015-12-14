@@ -1,4 +1,5 @@
-import {Component, FORM_DIRECTIVES} from 'angular2/angular2';
+import {Component} from 'angular2/core';
+import {FORM_DIRECTIVES} from 'angular2/common';
 import {TodolistComponent} from './todolist/todolist.component';
 import {SimplebindComponent} from './simplebind/simplebind.component';
 import {LoggerService} from './blocks/logger.service';
