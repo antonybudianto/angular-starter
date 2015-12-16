@@ -1,11 +1,11 @@
 module.exports = function () {
     var root = '';
     var app = root + 'app/';
-    var assets = root + 'assets/';
-    var index = app + 'index.html';
+    var index = root + 'index.html';
     var tsFiles = app + '**/*.ts';
     var build = {
         path: 'build/',
+        assetPath: 'build/assets/',
         assets: {
             lib: {
                 js: 'lib.js',
@@ -15,10 +15,10 @@ module.exports = function () {
     };
     var assetPath = {
         lib: {
-            css: assets + build.assets.lib.css,
-            js: assets + build.assets.lib.js
+            css: build.assetPath + build.assets.lib.css,
+            js: build.assetPath + build.assets.lib.js
         },
-        fonts: assets + 'fonts'
+        fonts: build.assetPath + 'fonts'
     };
     var liveServer = {
         port: 8181,
@@ -33,7 +33,6 @@ module.exports = function () {
         root: root,
         app: app,
         index: index,
-        assets: assets,
         build: build,
         assetPath: assetPath,
         tsFiles: tsFiles,

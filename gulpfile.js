@@ -59,17 +59,19 @@ gulp.task('build-assets', ['styles', 'scripts', 'fonts', 'compile-ts'], function
         ))
         .pipe(inject(
             gulp.src([
-                config.assetPath.lib.css,
-                config.assetPath.lib.js
+                config.build.assets.lib.css,
+                config.build.assets.lib.js
             ],
             {
-                read: false
+                read: false,
+                cwd: config.build.assetPath
             }),
             {
+                ignorePath: config.build.path,
                 relative: true
             }
         ))
-        .pipe(gulp.dest(config.root));
+        .pipe(gulp.dest(config.build.path));
 });
 
 /* Minify all bower css */
@@ -79,7 +81,7 @@ gulp.task('styles', function () {
     }))
     .pipe(concat(config.build.assets.lib.css))
     .pipe(minifyCss())
-    .pipe(gulp.dest(config.assets));
+    .pipe(gulp.dest(config.build.assetPath));
 });
 
 /* Copy fonts in bower */
@@ -97,7 +99,7 @@ gulp.task('scripts', function () {
     }))
     .pipe(concat(config.build.assets.lib.js))
     .pipe(uglify())
-    .pipe(gulp.dest(config.assets));
+    .pipe(gulp.dest(config.build.assetPath));
 });
 
 /* Clean build folder */
