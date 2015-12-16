@@ -1,9 +1,9 @@
 module.exports = function () {
-    var root = 'src/';
+    var root = '';
     var app = root + 'app/';
-    var index = root + 'index.html';
     var assets = root + 'assets/';
-    var tsFiles = root + '**/*.ts';
+    var index = app + 'index.html';
+    var tsFiles = app + '**/*.ts';
     var build = {
         path: 'build/',
         assets: {
@@ -23,7 +23,7 @@ module.exports = function () {
     var liveServer = {
         port: 8181,
         host: "127.0.0.1",
-        open: '/src',
+        open: '/',
         file: "index.html",
         wait: 1000
     };

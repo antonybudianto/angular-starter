@@ -5,9 +5,8 @@ import {SimplebindComponent} from './simplebind/simplebind.component';
 import {LoggerService} from './blocks/logger.service';
 
 @Component({
-	moduleId: module.id,
     selector: 'main-app',
-    templateUrl: 'app.html',
+    templateUrl: 'app/app.html',
     directives: [FORM_DIRECTIVES, TodolistComponent, SimplebindComponent]
 })
 export class AppComponent {

@@ -6,10 +6,13 @@ var minifyCss = require('gulp-minify-css');
 var inject = require('gulp-inject');
 var ts = require('gulp-typescript');
 var liveServer = require('live-server');
-var tsProject = ts.createProject('src/tsconfig.json');
 var config = require('./gulp.config')();
 var del = require('del');
 
+/* Initialize TS Project */
+var tsProject = ts.createProject(config.root + 'tsconfig.json');
+
+/* Default task */
 gulp.task('default', ['serve-dev']);
 
 /* Start live server */
