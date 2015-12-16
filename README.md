@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/antonybudianto/angular2-starter.svg?branch=master)](https://travis-ci.org/antonybudianto/angular2-starter)
 
-> Angular 2 is still in Alpha stage, please **don't** use this in production   
+> Angular 2 is still in Beta stage, please **don't** use this in production   
 > Follow it [here](https://splintercode.github.io/is-angular-2-ready/)
 
 ### Installation
