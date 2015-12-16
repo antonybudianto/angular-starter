@@ -3,19 +3,17 @@
   "version": "1.0.0",
   "author": "Antony Budianto",
   "description": "Angular 2 Starter with Gulp and Bower",
-  "main": "index.js",
+  "main": "app/boot.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/antonybudianto/angular2-starter.git"
   },
   "scripts": {
     "install": "bower install",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc -p src -w",
-    "start": "live-server --open=src"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "angular2": "2.0.0-beta.0",
     "systemjs": "0.19.6",
