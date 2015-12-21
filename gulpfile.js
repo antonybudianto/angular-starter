@@ -56,6 +56,7 @@ gulp.task('wiredep', function () {
         .pipe(gulp.dest(config.root));
 });
 
+/* Prepare build using SystemJS Builder */
 gulp.task('build-sjs', ['build-assets'], function () {
     var builder = new Builder('.');
     builder.config({
@@ -72,7 +73,7 @@ gulp.task('build-sjs', ['build-assets'], function () {
     });
     builder.loader.defaultJSExtensions = true;
     builder
-        .bundle('app/boot', 'build/app/boot.js', {
+        .bundle(config.app + 'boot', config.build.path + 'app/boot.js', {
             minify: true
         })
         .then(function () {
@@ -81,7 +82,7 @@ gulp.task('build-sjs', ['build-assets'], function () {
         .catch(function (ex) {
             console.log('error', ex);
         });
-    
+
     gulp.src('app/**/*.html', {
         base: 'app'
     })

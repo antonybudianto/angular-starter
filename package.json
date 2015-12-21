@@ -1,8 +1,8 @@
 {
   "name": "angular2-starter",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Antony Budianto",
-  "description": "Angular 2 Starter with Gulp and Bower",
+  "description": "Angular 2 Starter with Gulp, Bower using SystemJS",
   "main": "app/boot.ts",
   "repository": {
     "type": "git",
@@ -12,8 +12,17 @@
     "install": "bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "angular2",
+    "gulp",
+    "systemjs",
+    "systemjs builder",
+    "travis"
+  ],
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/antonybudianto/angular2-starter/issues"
+  },
   "dependencies": {
     "angular2": "2.0.0-beta.0",
     "systemjs": "0.19.6",
