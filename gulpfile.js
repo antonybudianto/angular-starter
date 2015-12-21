@@ -4,10 +4,13 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var minifyCss = require('gulp-minify-css');
 var inject = require('gulp-inject');
+var useref = require('gulp-useref');
+var gulpif = require('gulp-if');
 var ts = require('gulp-typescript');
 var liveServer = require('live-server');
 var config = require('./gulp.config')();
 var del = require('del');
+var Builder = require('systemjs-builder');
 
 /* Initialize TS Project */
 var tsProject = ts.createProject(config.root + 'tsconfig.json');
@@ -15,9 +18,14 @@ var tsProject = ts.createProject(config.root + 'tsconfig.json');
 /* Default task */
 gulp.task('default', ['serve-dev']);
 
-/* Start live server */
+/* Start live server dev mode */
 gulp.task('serve-dev', ['wiredep', 'compile-ts', 'watch-ts'], function () {  
-    liveServer.start(config.liveServer);
+    liveServer.start(config.liveServer.dev);
+});
+
+/* Start live server production mode */
+gulp.task('serve-build', ['build-sjs'], function () {
+    liveServer.start(config.liveServer.prod);
 });
 
 /* Watch changed typescripts file and compile it */
@@ -40,9 +48,6 @@ gulp.task('compile-ts', ['clean-compile'], function () {
 /* Wiredep the bower main files to index file */
 gulp.task('wiredep', function () {
     return gulp.src(config.index)
-        .pipe(inject(
-            gulp.src([], {read:false}), {empty: true}
-        ))
         .pipe(inject(gulp.src(mainBowerFiles(), {
             read: false
         }), {
@@ -51,37 +56,48 @@ gulp.task('wiredep', function () {
         .pipe(gulp.dest(config.root));
 });
 
-/* Concat and minify/uglify all css, js, and copy fonts */
-gulp.task('build-assets', ['styles', 'scripts', 'fonts', 'compile-ts'], function () {
-    return gulp.src(config.index)
-        .pipe(inject(
-            gulp.src([], {read:false}), {name: 'bower', empty: true}
-        ))
-        .pipe(inject(
-            gulp.src([
-                config.build.assets.lib.css,
-                config.build.assets.lib.js
-            ],
-            {
-                read: false,
-                cwd: config.build.assetPath
-            }),
-            {
-                ignorePath: config.build.path,
-                relative: true
-            }
-        ))
-        .pipe(gulp.dest(config.build.path));
+/* Prepare build using SystemJS Builder */
+gulp.task('build-sjs', ['build-assets'], function () {
+    var builder = new Builder('.');
+    builder.config({
+        map: {
+            'angular2': 'node_modules/angular2',
+            'rxjs': 'node_modules/rxjs'
+        },
+        packages: {
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+    });
+    builder.loader.defaultJSExtensions = true;
+    builder
+        .bundle(config.app + 'boot', config.build.path + 'app/boot.js', {
+            minify: true
+        })
+        .then(function () {
+            console.log('Build complete');
+        })
+        .catch(function (ex) {
+            console.log('error', ex);
+        });
+
+    gulp.src('app/**/*.html', {
+        base: 'app'
+    })
+    .pipe(gulp.dest(config.build.path + 'app'));
 });
 
-/* Minify all bower css */
-gulp.task('styles', function () {
-    return gulp.src(mainBowerFiles({
-        filter: '**/*.css'
-    }))
-    .pipe(concat(config.build.assets.lib.css))
-    .pipe(minifyCss())
-    .pipe(gulp.dest(config.build.assetPath));
+/* Concat and minify/uglify all css, js, and copy fonts */
+gulp.task('build-assets', ['clean', 'wiredep', 'fonts', 'compile-ts'], function () {
+    return gulp.src(config.index)
+        .pipe(useref())
+        .pipe(gulpif('*.js', uglify()))
+        .pipe(gulpif('*.css', minifyCss({
+            processImport: false
+        })))
+        .pipe(gulp.dest(config.build.path));
 });
 
 /* Copy fonts in bower */
@@ -92,22 +108,12 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest(config.assetPath.fonts));
 });
 
-/* Uglify all bower js */
-gulp.task('scripts', function () {
-    return gulp.src(mainBowerFiles({
-        filter: '**/*.js'
-    }))
-    .pipe(concat(config.build.assets.lib.js))
-    .pipe(uglify())
-    .pipe(gulp.dest(config.build.assetPath));
-});
-
 /* Clean build folder */
 gulp.task('clean', function () {
-    del([config.build.path]);
+    return del([config.build.path]);
 });
 
 /* Clean js and map */
 gulp.task('clean-compile', function () {
-    del([config.app + '**/*.js', config.app + '**/*.js.map']);
+    return del([config.app + '**/*.js', config.app + '**/*.js.map']);
 });

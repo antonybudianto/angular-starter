@@ -25,3 +25,19 @@ Let's start up the server, run:
 and done! The browser will popup and you can start trying Angular 2!   
 Every changes to the file will refresh the browser automatically
 and it'll also compile your changed TypeScripts files to Javascript files.
+
+### Production
+> Angular 2 is not ready for *production* yet, consider this build task for learning purpose
+
+You can create production build by running:
+```
+gulp build-sjs
+```
+or you can serve the build folder by running:
+```
+gulp serve-build
+```
+It uses [SystemJS Builder](https://github.com/systemjs/builder) to bundle your application so it's ready for production use
+
+### License
+MIT

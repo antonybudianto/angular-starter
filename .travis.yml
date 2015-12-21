@@ -9,4 +9,4 @@ node_js:
 before_script:
   - npm install -g gulp bower
   - npm install
-script: gulp build-assets
+script: gulp build-sjs
