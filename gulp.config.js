@@ -18,23 +18,24 @@ module.exports = function () {
             css: build.assetPath + build.assets.lib.css,
             js: build.assetPath + build.assets.lib.js
         },
-        fonts: build.assetPath + 'fonts'
+        fonts: build.path + 'fonts'
     };
     var liveServer = {
-        port: 8181,
-        host: "127.0.0.1",
-        open: '/',
-        file: "index.html",
-        wait: 1000
+        dev: {
+            port: 3000,
+            host: "127.0.0.1",
+            open: '/',
+            file: "index.html",
+            wait: 1000
+        },
+        prod: {
+            port: 3001,
+            host: "127.0.0.1",
+            open: '/build',
+            file: "index.html",
+            wait: 1000
+        }
     };
-    var liveServerBuild = {
-        port: 8282,
-        host: "127.0.0.1",
-        open: '/build',
-        file: "index.html",
-        wait: 1000
-    };
-
 
     var config = {
         root: root,
@@ -43,8 +44,7 @@ module.exports = function () {
         build: build,
         assetPath: assetPath,
         tsFiles: tsFiles,
-        liveServer: liveServer,
-        liveServerBuild: liveServerBuild
+        liveServer: liveServer
     };
 
     return config;

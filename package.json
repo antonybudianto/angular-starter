@@ -33,6 +33,8 @@
     "main-bower-files": "^2.9.0",
     "gulp-typescript": "~2.10.0",
     "del": "~2.2.0",
-    "systemjs-builder": "~0.14.15"
+    "systemjs-builder": "~0.14.15",
+    "gulp-useref": "~3.0.4",
+    "gulp-if": "~2.0.0"
   }
 }

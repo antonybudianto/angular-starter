@@ -1,30 +1,27 @@
 <html>
   <head>
     <title>Angular 2 QuickStart</title>
+    <!-- build:css assets/lib.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="/bower_components/bootswatch-dist/css/bootstrap.css">
     <!-- endinject -->
-    <!-- inject:css -->
-    <!-- endinject -->
+    <!-- endbuild -->
   </head>
   <body>
     <main-app>loading...</main-app>
 
-    <!-- 1. Load libraries -->
+    <!-- build:js assets/lib.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/bootswatch-dist/js/bootstrap.js"></script>
     <!-- endinject -->
-    <!-- inject:js -->
-    <!-- endinject -->
 
-    <!-- rmproduction:js -->
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-    <!-- endinject -->
+    <!-- endbuild -->
     <script>
       System.config({
         packages: {        
