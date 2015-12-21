@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Angular 2 QuickStart</title>
+    <base href="/">
     <!-- build:css assets/lib.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.css">
@@ -9,7 +10,9 @@
     <!-- endbuild -->
   </head>
   <body>
-    <main-app>loading...</main-app>
+    <main-app>
+      <i class="fa fa-spin fa-spinner fa-lg"></i>
+    </main-app>
 
     <!-- build:js assets/lib.js -->
     <!-- bower:js -->
@@ -20,7 +23,8 @@
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.min.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
     <!-- endbuild -->
     <script>
       System.config({

@@ -6,7 +6,7 @@ import {CORE_DIRECTIVES} from 'angular2/common';
 	templateUrl: 'app/simplebind/simplebind.html'
 })
 export class SimplebindComponent {
-	@Input() myname: string;
+	private myname: string = "Simple";
 	private count: number = 0;
 
 	changeCount() {

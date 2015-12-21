@@ -31,7 +31,7 @@ module.exports = function () {
         prod: {
             port: 3001,
             host: "127.0.0.1",
-            open: '/build',
+            root: 'build/',
             file: "index.html",
             wait: 1000
         }
