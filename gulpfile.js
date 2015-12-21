@@ -110,7 +110,7 @@ gulp.task('fonts', function () {
 
 /* Clean build folder */
 gulp.task('clean', function () {
-    return del([config.build.path]);
+    del([config.build.path + '**/*.*']);
 });
 
 /* Clean js and map */
