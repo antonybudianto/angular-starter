@@ -27,6 +27,13 @@ module.exports = function () {
         file: "index.html",
         wait: 1000
     };
+    var liveServerBuild = {
+        port: 8282,
+        host: "127.0.0.1",
+        open: '/build',
+        file: "index.html",
+        wait: 1000
+    };
 
 
     var config = {
@@ -36,7 +43,8 @@ module.exports = function () {
         build: build,
         assetPath: assetPath,
         tsFiles: tsFiles,
-        liveServer: liveServer
+        liveServer: liveServer,
+        liveServerBuild: liveServerBuild
     };
 
     return config;

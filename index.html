@@ -12,10 +12,19 @@
     <main-app>loading...</main-app>
 
     <!-- 1. Load libraries -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/bootswatch-dist/js/bootstrap.js"></script>
+    <!-- endinject -->
+    <!-- inject:js -->
+    <!-- endinject -->
+
+    <!-- rmproduction:js -->
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <!-- endinject -->
     <script>
       System.config({
         packages: {        
@@ -28,12 +37,5 @@
       System.import('app/boot')
             .then(null, console.error.bind(console));
     </script>
-    
-      <!-- bower:js -->
-      <script src="/bower_components/jquery/dist/jquery.js"></script>
-      <script src="/bower_components/bootswatch-dist/js/bootstrap.js"></script>
-      <!-- endinject -->
-      <!-- inject:js -->
-      <!-- endinject -->
   </body>
 </html>
