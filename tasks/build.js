@@ -15,7 +15,8 @@ gulp.task('build-sjs', ['build-assets', 'tsc-app'], function () {
     builder.loader.defaultJSExtensions = true;
     builder
         .bundle(config.app + 'boot', config.build.path + 'app/boot.js', {
-            minify: true
+            minify: true,
+            globalDefs: { DEBUG: false }
         })
         .then(function () {
             console.log('Build complete');
