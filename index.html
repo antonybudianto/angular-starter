@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular 2 Starter by antonybudianto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Angular 2 Starter</h1>
+      <h2 class="project-tagline">Simple Angular 2 Starter for TypeScript with Gulp, Bower, Karma, Jasmine using SystemJS</h2>
+      <a href="https://github.com/antonybudianto/angular2-starter" class="btn">View on GitHub</a>
+      <a href="https://github.com/antonybudianto/angular2-starter/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/antonybudianto/angular2-starter/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="angular-2-starter" class="anchor" href="#angular-2-starter" aria-hidden="true"><span class="octicon octicon-link"></span></a>Angular 2 Starter</h1>
+
+<p><a href="https://travis-ci.org/antonybudianto/angular2-starter"><img src="https://travis-ci.org/antonybudianto/angular2-starter.svg?branch=master" alt="Build Status"></a></p>
+
+<blockquote>
+<p>Angular 2 is still in Beta stage, please <strong>don't</strong> use this in production<br>
+Follow it <a href="https://splintercode.github.io/is-angular-2-ready/">here</a></p>
+</blockquote>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Firstly, you need to have <a href="https://nodejs.org/en/">NodeJS</a> (support Node from 0.12.x or higher), then<br>
+install these packages globally:   </p>
+
+<div class="highlight highlight-source-shell"><pre>npm install -g gulp bower</pre></div>
+
+<p>After that, just run:</p>
+
+<div class="highlight highlight-source-shell"><pre>npm install</pre></div>
+
+<p>and to install bower dependencies:</p>
+
+<div class="highlight highlight-source-shell"><pre>bower install</pre></div>
+
+<h2>
+<a id="start" class="anchor" href="#start" aria-hidden="true"><span class="octicon octicon-link"></span></a>Start</h2>
+
+<p>Let's start up the server, run:<br>
+<code>gulp</code> or <code>gulp serve-dev</code></p>
+
+<p>and done! The browser will popup and you can start trying Angular 2!<br>
+Every changes to the file will refresh the browser automatically
+and it'll also compile your changed TypeScripts files to Javascript files.</p>
+
+<h2>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing</h2>
+
+<p>This starter comes with unit-testing gulp workflow, using:   </p>
+
+<ul>
+<li>
+<a href="karma-runner.github.io">Karma</a> as test-runner</li>
+<li>
+<a href="http://jasmine.github.io/">Jasmine</a> as the testing framework</li>
+<li>
+<a href="https://gotwarlost.github.io/istanbul/">Istanbul</a> as coverage instrumenter</li>
+<li>
+<a href="https://github.com/SitePen/remap-istanbul">Remap Istanbul</a> for remap JS coverage to TS using sourcemaps.<br>
+</li>
+</ul>
+
+<p>Just run:   </p>
+
+<div class="highlight highlight-source-shell"><pre>gulp <span class="pl-c1">test</span></pre></div>
+
+<p>and it'll compile needed TS files (app and test-helpers), start Karma, then remap Istanbul coverage so that it shows TypeScripts coverage, not the transpiled Javascript coverage.
+<img src="http://s9.postimg.org/ij32cv5dr/test.png" alt="Coverage result"></p>
+
+<blockquote>
+<p>Thanks to Julie Ralph's <a href="https://github.com/juliemr/ng2-test-seed">ng2-test-seed</a> which helped me lot to get started.</p>
+</blockquote>
+
+<h2>
+<a id="production" class="anchor" href="#production" aria-hidden="true"><span class="octicon octicon-link"></span></a>Production</h2>
+
+<blockquote>
+<p>Angular 2 is not ready for <em>production</em> yet, consider this build task for learning purpose</p>
+</blockquote>
+
+<p>You can create production build by running:</p>
+
+<div class="highlight highlight-source-shell"><pre>gulp build-sjs</pre></div>
+
+<p>or you can serve the build folder by running:</p>
+
+<div class="highlight highlight-source-shell"><pre>gulp serve-build</pre></div>
+
+<p>It uses <a href="https://github.com/systemjs/builder">SystemJS Builder</a> to bundle your application so it's ready for production use</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/antonybudianto/angular2-starter">Angular 2 Starter</a> is maintained by <a href="https://github.com/antonybudianto">antonybudianto</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
