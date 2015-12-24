@@ -8,16 +8,16 @@
 ## Installation
 Firstly, you need to have [NodeJS](https://nodejs.org/en/) (support Node from 0.12.x or higher), then   
 install these packages globally:   
-```
+```bash
 npm install -g gulp bower
 ```
 
 After that, just run:
-```
+```bash
 npm install
 ```
 and to install bower dependencies:
-```
+```bash
 bower install
 ```
 
@@ -35,8 +35,9 @@ This starter comes with unit-testing gulp workflow, using:
 - [Jasmine](http://jasmine.github.io/) as the testing framework
 - [Istanbul](https://gotwarlost.github.io/istanbul/) as coverage instrumenter
 - [Remap Istanbul](https://github.com/SitePen/remap-istanbul) for remap JS coverage to TS using sourcemaps.   
+
 Just run:   
-```
+```bash
 gulp test
 ```
 and it'll compile needed TS files (app and test-helpers), start Karma, then remap Instanbul Coverage so that it shows TypeScripts coverage, not the transpiled Javascript coverage.
@@ -48,11 +49,11 @@ and it'll compile needed TS files (app and test-helpers), start Karma, then rema
 > Angular 2 is not ready for *production* yet, consider this build task for learning purpose
 
 You can create production build by running:
-```
+```bash
 gulp build-sjs
 ```
 or you can serve the build folder by running:
-```
+```bash
 gulp serve-build
 ```
 It uses [SystemJS Builder](https://github.com/systemjs/builder) to bundle your application so it's ready for production use
