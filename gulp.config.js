@@ -1,8 +1,15 @@
 module.exports = function () {
     var root = '';
     var app = root + 'app/';
+    var testHelper = root + 'test-helpers/';
     var index = root + 'index.html';
-    var tsFiles = app + '**/*.ts';
+    var tsFiles = [
+        app + '**/!(*.spec)+(.ts)'
+    ];
+    var tsSpecFiles = [
+        app + '**/*.spec.ts',
+        testHelper + '**/*.ts'
+    ];
     var build = {
         path: 'build/',
         assetPath: 'build/assets/',
@@ -12,6 +19,9 @@ module.exports = function () {
                 css: 'lib.css'
             }
         }
+    };
+    var report = {
+        path: 'report/'
     };
     var assetPath = {
         lib: {
@@ -37,14 +47,31 @@ module.exports = function () {
         }
     };
 
+    var systemjsBuild = {
+        map: {
+            'angular2': 'node_modules/angular2',
+            'rxjs': 'node_modules/rxjs'
+        },
+        packages: {
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+    };
+
     var config = {
         root: root,
         app: app,
+        testHelper: testHelper,
         index: index,
         build: build,
+        report: report,
         assetPath: assetPath,
         tsFiles: tsFiles,
-        liveServer: liveServer
+        tsSpecFiles: tsSpecFiles,
+        liveServer: liveServer,
+        systemjsBuild: systemjsBuild
     };
 
     return config;

@@ -15,5 +15,6 @@ export class AppComponent {
 
 	constructor(logger: LoggerService) {
 		this.logger = logger;
+		this.logger.log('Hello!');
 	}
 }
