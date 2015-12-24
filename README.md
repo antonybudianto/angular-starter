@@ -6,7 +6,7 @@
 > Follow it [here](https://splintercode.github.io/is-angular-2-ready/)
 
 ## Installation
-Firstly, you need to have [NodeJS](https://nodejs.org/en/), then   
+Firstly, you need to have [NodeJS](https://nodejs.org/en/) (support Node from 0.12.x or higher), then   
 install these packages globally:   
 ```
 npm install -g gulp bower
