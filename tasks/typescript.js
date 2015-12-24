@@ -26,7 +26,6 @@ gulp.task('tsc-app', ['clean-ts-app'], function () {
 });
 
 gulp.task('tsc-spec', ['clean-ts-spec'], function () {
-    console.log(config.tsSpecFiles);
     return compileTs(config.tsSpecFiles);
 });
 
