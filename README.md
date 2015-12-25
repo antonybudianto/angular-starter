@@ -1,6 +1,9 @@
 # Angular 2 Starter
 
 [![Build Status](https://travis-ci.org/antonybudianto/angular2-starter.svg?branch=master)](https://travis-ci.org/antonybudianto/angular2-starter)
+[![Dependency Status](https://david-dm.org/antonybudianto/angular2-starter.svg)](https://david-dm.org/antonybudianto/angular2-starter)
+[![devDependency Status](https://david-dm.org/antonybudianto/angular2-starter/dev-status.svg)](https://david-dm.org/antonybudianto/angular2-starter#info=devDependencies)
+
 
 > Angular 2 is still in Beta stage, please **don't** use this in production   
 > Follow it [here](https://splintercode.github.io/is-angular-2-ready/)
