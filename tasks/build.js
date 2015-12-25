@@ -4,7 +4,7 @@ var inject = require('gulp-inject');
 var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
 var uglify = require('gulp-uglify');
-var minifyCss = require('gulp-minify-css');
+var cssnano = require('gulp-cssnano');
 var mainBowerFiles = require('main-bower-files');
 var Builder = require('systemjs-builder');
 
@@ -36,9 +36,7 @@ gulp.task('build-assets', ['clean-build', 'wiredep', 'fonts'], function () {
     gulp.src(config.index)
         .pipe(useref())
         .pipe(gulpif('*.js', uglify()))
-        .pipe(gulpif('*.css', minifyCss({
-            processImport: false
-        })))
+        .pipe(gulpif('*.css', cssnano()))
         .pipe(gulp.dest(config.build.path));
 });
 
