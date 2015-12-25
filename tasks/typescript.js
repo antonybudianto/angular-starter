@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var config = require('../gulp.config')();
 var ts = require('gulp-typescript');
+var tslint = require('gulp-tslint');
 var sourcemaps = require('gulp-sourcemaps');
 var path = require('path');
 
@@ -28,6 +29,25 @@ gulp.task('tsc-app', ['clean-ts-app'], function () {
 gulp.task('tsc-spec', ['clean-ts-spec'], function () {
     return compileTs(config.tsSpecFiles);
 });
+
+/* Lint typescripts */
+gulp.task('tslint', ['tslint-app', 'tslint-spec']);
+
+gulp.task('tslint-app', function () {
+    return lintTs(config.tsFiles);
+});
+
+gulp.task('tslint-spec', function () {
+    return lintTs(config.tsSpecFiles);
+});
+
+function lintTs(files) {
+    return gulp.src(files)
+        .pipe(tslint())
+        .pipe(tslint.report('prose', {
+          summarizeFailureOutput: true
+        }));
+}
 
 function compileTs(files) {
     var res = gulp.src(files, {

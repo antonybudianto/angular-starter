@@ -4,5 +4,5 @@ import {AppComponent} from './app.component';
 import {LoggerService} from './blocks/logger.service';
 
 bootstrap(AppComponent, [
-	LoggerService, ROUTER_PROVIDERS
+    LoggerService, ROUTER_PROVIDERS
 ]);
