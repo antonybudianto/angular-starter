@@ -29,6 +29,12 @@ gulp.task('build-sjs', ['build-assets', 'tsc-app'], function () {
         base: 'app'
     })
     .pipe(gulp.dest(config.build.path + 'app'));
+
+    gulp.src('app/**/*.css', {
+        base: 'app'
+    })
+    .pipe(cssnano())
+    .pipe(gulp.dest(config.build.path + 'app'));
 });
 
 /* Concat and minify/uglify all css, js, and copy fonts */
