@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var config = require('../gulp.config')();
 var Server = require('karma').Server;
 var remapIstanbul = require('remap-istanbul/lib/gulpRemapIstanbul');
 
@@ -22,12 +23,12 @@ gulp.task('unit-test', ['tsc'], function () {
 });
 
 function remapCoverage () {
-    gulp.src('report/report-json/coverage-final.json')
+    gulp.src(config.report + 'report-json/coverage-final.json')
         .pipe(remapIstanbul({
             reports: {
-                'lcovonly': 'report/remap/lcov.info',
-                'json': 'report/remap/coverage.json',
-                'html': 'report/remap/html-report'
+                'lcovonly': config.report + 'remap/lcov.info',
+                'json': config.report + 'remap/coverage.json',
+                'html': config.report + 'remap/html-report'
             }
         }));
 }
