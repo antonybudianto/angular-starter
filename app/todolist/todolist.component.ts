@@ -1,21 +1,27 @@
 import {Component} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
-import {Todolist} from './todolist.model';
+import {Todo} from './todo.model';
 
 @Component({
     selector: 'todolist',
     templateUrl: 'app/todolist/todolist.html',
-    directives: CORE_DIRECTIVES
+    directives: [CORE_DIRECTIVES]
 })
 export class TodolistComponent {
-    public todoValue: string;
-    private list: Todolist[] = [
-        new Todolist('Its cool'),
-        new Todolist('Hello', true)
-    ];
+    public todo: Todo;
+    private list: Todo[];
+
+    constructor() {
+        this.todo = Todo.create(new Todo('', false));
+        this.list = [
+            new Todo('Its cool'),
+            new Todo('Hello', true)
+        ];
+    }
 
     addTodo() {
-        this.list.push(new Todolist(this.todoValue));
+        this.list.push(Todo.create(this.todo));
+        this.todo.clear();
     }
 
     delTodo(index: number) {

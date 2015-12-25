@@ -1,6 +1,10 @@
-export class Todolist {
+export class Todo {
     public name: string;
     public done: boolean;
+
+    static create(todo: Todo) {
+        return new Todo(todo.name, todo.done);
+    }
 
     constructor(name: string, done?: boolean) {
         this.name = name;
@@ -9,5 +13,10 @@ export class Todolist {
 
     check() {
         this.done = !this.done;
+    }
+
+    clear() {
+        this.name = '';
+        this.done = false;
     }
 }

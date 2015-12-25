@@ -7,6 +7,15 @@
 		vertical-align: middle;
 		display: inline-block;
 	}
+	[hidden] {
+		display: none;
+	}
+	.ng-valid[required] {
+	  border-left: 5px solid #42A948; /* green */
+	}
+	.ng-invalid {
+	  border-left: 5px solid orange; /* orange */
+	}
 </style>
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -16,10 +25,11 @@
   	<div class="row">
   		<div class="col-md-12">
 			<div class="form-group">
-				<form (submit)="addTodo()">
+				<form (ngSubmit)="addTodo()" #todoForm="ngForm">
 					<label for="todo">To Do</label>
+					<span [hidden]="name.valid" class="badge badge-warning">Required</span>
 					<div class="form-inline">
-						<input required [(ngModel)]="todoValue" id="todo" type="text" class="form-control" size="50">
+						<input required [(ngModel)]="todo.name" ngControl="name" #name="ngForm" id="todo" type="text" class="form-control" size="50">
 						<button type="submit" class="btn btn-primary">Add</button>
 					</div>
 				</form>
