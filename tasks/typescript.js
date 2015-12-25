@@ -44,7 +44,9 @@ gulp.task('tslint-spec', function () {
 function lintTs(files) {
     return gulp.src(files)
         .pipe(tslint())
-        .pipe(tslint.report('prose'));
+        .pipe(tslint.report('prose', {
+          summarizeFailureOutput: true
+        }));
 }
 
 function compileTs(files) {
