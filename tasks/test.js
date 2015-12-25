@@ -5,7 +5,7 @@ var remapIstanbul = require('remap-istanbul/lib/gulpRemapIstanbul');
 /**
  * Run test once and exit
  */
-gulp.task('test', ['clean-report', 'unit-test']);
+gulp.task('test', ['tslint', 'clean-report', 'unit-test']);
 
 gulp.task('unit-test', ['tsc'], function () {
     new Server({

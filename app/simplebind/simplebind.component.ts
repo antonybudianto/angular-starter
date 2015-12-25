@@ -1,15 +1,19 @@
-import {Component, Input} from 'angular2/core';
-import {CORE_DIRECTIVES} from 'angular2/common';
+import {Component} from 'angular2/core';
 
 @Component({
-	selector: 'simplebind',
-	templateUrl: 'app/simplebind/simplebind.html'
+    selector: 'simplebind',
+    templateUrl: 'app/simplebind/simplebind.html'
 })
 export class SimplebindComponent {
-	private myname: string = "Simple";
-	private count: number = 0;
+    private myname: string;
+    private count: number;
 
-	changeCount() {
-		this.count++;
-	}
+    constructor() {
+        this.myname = 'Simple';
+        this.count = 0;
+    }
+
+    changeCount() {
+        this.count++;
+    }
 }

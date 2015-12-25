@@ -11,10 +11,10 @@ import {LoggerService} from './blocks/logger.service';
 })
 @RouteConfig(APP_ROUTES)
 export class AppComponent {
-	private logger: LoggerService;
+    private logger: LoggerService;
 
-	constructor(logger: LoggerService) {
-		this.logger = logger;
-		this.logger.log('Hello!');
-	}
+    constructor(logger: LoggerService) {
+        this.logger = logger;
+        this.logger.log('Hello!');
+    }
 }
