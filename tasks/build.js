@@ -14,7 +14,9 @@ gulp.task('build-sjs', ['build-assets', 'tsc-app'], function () {
     builder.config(config.systemjsBuild);
     builder.loader.defaultJSExtensions = true;
     builder
-        .bundle(config.app + 'boot', config.build.path + 'app/boot.js', {
+        .bundle(config.app + 'boot',
+                config.build.path + config.app + 'boot.js', 
+        {
             minify: true,
             globalDefs: { DEBUG: false }
         })
@@ -25,16 +27,16 @@ gulp.task('build-sjs', ['build-assets', 'tsc-app'], function () {
             console.log('error', ex);
         });
 
-    gulp.src('app/**/*.html', {
-        base: 'app'
+    gulp.src(config.app + '**/*.html', {
+        base: config.app
     })
-    .pipe(gulp.dest(config.build.path + 'app'));
+    .pipe(gulp.dest(config.build.app));
 
-    gulp.src('app/**/*.css', {
-        base: 'app'
+    gulp.src(config.app + '**/*.css', {
+        base: config.app
     })
     .pipe(cssnano())
-    .pipe(gulp.dest(config.build.path + 'app'));
+    .pipe(gulp.dest(config.build.app));
 });
 
 /* Concat and minify/uglify all css, js, and copy fonts */
@@ -51,16 +53,23 @@ gulp.task('fonts', function () {
     gulp.src(mainBowerFiles({
         filter: '**/fonts/*.*'
     }))
-    .pipe(gulp.dest(config.assetPath.fonts));
+    .pipe(gulp.dest(config.buildPath.fonts));
 });
 
 /* Wiredep the bower main files to index file */
-gulp.task('wiredep', function () {
+gulp.task('wiredep', ['sass'], function () {
     return gulp.src(config.index)
         .pipe(inject(gulp.src(mainBowerFiles(), {
             read: false
         }), {
             name: 'bower'
+        }))
+        .pipe(inject(
+            gulp.src(config.assetsPath.styles + 'main.css', {
+                read: false
+            })
+        , {
+            name: 'app'
         }))
         .pipe(gulp.dest(config.root));
 });
