@@ -7,10 +7,11 @@ var path = require('path');
 
 /* Initialize TS Project */
 var tsProject = ts.createProject(config.root + 'tsconfig.json');
+var tsFiles = [].concat(config.tsFiles, config.tsSpecFiles);
 
 /* Watch changed typescripts file and compile it */
 gulp.task('watch-ts', function () {
-    return gulp.watch(config.tsFiles, function (file) {
+    return gulp.watch(tsFiles, function (file) {
         console.log('Compiling ' + file.path + '...');
         return compileTs(file.path);
     });
@@ -18,7 +19,6 @@ gulp.task('watch-ts', function () {
 
 /* Compile typescripts */
 gulp.task('tsc', ['clean-ts'], function () {
-    var tsFiles = [].concat(config.tsFiles, config.tsSpecFiles);
     return compileTs(tsFiles);
 });
 

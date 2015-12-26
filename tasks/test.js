@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var config = require('../gulp.config')();
 var Server = require('karma').Server;
 var remapIstanbul = require('remap-istanbul/lib/gulpRemapIstanbul');
 
@@ -7,7 +8,7 @@ var remapIstanbul = require('remap-istanbul/lib/gulpRemapIstanbul');
  */
 gulp.task('test', ['tslint', 'clean-report', 'unit-test']);
 
-gulp.task('unit-test', ['tsc'], function () {
+gulp.task('unit-test', ['tsc'], function (done) {
     new Server({
         configFile: __dirname + '/../karma.conf.js',
         singleRun: true
@@ -18,16 +19,21 @@ gulp.task('unit-test', ['tsc'], function () {
     	console.log('Remapping coverage to TypeScript format...');
     	remapCoverage();
         console.log('Remapping done! View the result in report/remap/html-report');
+        if(exitCode === 0) {
+            done();
+        } else {
+            done('Unit test failed.');
+        }
     }
 });
 
 function remapCoverage () {
-    gulp.src('report/report-json/coverage-final.json')
+    gulp.src(config.report.path + 'report-json/coverage-final.json')
         .pipe(remapIstanbul({
             reports: {
-                'lcovonly': 'report/remap/lcov.info',
-                'json': 'report/remap/coverage.json',
-                'html': 'report/remap/html-report'
+                'lcovonly': config.report.path + 'remap/lcov.info',
+                'json': config.report.path + 'remap/coverage.json',
+                'html': config.report.path + 'remap/html-report'
             }
         }));
 }

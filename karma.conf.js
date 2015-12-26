@@ -1,10 +1,17 @@
 module.exports = function(config) {
-  config.set({
-    basePath: '',
+  var configuration = {
+    basePath: '.',
 
     frameworks: ['jasmine'],
     browsers: ['Chrome'],
     reporters: ['progress', 'coverage'],
+
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
 
     preprocessors: {
       'app/**/!(*.spec)+(.js)': ['coverage']
@@ -53,5 +60,12 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
     autoWatch: false,
     singleRun: true
-  })
+  };
+
+  /* Set Travis CI */
+  if(process.env.TRAVIS){
+    configuration.browsers = ['Chrome_travis_ci'];
+  }
+
+  config.set(configuration);
 }

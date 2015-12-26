@@ -2,6 +2,11 @@ module.exports = function () {
     var root = '';
     var app = root + 'app/';
     var testHelper = root + 'test-helpers/';
+    var assets = root + 'assets/';
+    var assetsPath = {
+        styles: assets + 'styles/',
+        images: assets + 'images/'
+    };
     var index = root + 'index.html';
     var tsFiles = [
         app + '**/!(*.spec)+(.ts)'
@@ -12,6 +17,7 @@ module.exports = function () {
     ];
     var build = {
         path: 'build/',
+        app: 'build/app/',
         assetPath: 'build/assets/',
         assets: {
             lib: {
@@ -23,7 +29,7 @@ module.exports = function () {
     var report = {
         path: 'report/'
     };
-    var assetPath = {
+    var buildPath = {
         lib: {
             css: build.assetPath + build.assets.lib.css,
             js: build.assetPath + build.assets.lib.js
@@ -64,10 +70,12 @@ module.exports = function () {
         root: root,
         app: app,
         testHelper: testHelper,
+        assets: assets,
         index: index,
         build: build,
         report: report,
-        assetPath: assetPath,
+        assetsPath: assetsPath,
+        buildPath: buildPath,
         tsFiles: tsFiles,
         tsSpecFiles: tsSpecFiles,
         liveServer: liveServer,

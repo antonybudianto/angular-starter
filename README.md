@@ -49,13 +49,13 @@ and it'll compile needed TS files (app and test-helpers), start Karma, then rema
    
 
 ## Production
-> Angular 2 is not ready for *production* yet, consider this build task for learning purpose
+> All build tasks will run the `gulp test`, the bundle will only be created if the test passed.
 
 You can create production build by running:
 ```bash
-gulp build-sjs
+gulp build
 ```
-or you can serve the build folder by running:
+or you can create production build and then serve it using `live-server` by running:
 ```bash
 gulp serve-build
 ```
