@@ -14,6 +14,8 @@
 * [Start](#start)
 * [Testing](#testing)
 * [Production](#production)
+* [Contributing](#contributing)
+* [Wiki](#wiki)
 * [License](#license)
 
 ## Introduction
@@ -56,13 +58,7 @@ Every changes to the file will refresh the browser automatically
 and it'll also compile your changed TypeScripts files to Javascript files.
 
 ## Testing
-This starter comes with unit-testing gulp workflow, using:   
-- [Karma](karma-runner.github.io) as test-runner
-- [Jasmine](http://jasmine.github.io/) as the testing framework
-- [Istanbul](https://gotwarlost.github.io/istanbul/) as coverage instrumenter
-- [Remap Istanbul](https://github.com/SitePen/remap-istanbul) for remap JS coverage to TS using sourcemaps.   
-
-Just run:   
+This starter comes with unit-testing gulp workflow, just run:   
 ```bash
 gulp test
 ```
@@ -83,6 +79,12 @@ or you can create production build and then serve it using `live-server` by runn
 gulp serve-build
 ```
 It uses [SystemJS Builder](https://github.com/systemjs/builder) to bundle your application so it's ready for production use
+
+## Contributing
+Feel free to submit a PR if there are any issues or new features
+
+## Wiki
+Please consult to the [wiki](https://github.com/antonybudianto/angular2-starter/wiki) for more details
 
 ## License
 MIT
