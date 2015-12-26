@@ -47,7 +47,7 @@ gulp.task('build-sjs', ['build-assets', 'tsc-app'], function () {
 /* Concat and minify/uglify all css, js, and copy fonts */
 gulp.task('build-assets', function () {
     runSequence('clean-build', ['wiredep', 'fonts'], function () {
-        gulp.src(config.index)
+        return gulp.src(config.index)
             .pipe(useref())
             .pipe(gulpif('*.js', uglify()))
             .pipe(gulpif('*.css', cssnano()))
