@@ -50,12 +50,15 @@ gulp.task('build-sjs', function (done) {
 });
 
 /* Concat and minify/uglify all css, js, and copy fonts */
-gulp.task('build-assets', ['clean-build', 'wiredep', 'fonts'], function () {
-    return gulp.src(config.index)
-        .pipe(useref())
-        .pipe(gulpif('*.js', uglify()))
-        .pipe(gulpif('*.css', cssnano()))
-        .pipe(gulp.dest(config.build.path));
+gulp.task('build-assets', function (done) {
+    runSequence('clean-build', ['wiredep', 'fonts'], function () {
+        done();
+        return gulp.src(config.index)
+            .pipe(useref())
+            .pipe(gulpif('*.js', uglify()))
+            .pipe(gulpif('*.css', cssnano()))
+            .pipe(gulp.dest(config.build.path));
+    });
 });
 
 /* Copy fonts in bower */
