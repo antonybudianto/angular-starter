@@ -62,7 +62,7 @@ This starter comes with unit-testing gulp workflow, just run:
 ```bash
 gulp test
 ```
-and it'll compile needed TS files (app and test-helpers), start Karma, then remap Istanbul coverage so that it shows TypeScripts coverage, not the transpiled Javascript coverage.
+and it'll compile all TypeScript files, start Karma, then remap Istanbul coverage so that it shows TypeScript coverage, not the transpiled Javascript coverage.
 ![Coverage result](http://s9.postimg.org/ij32cv5dr/test.png)
 > Thanks to Julie Ralph's [ng2-test-seed](https://github.com/juliemr/ng2-test-seed) which helped me lot to get started.
    
