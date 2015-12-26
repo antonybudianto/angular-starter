@@ -32,6 +32,54 @@ Follow it <a href="https://splintercode.github.io/is-angular-2-ready/">here</a><
 </blockquote>
 
 <h2>
+<a id="table-of-content" class="anchor" href="#table-of-content" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table of Content</h2>
+
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#start">Start</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#production">Production</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#wiki">Wiki</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+
+<h2>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p>Welcome to Angular 2 Starter!
+This starter contains almost everything you need to start developing <a href="https://angular.io/">Angular 2</a>: </p>
+
+<ul>
+<li>
+<a href="http://www.typescriptlang.org/">TypeScript</a> for the base language</li>
+<li>
+<a href="http://gulpjs.com/">Gulp</a> for workflow (from <em>serve</em>, <em>watch</em>, <em>compile</em>, <em>test</em> to <em>build</em>)</li>
+<li>
+<a href="http://bower.io/">Bower</a> for front-end package manager</li>
+<li>
+<a href="https://www.npmjs.com/">NPM</a> for angular2 &amp; dev-tooling package manager</li>
+<li>
+<a href="https://github.com/tapio/live-server">Live Server</a> for development server &amp; reload capability</li>
+<li>
+<a href="https://github.com/systemjs/systemjs">SystemJS</a> for module loader</li>
+<li>
+<a href="http://karma-runner.github.io/">Karma</a> for test-runner</li>
+<li>
+<a href="http://jasmine.github.io/">Jasmine</a> for test framework</li>
+<li>
+<a href="https://github.com/gotwarlost/istanbul">Istanbul</a> for test coverage
+
+<ul>
+<li>with <a href="https://github.com/SitePen/remap-istanbul">Remap Istanbul</a> for remapping Javascript to TypeScript coverage</li>
+</ul>
+</li>
+<li>
+<a href="https://github.com/systemjs/builder">SystemJS Builder</a> for module bundling in production</li>
+</ul>
+
+<h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <p>Firstly, you need to have <a href="https://nodejs.org/en/">NodeJS</a> (support Node from 0.12.x or higher), then<br>
@@ -60,25 +108,11 @@ and it'll also compile your changed TypeScripts files to Javascript files.</p>
 <h2>
 <a id="testing" class="anchor" href="#testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing</h2>
 
-<p>This starter comes with unit-testing gulp workflow, using:   </p>
-
-<ul>
-<li>
-<a href="karma-runner.github.io">Karma</a> as test-runner</li>
-<li>
-<a href="http://jasmine.github.io/">Jasmine</a> as the testing framework</li>
-<li>
-<a href="https://gotwarlost.github.io/istanbul/">Istanbul</a> as coverage instrumenter</li>
-<li>
-<a href="https://github.com/SitePen/remap-istanbul">Remap Istanbul</a> for remap JS coverage to TS using sourcemaps.<br>
-</li>
-</ul>
-
-<p>Just run:   </p>
+<p>This starter comes with unit-testing gulp workflow, just run:   </p>
 
 <div class="highlight highlight-source-shell"><pre>gulp <span class="pl-c1">test</span></pre></div>
 
-<p>and it'll compile needed TS files (app and test-helpers), start Karma, then remap Istanbul coverage so that it shows TypeScripts coverage, not the transpiled Javascript coverage.
+<p>and it'll compile all TypeScript files, start Karma, then remap Istanbul coverage so that it shows TypeScript coverage, not the transpiled Javascript coverage.
 <img src="http://s9.postimg.org/ij32cv5dr/test.png" alt="Coverage result"></p>
 
 <blockquote>
@@ -101,6 +135,16 @@ and it'll also compile your changed TypeScripts files to Javascript files.</p>
 <div class="highlight highlight-source-shell"><pre>gulp serve-build</pre></div>
 
 <p>It uses <a href="https://github.com/systemjs/builder">SystemJS Builder</a> to bundle your application so it's ready for production use</p>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Feel free to submit a PR if there are any issues or new features</p>
+
+<h2>
+<a id="wiki" class="anchor" href="#wiki" aria-hidden="true"><span class="octicon octicon-link"></span></a>Wiki</h2>
+
+<p>Please consult to the <a href="https://github.com/antonybudianto/angular2-starter/wiki">wiki</a> for more details</p>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
