@@ -28,12 +28,12 @@ gulp.task('unit-test', ['tsc'], function (done) {
 });
 
 function remapCoverage () {
-    gulp.src(config.report + 'report-json/coverage-final.json')
+    gulp.src(config.report.path + 'report-json/coverage-final.json')
         .pipe(remapIstanbul({
             reports: {
-                'lcovonly': config.report + 'remap/lcov.info',
-                'json': config.report + 'remap/coverage.json',
-                'html': config.report + 'remap/html-report'
+                'lcovonly': config.report.path + 'remap/lcov.info',
+                'json': config.report.path + 'remap/coverage.json',
+                'html': config.report.path + 'remap/html-report'
             }
         }));
 }

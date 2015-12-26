@@ -1,6 +1,6 @@
 module.exports = function(config) {
   var configuration = {
-    basePath: '',
+    basePath: '.',
 
     frameworks: ['jasmine'],
     browsers: ['Chrome'],
