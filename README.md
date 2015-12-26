@@ -8,6 +8,29 @@
 > Angular 2 is still in Beta stage, please **don't** use this in production   
 > Follow it [here](https://splintercode.github.io/is-angular-2-ready/)
 
+## Table of Content
+* [Introduction](#introduction)
+* [Installation](#installation)
+* [Start](#start)
+* [Testing](#testing)
+* [Production](#production)
+* [License](#license)
+
+## Introduction
+Welcome to Angular 2 Starter!
+This starter contains almost everything you need to start developing [Angular 2](https://angular.io/): 
+* [TypeScript](http://www.typescriptlang.org/) for the base language
+* [Gulp](http://gulpjs.com/) for workflow (from *serve*, *watch*, *test* to build)
+* [Bower](http://bower.io/) for front-end package manager
+* [NPM](https://www.npmjs.com/) for angular2 & dev-tooling package manager
+* [Live Server](https://github.com/tapio/live-server) for development server & reload capability
+* [SystemJS](https://github.com/systemjs/systemjs) for module loader
+* [Karma](http://karma-runner.github.io/) for test-runner
+* [Jasmine](http://jasmine.github.io/) for test framework
+* [Istanbul](https://github.com/gotwarlost/istanbul) for test coverage
+  * with [Remap Istanbul](https://github.com/SitePen/remap-istanbul) for remapping Javascript to TypeScript coverage
+* [SystemJS Builder](https://github.com/systemjs/builder) for module bundling in production
+
 ## Installation
 Firstly, you need to have [NodeJS](https://nodejs.org/en/) (support Node from 0.12.x or higher), then   
 install these packages globally:   
