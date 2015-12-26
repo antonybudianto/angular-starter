@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var runSequence = require('run-sequence');
 var config = require('../gulp.config')();
 var inject = require('gulp-inject');
 var useref = require('gulp-useref');
@@ -9,6 +10,10 @@ var mainBowerFiles = require('main-bower-files');
 var Builder = require('systemjs-builder');
 
 /* Prepare build using SystemJS Builder */
+gulp.task('build', function (done) {
+    runSequence('test', 'build-sjs', done);
+});
+
 gulp.task('build-sjs', ['build-assets', 'tsc-app'], function () {
     var builder = new Builder('.');
     builder.config(config.systemjsBuild);
@@ -40,12 +45,14 @@ gulp.task('build-sjs', ['build-assets', 'tsc-app'], function () {
 });
 
 /* Concat and minify/uglify all css, js, and copy fonts */
-gulp.task('build-assets', ['clean-build', 'wiredep', 'fonts'], function () {
-    gulp.src(config.index)
-        .pipe(useref())
-        .pipe(gulpif('*.js', uglify()))
-        .pipe(gulpif('*.css', cssnano()))
-        .pipe(gulp.dest(config.build.path));
+gulp.task('build-assets', function () {
+    runSequence('clean-build', ['wiredep', 'fonts'], function () {
+        gulp.src(config.index)
+            .pipe(useref())
+            .pipe(gulpif('*.js', uglify()))
+            .pipe(gulpif('*.css', cssnano()))
+            .pipe(gulp.dest(config.build.path));
+    });
 });
 
 /* Copy fonts in bower */

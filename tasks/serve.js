@@ -8,6 +8,6 @@ gulp.task('serve-dev', ['wiredep', 'tsc-app', 'watch-ts', 'watch-sass'], functio
 });
 
 /* Start live server production mode */
-gulp.task('serve-build', ['build-sjs'], function () {
+gulp.task('serve-build', ['build'], function () {
     liveServer.start(config.liveServer.prod);
 });

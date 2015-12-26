@@ -58,6 +58,7 @@
     "path": "^0.12.7",
     "remap-istanbul": "~0.5.1",
     "require-dir": "~0.3.0",
+    "run-sequence": "^1.1.5",
     "systemjs-builder": "~0.14.15",
     "tslint": "^3.2.1"
   }
