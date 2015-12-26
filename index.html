@@ -89,14 +89,14 @@ and it'll also compile your changed TypeScripts files to Javascript files.</p>
 <a id="production" class="anchor" href="#production" aria-hidden="true"><span class="octicon octicon-link"></span></a>Production</h2>
 
 <blockquote>
-<p>Angular 2 is not ready for <em>production</em> yet, consider this build task for learning purpose</p>
+<p>All build tasks will run the <code>gulp test</code>, the bundle will only be created if the test passed.</p>
 </blockquote>
 
 <p>You can create production build by running:</p>
 
-<div class="highlight highlight-source-shell"><pre>gulp build-sjs</pre></div>
+<div class="highlight highlight-source-shell"><pre>gulp build</pre></div>
 
-<p>or you can serve the build folder by running:</p>
+<p>or you can create production build and then serve it using <code>live-server</code> by running:</p>
 
 <div class="highlight highlight-source-shell"><pre>gulp serve-build</pre></div>
 
