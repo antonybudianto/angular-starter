@@ -14,45 +14,48 @@ gulp.task('build', function (done) {
     runSequence('test', 'build-sjs', done);
 });
 
-gulp.task('build-sjs', ['build-assets', 'tsc-app'], function () {
-    var builder = new Builder('.');
-    builder.config(config.systemjsBuild);
-    builder.loader.defaultJSExtensions = true;
-    builder
-        .bundle(config.app + 'boot',
-                config.build.path + config.app + 'boot.js', 
-        {
-            minify: true,
-            globalDefs: { DEBUG: false }
-        })
-        .then(function () {
-            console.log('Build complete');
-        })
-        .catch(function (ex) {
-            console.log('error', ex);
-        });
+gulp.task('build-sjs', function (done) {
+    runSequence('build-assets', 'tsc-app', buildSJS);
+    function buildSJS () {
+        var builder = new Builder('.');
+        builder.config(config.systemjsBuild);
+        builder.loader.defaultJSExtensions = true;
+        builder
+            .bundle(config.app + 'boot',
+                    config.build.path + config.app + 'boot.js', 
+            {
+                minify: true,
+                globalDefs: { DEBUG: false }
+            })
+            .then(function () {
+                console.log('Build complete');
+                done();
+            })
+            .catch(function (ex) {
+                console.log('error', ex);
+                done('Build failed.')
+            });
 
-    gulp.src(config.app + '**/*.html', {
-        base: config.app
-    })
-    .pipe(gulp.dest(config.build.app));
+        gulp.src(config.app + '**/*.html', {
+            base: config.app
+        })
+        .pipe(gulp.dest(config.build.app));
 
-    gulp.src(config.app + '**/*.css', {
-        base: config.app
-    })
-    .pipe(cssnano())
-    .pipe(gulp.dest(config.build.app));
+        gulp.src(config.app + '**/*.css', {
+            base: config.app
+        })
+        .pipe(cssnano())
+        .pipe(gulp.dest(config.build.app));
+    }
 });
 
 /* Concat and minify/uglify all css, js, and copy fonts */
-gulp.task('build-assets', function () {
-    runSequence('clean-build', ['wiredep', 'fonts'], function () {
-        return gulp.src(config.index)
-            .pipe(useref())
-            .pipe(gulpif('*.js', uglify()))
-            .pipe(gulpif('*.css', cssnano()))
-            .pipe(gulp.dest(config.build.path));
-    });
+gulp.task('build-assets', ['clean-build', 'wiredep', 'fonts'], function () {
+    return gulp.src(config.index)
+        .pipe(useref())
+        .pipe(gulpif('*.js', uglify()))
+        .pipe(gulpif('*.css', cssnano()))
+        .pipe(gulp.dest(config.build.path));
 });
 
 /* Copy fonts in bower */
