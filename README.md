@@ -15,7 +15,7 @@
 * [Testing](#testing)
 * [Production](#production)
 * [Contributing](#contributing)
-* [Wiki](#wiki)
+* [Special thanks](#special-thanks)
 * [License](#license)
 
 ## Introduction
@@ -32,6 +32,8 @@ This starter contains almost everything you need to start developing [Angular 2]
 * [Istanbul](https://github.com/gotwarlost/istanbul) for test coverage
   * with [Remap Istanbul](https://github.com/SitePen/remap-istanbul) for remapping Javascript to TypeScript coverage
 * [SystemJS Builder](https://github.com/systemjs/builder) for module bundling in production
+
+Please visit the [wiki](https://github.com/antonybudianto/angular2-starter/wiki) for more details.
 
 ## Installation
 Firstly, you need to have [NodeJS](https://nodejs.org/en/) (support Node from 0.12.x or higher), then   
@@ -64,7 +66,6 @@ gulp test
 ```
 and it'll compile all TypeScript files, start Karma, then remap Istanbul coverage so that it shows TypeScript coverage, not the transpiled Javascript coverage.
 ![Coverage result](http://s9.postimg.org/ij32cv5dr/test.png)
-> Thanks to Julie Ralph's [ng2-test-seed](https://github.com/juliemr/ng2-test-seed) which helped me lot to get started.
    
 
 ## Production
@@ -83,8 +84,9 @@ It uses [SystemJS Builder](https://github.com/systemjs/builder) to bundle your a
 ## Contributing
 Feel free to submit a PR if there are any issues or new features
 
-## Wiki
-Please consult to the [wiki](https://github.com/antonybudianto/angular2-starter/wiki) for more details
+## Special thanks
+* John Papa for his awesome [angular-styleguide](https://github.com/johnpapa/angular-styleguide) and [Tour of Heroes](https://github.com/johnpapa/angular2-tour-of-heroes)
+* Julie Ralph for her [ng2-test-seed](https://github.com/juliemr/ng2-test-seed) which helped me a lot to get started with testing feature
 
 ## License
 MIT
