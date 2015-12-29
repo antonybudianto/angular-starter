@@ -33,8 +33,15 @@ gulp.task('build-sjs', function (done) {
             })
             .catch(function (ex) {
                 console.log('error', ex);
-                done('Build failed.')
+                done('Build failed.');
             });
+    }
+});
+
+/* Concat and minify/uglify all css, js, and copy fonts */
+gulp.task('build-assets', function (done) {
+    runSequence('clean-build', ['wiredep', 'fonts'], function () {
+        done();
 
         gulp.src(config.app + '**/*.html', {
             base: config.app
@@ -46,13 +53,12 @@ gulp.task('build-sjs', function (done) {
         })
         .pipe(cssnano())
         .pipe(gulp.dest(config.build.app));
-    }
-});
 
-/* Concat and minify/uglify all css, js, and copy fonts */
-gulp.task('build-assets', function (done) {
-    runSequence('clean-build', ['wiredep', 'fonts'], function () {
-        done();
+        gulp.src(config.assetsPath.images + '**/*.*', {
+            base: config.assetsPath.images
+        })
+        .pipe(gulp.dest(config.build.assetPath + 'images'));
+
         return gulp.src(config.index)
             .pipe(useref())
             .pipe(gulpif('*.js', uglify()))
@@ -63,6 +69,11 @@ gulp.task('build-assets', function (done) {
 
 /* Copy fonts in bower */
 gulp.task('fonts', function () {
+    gulp.src(config.assetsPath.fonts + '**/*.*', {
+        base: config.assetsPath.fonts
+    })
+    .pipe(gulp.dest(config.buildPath.fonts));
+
     gulp.src(mainBowerFiles({
         filter: '**/fonts/*.*'
     }))
