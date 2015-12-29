@@ -3,7 +3,7 @@ var sass = require('gulp-sass');
 var config = require('../gulp.config')();
  
 gulp.task('sass', function () {
-    return gulp.src(config.assetsPath.styles + '**/*.scss')
+    return gulp.src(config.assetsPath.styles + 'main.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest(config.assetsPath.styles));
 });
