@@ -5,7 +5,8 @@ module.exports = function () {
     var assets = root + 'assets/';
     var assetsPath = {
         styles: assets + 'styles/',
-        images: assets + 'images/'
+        images: assets + 'images/',
+        fonts: assets + 'fonts/'
     };
     var index = root + 'index.html';
     var tsFiles = [
