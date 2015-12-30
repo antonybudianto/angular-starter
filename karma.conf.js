@@ -25,7 +25,6 @@ module.exports = function(config) {
     },
 
     files: [
-      {pattern: 'node_modules/es6-shim/es6-shim.min.js', included: true, watched: true},
       {pattern: 'node_modules/angular2/bundles/angular2-polyfills.js', included: true, watched: true},
       {pattern: 'node_modules/systemjs/dist/system.src.js', included: true, watched: true},
       {pattern: 'node_modules/rxjs/bundles/Rx.js', included: true, watched: true},
