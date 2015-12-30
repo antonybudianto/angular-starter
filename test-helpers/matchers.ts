@@ -1,8 +1,8 @@
 beforeEach(() => {
     jasmine.addMatchers({
-        toContainText: function() {
+        toContainText: () => {
             return {
-                compare: function(actual, expectedText) {
+                compare: (actual, expectedText) => {
                     let actualText = actual.textContent;
                     return {
                         pass: actualText.indexOf(expectedText) > -1,
