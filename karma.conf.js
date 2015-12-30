@@ -25,6 +25,7 @@ module.exports = function(config) {
     },
 
     files: [
+      {pattern: 'node_modules/es6-shim/es6-shim.min.js', included: true, watched: true},
       {pattern: 'node_modules/angular2/bundles/angular2-polyfills.js', included: true, watched: true},
       {pattern: 'node_modules/systemjs/dist/system.src.js', included: true, watched: true},
       {pattern: 'node_modules/rxjs/bundles/Rx.js', included: true, watched: true},
@@ -35,7 +36,6 @@ module.exports = function(config) {
       {pattern: 'karma-test-shim.js', included: true, watched: true},
 
       // paths loaded via module imports
-      // {pattern: 'app/**/!(*.spec)+(.js)', included: true, watched: true},
       {pattern: 'app/**/*.js', included: false, watched: true},
 
       // paths loaded via Angular's component compiler
