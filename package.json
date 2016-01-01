@@ -1,6 +1,6 @@
 {
   "name": "angular2-starter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Antony Budianto",
   "description": "Angular 2 Starter with Gulp, Bower, Karma, Jasmine using SystemJS",
   "main": "index.html",
