@@ -7,7 +7,9 @@ var path = require('path');
 
 /* Initialize TS Project */
 var tsProject = ts.createProject(config.root + 'tsconfig.json');
-var tsFiles = [].concat(config.tsFiles, config.tsSpecFiles);
+var tsUnitFiles = [].concat(config.tsTestFiles.unit, config.tsTestFiles.helper);
+var tsE2EFiles = [].concat(config.tsTestFiles.e2e, config.tsTestFiles.helper);
+var tsFiles = [].concat(config.tsFiles, tsUnitFiles, tsE2EFiles);
 
 /* Watch changed typescripts file and compile it */
 gulp.task('watch-ts', function () {
@@ -26,19 +28,29 @@ gulp.task('tsc-app', ['clean-ts-app'], function () {
     return compileTs(config.tsFiles);
 });
 
-gulp.task('tsc-spec', ['clean-ts-spec'], function () {
-    return compileTs(config.tsSpecFiles);
+gulp.task('tsc-unit', ['clean-ts-test'], function () {
+    return compileTs(tsUnitFiles);
+});
+
+gulp.task('tsc-e2e', ['clean-ts-test'], function () {
+    return compileTs(tsE2EFiles);
 });
 
 /* Lint typescripts */
-gulp.task('tslint', ['tslint-app', 'tslint-spec']);
+gulp.task('tslint', function () {
+    return lintTs(tsFiles);
+});
 
 gulp.task('tslint-app', function () {
     return lintTs(config.tsFiles);
 });
 
-gulp.task('tslint-spec', function () {
-    return lintTs(config.tsSpecFiles);
+gulp.task('tslint-unit', function () {
+    return lintTs(tsUnitFiles);
+});
+
+gulp.task('tslint-e2e', function () {
+    return lintTs(tsE2EFiles);
 });
 
 function lintTs(files) {
