@@ -37,7 +37,9 @@ gulp.task('tsc-e2e', ['clean-ts-test'], function () {
 });
 
 /* Lint typescripts */
-gulp.task('tslint', ['tslint-app', 'tslint-unit', 'tslint-e2e']);
+gulp.task('tslint', function () {
+    return lintTs(tsFiles);
+});
 
 gulp.task('tslint-app', function () {
     return lintTs(config.tsFiles);
