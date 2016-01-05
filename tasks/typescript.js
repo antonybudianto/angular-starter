@@ -66,7 +66,10 @@ function compileTs(files) {
             base: '.'
         })
         .pipe(sourcemaps.init())
-        .pipe(ts(tsProject));
+        .pipe(ts(tsProject))
+        .on('error', function () {
+            process.exit(1);
+        });
     return res.js
         .pipe(sourcemaps.write('.', {
               // Return relative source map root directories per file.

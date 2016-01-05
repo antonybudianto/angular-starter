@@ -1,19 +1,17 @@
 import {
     it,
-    describe,
-    expect,
     inject,
-    TestComponentBuilder
+    beforeEachProviders,
+    describe,
+    expect
 } from 'angular2/testing';
 import { AppComponent } from './app.component';
+import { LoggerService } from './blocks/logger.service';
 
 describe('AppComponent', () => {
-    it('should have brand Angular 2', inject([TestComponentBuilder], tcBuilder => {
-        tcBuilder.createAsync(AppComponent).then((fixture) => {
-            fixture.detectChanges();
-            let compiled = fixture.debugElement.nativeElement;
-            console.log(compiled);
-            expect(compiled).toContainText('Angular 2 Stsarter');
-        });
+    beforeEachProviders(() => [LoggerService, AppComponent]);
+
+    it('should be defined', inject([AppComponent], (app: AppComponent) => {
+        expect(app).toBeDefined();
     }));
 });
