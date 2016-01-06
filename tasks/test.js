@@ -16,9 +16,7 @@ gulp.task('unit-test', ['tsc'], function (done) {
 
     function karmaDone (exitCode) {
     	console.log('Test Done with exit code: ' + exitCode);
-    	console.log('Remapping coverage to TypeScript format...');
     	remapCoverage();
-        console.log('Remapping done! View the result in report/remap/html-report');
         if(exitCode === 0) {
             done();
         } else {
@@ -28,6 +26,7 @@ gulp.task('unit-test', ['tsc'], function (done) {
 });
 
 function remapCoverage () {
+    console.log('Remapping coverage to TypeScript format...');
     gulp.src(config.report.path + 'report-json/coverage-final.json')
         .pipe(remapIstanbul({
             reports: {
@@ -35,5 +34,8 @@ function remapCoverage () {
                 'json': config.report.path + 'remap/coverage.json',
                 'html': config.report.path + 'remap/html-report'
             }
-        }));
+        }))
+        .on('finish', function () {
+            console.log('Remapping done! View the result in report/remap/html-report');
+        });
 }
