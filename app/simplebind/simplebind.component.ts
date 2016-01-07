@@ -1,19 +1,15 @@
 import {Component} from 'angular2/core';
+import {ChildComponent} from './child.component';
 
 @Component({
     selector: 'simplebind',
-    templateUrl: 'app/simplebind/simplebind.html'
+    templateUrl: 'app/simplebind/simplebind.html',
+    directives: [ChildComponent]
 })
 export class SimplebindComponent {
     private myname: string;
-    private count: number;
 
     constructor() {
         this.myname = 'Simple';
-        this.count = 0;
-    }
-
-    changeCount() {
-        this.count++;
     }
 }
