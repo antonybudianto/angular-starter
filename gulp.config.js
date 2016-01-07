@@ -57,6 +57,10 @@ module.exports = function () {
         }
     };
 
+    var e2eConfig = {
+        seleniumTarget: 'http://127.0.0.1:3000'
+    };
+
     var systemjsBuild = {
         map: {
             'angular2': 'node_modules/angular2',
@@ -76,6 +80,7 @@ module.exports = function () {
         test: test,
         testHelper: testHelper,
         e2e: e2e,
+        e2eConfig, e2eConfig,
         assets: assets,
         index: index,
         build: build,

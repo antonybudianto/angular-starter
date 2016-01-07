@@ -1,11 +1,9 @@
 var gulp = require('gulp');
 var config = require('../gulp.config')();
 var Server = require('karma').Server;
+var gulpProtractor = require('gulp-protractor');
 var remapIstanbul = require('remap-istanbul/lib/gulpRemapIstanbul');
 
-/**
- * Run test once and exit
- */
 gulp.task('test', ['clean-report', 'tslint', 'unit-test']);
 
 gulp.task('unit-test', ['tsc'], function (done) {
@@ -23,6 +21,20 @@ gulp.task('unit-test', ['tsc'], function (done) {
             done('Unit test failed.');
         }
     }
+});
+
+gulp.task('e2e', ['e2e-test']);
+gulp.task('driver-update', gulpProtractor['webdriver_update']);
+gulp.task('e2e-test', ['driver-update'], function () {
+    gulp.src(config.e2e + '**/*.spec.js')
+    .pipe(gulpProtractor.protractor({
+        configFile: 'protractor.conf.js',
+        args: ['--baseUrl', config.e2eConfig.seleniumTarget]
+    }))
+    .on('error', function(e) {
+        console.log('Error running E2E testing');
+        process.exit(1);
+    });
 });
 
 function remapCoverage () {
