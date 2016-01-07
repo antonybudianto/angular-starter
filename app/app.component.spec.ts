@@ -8,8 +8,9 @@ import {
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-    it('should have brand Angular 2', inject([TestComponentBuilder], tcBuilder => {
-        tcBuilder.createAsync(AppComponent).then((fixture) => {
+    it('should have brand Angular 2', inject([TestComponentBuilder],
+        (tsb: TestComponentBuilder) => {
+        tsb.createAsync(AppComponent).then((fixture) => {
             fixture.detectChanges();
             let compiled = fixture.debugElement.nativeElement;
             console.log(compiled);

@@ -6,21 +6,26 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>From parent <span class="label label-success">1 way</span></label>
-                    <input class="form-control" type="text" [value]="myname">
+                    Parent component: (the origin, all <strong>"Simple"</strong> comes from this component)
+                    <br>
+                    <p>{{myname}}</p>
+                    <div class="well">
+                        <h5>Child component:</h5>
+                        <child text="Custom 1-way Binding" [fromParent]="myname"></child>
+                        <child text="Custom 2-way Binding" [(fromParent)]="myname"></child>
+                    </div>
                 </div>
+            </div>
+            <div class="col-md-6">
                 <div class="form-group">
-                    <label>From parent <span class="label label-success">2 way</span></label>
-                    <input class="form-control" type="text" [(ngModel)]="myname">
-                </div>
-                <div class="form-group">
-                    <label>From this component</label>
-                    <div class="form-inline">
-                        <div class="form-group">
-                            <input [(ngModel)]="count" type="number" class="form-control">
-                            </div>
-                            <label>{{count}}</label>
-                            <button (click)="changeCount()" class="btn btn-primary">Change</button>
+                    <label><h3>Using ngModel</h3></label>
+                    <div class="form-group">
+                        <label>1-way binding</label>
+                        <input [ngModel]="myname" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>2-way binding</label>
+                        <input [(ngModel)]="myname" type="text" class="form-control">
                     </div>
                 </div>
             </div>
