@@ -80,7 +80,7 @@ module.exports = function () {
         test: test,
         testHelper: testHelper,
         e2e: e2e,
-        e2eConfig, e2eConfig,
+        e2eConfig: e2eConfig,
         assets: assets,
         index: index,
         build: build,
