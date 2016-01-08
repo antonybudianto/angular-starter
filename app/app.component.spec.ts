@@ -1,5 +1,5 @@
 import {
-    it,
+    xit,
     inject,
     beforeEachProviders,
     describe,
@@ -11,7 +11,7 @@ import { LoggerService } from './blocks/logger.service';
 
 describe('AppComponent', () => {
     beforeEachProviders(() => [LoggerService, AppComponent]);
-    it('should have brand Angular 2', inject([TestComponentBuilder],
+    xit('should have brand Angular 2', inject([TestComponentBuilder],
         (tsb: TestComponentBuilder) => {
         tsb.createAsync(AppComponent).then((fixture) => {
             fixture.detectChanges();
