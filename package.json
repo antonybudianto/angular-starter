@@ -1,6 +1,6 @@
 {
   "name": "angular2-starter",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Antony Budianto",
   "description": "Angular 2 Starter with Gulp, Bower, Karma, Jasmine using SystemJS",
   "main": "index.html",
@@ -28,7 +28,7 @@
     "url": "https://github.com/antonybudianto/angular2-starter/issues"
   },
   "dependencies": {
-    "angular2": "2.0.0-beta.0",
+    "angular2": "2.0.0-beta.1",
     "systemjs": "0.19.9",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",
@@ -38,9 +38,9 @@
   },
   "devDependencies": {
     "del": "~2.2.0",
-    "glob": "^6.0.3",
+    "glob": "^6.0.4",
     "gulp": "^3.9.0",
-    "gulp-cssnano": "^2.0.0",
+    "gulp-cssnano": "^2.1.0",
     "gulp-if": "~2.0.0",
     "gulp-inject": "^3.0.0",
     "gulp-protractor": "^2.1.0",
@@ -51,12 +51,12 @@
     "gulp-uglify": "^1.5.1",
     "gulp-useref": "~3.0.4",
     "jasmine-core": "~2.4.1",
-    "karma": "~0.13.16",
+    "karma": "~0.13.19",
     "karma-chrome-launcher": "~0.2.2",
     "karma-coverage": "~0.5.3",
     "karma-jasmine": "~0.3.6",
     "live-server": "~0.9.0",
-    "main-bower-files": "^2.11.0",
+    "main-bower-files": "^2.11.1",
     "path": "^0.12.7",
     "remap-istanbul": "~0.5.1",
     "require-dir": "~0.3.0",

@@ -16,7 +16,7 @@ module.exports = function () {
     ];
     var tsTestFiles = {
         unit: [app + '**/*.spec.ts'],
-        e2e: [e2e + '**/*.spec.ts'],
+        e2e: [e2e + '**/*.ts'],
         helper: [testHelper + '**/*.ts']
     };
     var build = {
