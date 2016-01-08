@@ -15,9 +15,9 @@ module.exports = function () {
         app + '**/!(*.spec)+(.ts)'
     ];
     var tsTestFiles = {
-        unit: app + '**/*.spec.ts',
-        e2e: e2e + '**/*.spec.ts',
-        helper: testHelper + '**/*.ts'
+        unit: [app + '**/*.spec.ts'],
+        e2e: [e2e + '**/*.spec.ts'],
+        helper: [testHelper + '**/*.ts']
     };
     var build = {
         path: 'build/',
