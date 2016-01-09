@@ -25,6 +25,9 @@ gulp.task('build-sjs', function (done) {
                     config.build.path + config.app + 'boot.js', 
             {
                 minify: true,
+                // TODO: remove this when angular2 bug is solved
+                mangle: false,
+                // TODO
                 globalDefs: { DEBUG: false }
             })
             .then(function () {
