@@ -60,13 +60,26 @@ Every changes to the file will refresh the browser automatically
 and it'll also compile your changed TypeScripts files to Javascript files.
 
 ## Testing
-This starter comes with unit-testing gulp workflow, just run:   
+This starter comes with testing gulp workflow
+
+### Unit testing
+Just run
 ```bash
 gulp test
 ```
 and it'll compile all TypeScript files, start Karma, then remap Istanbul coverage so that it shows TypeScript coverage, not the transpiled Javascript coverage.
 ![Coverage result](http://s9.postimg.org/ij32cv5dr/test.png)
-   
+
+### E2E testing
+Firstly start the server:
+```
+gulp serve-dev
+```
+To begin testing, run:
+```bash
+gulp e2e
+```
+and it'll compile all E2E spec files in `/test/e2e/*.spec.ts`, boot up Selenium server then launches Chrome browser.
 
 ## Production
 > All build tasks will run the `gulp test`, the bundle will only be created if the test passed.
