@@ -21,7 +21,7 @@ gulp.task('clean-sass', function () {
 });
 
 /* Clean js and map */
-gulp.task('clean-ts', ['clean-ts-app', 'clean-ts-spec']);
+gulp.task('clean-ts', ['clean-ts-app', 'clean-ts-test']);
 
 gulp.task('clean-ts-app', function () {
     return del([
@@ -30,11 +30,11 @@ gulp.task('clean-ts-app', function () {
     ]);
 });
 
-gulp.task('clean-ts-spec', function () {
+gulp.task('clean-ts-test', function () {
     return del([
         config.app + '**/*.spec.js',
         config.app + '**/*.spec.js.map',
-        config.testHelper + '**/*.js',
-        config.testHelper + '**/*.js.map'
+        config.test + '**/*.js',
+        config.test + '**/*.js.map'
     ]);
 });

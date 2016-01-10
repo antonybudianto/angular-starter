@@ -1,7 +1,9 @@
 module.exports = function () {
     var root = '';
     var app = root + 'app/';
-    var testHelper = root + 'test-helpers/';
+    var test = root + 'test/';
+    var testHelper = test + 'test-helpers/';
+    var e2e = test + 'e2e/';
     var assets = root + 'assets/';
     var assetsPath = {
         styles: assets + 'styles/',
@@ -12,10 +14,11 @@ module.exports = function () {
     var tsFiles = [
         app + '**/!(*.spec)+(.ts)'
     ];
-    var tsSpecFiles = [
-        app + '**/*.spec.ts',
-        testHelper + '**/*.ts'
-    ];
+    var tsTestFiles = {
+        unit: [app + '**/*.spec.ts'],
+        e2e: [e2e + '**/*.ts'],
+        helper: [testHelper + '**/*.ts']
+    };
     var build = {
         path: 'build/',
         app: 'build/app/',
@@ -54,6 +57,10 @@ module.exports = function () {
         }
     };
 
+    var e2eConfig = {
+        seleniumTarget: 'http://127.0.0.1:3000'
+    };
+
     var systemjsBuild = {
         map: {
             'angular2': 'node_modules/angular2',
@@ -70,7 +77,10 @@ module.exports = function () {
     var config = {
         root: root,
         app: app,
+        test: test,
         testHelper: testHelper,
+        e2e: e2e,
+        e2eConfig: e2eConfig,
         assets: assets,
         index: index,
         build: build,
@@ -78,7 +88,7 @@ module.exports = function () {
         assetsPath: assetsPath,
         buildPath: buildPath,
         tsFiles: tsFiles,
-        tsSpecFiles: tsSpecFiles,
+        tsTestFiles: tsTestFiles,
         liveServer: liveServer,
         systemjsBuild: systemjsBuild
     };
