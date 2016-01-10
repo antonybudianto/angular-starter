@@ -110,12 +110,31 @@ and it'll also compile your changed TypeScripts files to Javascript files.</p>
 <h2>
 <a id="testing" class="anchor" href="#testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing</h2>
 
-<p>This starter comes with unit-testing gulp workflow, just run:   </p>
+<p>This starter comes with testing gulp workflow</p>
+
+<h3>
+<a id="unit-testing" class="anchor" href="#unit-testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unit testing</h3>
+
+<p>Just run</p>
 
 <div class="highlight highlight-source-shell"><pre>gulp <span class="pl-c1">test</span></pre></div>
 
 <p>and it'll compile all TypeScript files, start Karma, then remap Istanbul coverage so that it shows TypeScript coverage, not the transpiled Javascript coverage.
 <img src="http://s9.postimg.org/ij32cv5dr/test.png" alt="Coverage result"></p>
+
+<h3>
+<a id="e2e-testing" class="anchor" href="#e2e-testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>E2E testing</h3>
+
+<p>Firstly start the server:</p>
+
+<pre><code>gulp serve-dev
+</code></pre>
+
+<p>To begin testing, run:</p>
+
+<div class="highlight highlight-source-shell"><pre>gulp e2e</pre></div>
+
+<p>and it'll compile all E2E spec files in <code>/test/e2e/*.spec.ts</code>, boot up Selenium server then launches Chrome browser.</p>
 
 <h2>
 <a id="production" class="anchor" href="#production" aria-hidden="true"><span class="octicon octicon-link"></span></a>Production</h2>
