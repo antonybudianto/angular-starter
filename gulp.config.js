@@ -1,7 +1,7 @@
 module.exports = function () {
     var root = '';
     var app = root + 'app/';
-    var test = 'test/';
+    var test = root + 'test/';
     var testHelper = test + 'test-helpers/';
     var e2e = test + 'e2e/';
     var assets = root + 'assets/';
