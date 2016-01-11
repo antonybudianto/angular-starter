@@ -36,8 +36,11 @@ This starter contains almost everything you need to start developing [Angular 2]
 Please visit the [wiki](https://github.com/antonybudianto/angular2-starter/wiki) for more details.
 
 ## Installation
-Firstly, you need to have [NodeJS](https://nodejs.org/en/) (support Node from 0.12.x or higher), then   
-install these packages globally:   
+Firstly, you need to have [Node.js](https://nodejs.org/en/) 
+- Support from v0.12 or higher (v4.2.x is **highly** recommended)
+- You need v4.x or higher for [Protractor](https://angular.github.io/protractor/#/)
+
+Then, install these packages globally:   
 ```bash
 npm install -g gulp bower
 ```
