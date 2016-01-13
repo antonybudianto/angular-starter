@@ -4,7 +4,7 @@ var Server = require('karma').Server;
 var gulpProtractor = require('gulp-protractor');
 var remapIstanbul = require('remap-istanbul/lib/gulpRemapIstanbul');
 
-gulp.task('test', ['clean-report', 'tslint', 'unit-test']);
+gulp.task('test', ['clean-report', 'unit-test']);
 
 gulp.task('unit-test', ['tsc'], function (done) {
     new Server({
