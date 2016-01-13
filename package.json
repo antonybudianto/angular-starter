@@ -1,6 +1,6 @@
 {
   "name": "angular2-starter",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "Antony Budianto",
   "description": "Angular 2 Starter with Gulp, Bower, Karma, Jasmine using SystemJS",
   "main": "index.html",
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "angular2": "2.0.0-beta.1",
-    "systemjs": "0.19.14",
+    "systemjs": "0.19.15",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",
     "reflect-metadata": "0.1.2",
@@ -46,7 +46,7 @@
     "gulp-protractor": "^2.1.0",
     "gulp-sass": "^2.1.1",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-tslint": "^4.2.2",
+    "gulp-tslint": "^4.3.0",
     "gulp-typescript": "~2.10.0",
     "gulp-uglify": "^1.5.1",
     "gulp-useref": "~3.0.4",

@@ -22,6 +22,7 @@ module.exports = function () {
     var build = {
         path: 'build/',
         app: 'build/app/',
+        fonts: 'build/fonts',
         assetPath: 'build/assets/',
         assets: {
             lib: {
@@ -32,13 +33,6 @@ module.exports = function () {
     };
     var report = {
         path: 'report/'
-    };
-    var buildPath = {
-        lib: {
-            css: build.assetPath + build.assets.lib.css,
-            js: build.assetPath + build.assets.lib.js
-        },
-        fonts: build.path + 'fonts'
     };
     var liveServer = {
         dev: {
@@ -86,7 +80,6 @@ module.exports = function () {
         build: build,
         report: report,
         assetsPath: assetsPath,
-        buildPath: buildPath,
         tsFiles: tsFiles,
         tsTestFiles: tsTestFiles,
         liveServer: liveServer,

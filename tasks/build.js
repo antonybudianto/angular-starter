@@ -76,12 +76,12 @@ gulp.task('fonts', function () {
     gulp.src(config.assetsPath.fonts + '**/*.*', {
         base: config.assetsPath.fonts
     })
-    .pipe(gulp.dest(config.buildPath.fonts));
+    .pipe(gulp.dest(config.build.fonts));
 
     gulp.src(mainBowerFiles({
         filter: '**/fonts/*.*'
     }))
-    .pipe(gulp.dest(config.buildPath.fonts));
+    .pipe(gulp.dest(config.build.fonts));
 });
 
 /* Wiredep the bower main files to index file */
