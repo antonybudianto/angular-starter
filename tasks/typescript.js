@@ -15,7 +15,7 @@ var tsFiles = [].concat(config.tsFiles, tsUnitFiles, tsE2EFiles);
 gulp.task('watch-ts', function () {
     return gulp.watch(tsFiles, function (file) {
         console.log('Compiling ' + file.path + '...');
-        return compileTs(file.path);
+        return compileTs(file.path, true);
     });
 });
 
@@ -61,10 +61,16 @@ function lintTs(files) {
         }));
 }
 
-function compileTs(files) {
+function compileTs(files, watchMode) {
+    watchMode = watchMode || false;
     var res = gulp.src(files, {
             base: '.'
         })
+        .pipe(tslint())
+        .pipe(tslint.report('prose', {
+            summarizeFailureOutput: true,
+            emitError: !watchMode
+        }))
         .pipe(sourcemaps.init())
         .pipe(ts(tsProject))
         .on('error', function () {

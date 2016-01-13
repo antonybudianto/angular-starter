@@ -12,9 +12,10 @@ export class ChildComponent {
     @Input() text: string;
     @Input() fromParent: string;
     @Output() fromParentChange: EventEmitter<any>;
-    num: number = 0;
+    num: number;
 
     constructor() {
+        this.num = 0;
         this.fromParentChange = new EventEmitter<any>();
     }
 
