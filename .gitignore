@@ -3,3 +3,8 @@
 /build
 /report
 .DS_Store
+app/**/*.js
+app/**/*.js.map
+test/**/*.js
+test/**/*.js.map
+assets/styles/*.css
