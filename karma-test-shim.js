@@ -21,10 +21,7 @@ System.config({
     }
 });
 
-System.import('angular2/src/platform/browser/browser_adapter')
-.then(function(browser_adapter) {
-    browser_adapter.BrowserDomAdapter.makeCurrent();
-})
+System.import('test/test-helpers/setup')
 .then(function() {
     return Promise.all(
         Object.keys(window.__karma__.files)

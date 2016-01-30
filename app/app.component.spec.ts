@@ -1,12 +1,20 @@
 import {
     it,
-    inject,
+    beforeEachProviders,
+    injectAsync,
     describe,
     expect,
-    TestComponentBuilder
+    TestComponentBuilder,
+    MockApplicationRef
 } from 'angular2/testing';
-import { Component } from 'angular2/core';
+import {
+    APP_BASE_HREF,
+    ROUTER_PRIMARY_COMPONENT,
+    ROUTER_PROVIDERS
+} from 'angular2/router';
+import { Component, provide, ApplicationRef } from 'angular2/core';
 import { AppComponent } from './app.component';
+import { LoggerService } from './blocks/logger.service';
 
 @Component({
     selector: 'test',
@@ -18,13 +26,22 @@ class TestComponent {
 
 export function main() {
     describe('AppComponent', () => {
-        it('should have brand Angular 2', inject([TestComponentBuilder],
+        beforeEachProviders(() => [
+            LoggerService,
+            ROUTER_PROVIDERS,
+            provide(ROUTER_PRIMARY_COMPONENT, { useValue: AppComponent }),
+            provide(ApplicationRef, { useClass: MockApplicationRef }),
+            provide(APP_BASE_HREF, { useValue: '/' }),
+        ]);
+
+        it('should have generate Angular 2', injectAsync([TestComponentBuilder],
             (tsb: TestComponentBuilder) => {
-                tsb.createAsync(TestComponent).then((fixture) => {
+                return tsb.createAsync(TestComponent).then((fixture) => {
                     fixture.detectChanges();
                     let compiled = fixture.debugElement.nativeElement;
-                    console.log(compiled);
-                    expect(compiled).toContainText('Angular 2 Starter');
+                    expect(compiled).toBeDefined();
+                    expect(compiled.querySelector('a.navbar-brand'))
+                        .toHaveText('Angular 2 Starter');
                 });
             }));
     });

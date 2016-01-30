@@ -32,6 +32,7 @@ module.exports = function(config) {
       { pattern: 'node_modules/angular2/**/*.js', included: false, watched: false },
       { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
       { pattern: 'app/**/*.js', included: false, watched: true },
+      { pattern: 'test/test-helpers/*.js', included: false, watched: true },
       { pattern: 'node_modules/systemjs/dist/system-polyfills.js', included: false, watched: false },
 
       // paths loaded via Angular's component compiler

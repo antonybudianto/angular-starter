@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {RouterOutlet, RouteConfig} from 'angular2/router';
+import {RouterOutlet, RouteConfig, RouteDefinition} from 'angular2/router';
 import {APP_ROUTES} from './app.routes';
 import {NavbarComponent} from './navbar/navbar.component';
 import {LoggerService} from './blocks/logger.service';
@@ -11,10 +11,11 @@ import {LoggerService} from './blocks/logger.service';
 })
 @RouteConfig(APP_ROUTES)
 export class AppComponent {
+    public appRoutes: RouteDefinition[];
     private logger: LoggerService;
 
     constructor(logger: LoggerService) {
         this.logger = logger;
-        this.logger.log('Hello!');
+        this.appRoutes = APP_ROUTES;
     }
 }

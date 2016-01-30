@@ -10,3 +10,5 @@ node_js:
   - "4.0"
   - "0.12"
 script: gulp build
+after_script:
+  - npm run-script coveralls
