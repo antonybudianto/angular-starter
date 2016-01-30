@@ -1,15 +1,16 @@
 {
   "name": "angular2-starter",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "Antony Budianto",
-  "description": "Angular 2 Starter with Gulp, Bower, Karma, Jasmine using SystemJS",
+  "description": "Angular 2 Starter with Gulp, Bower, Karma, Jasmine, Protractor using SystemJS",
   "main": "index.html",
   "repository": {
     "type": "git",
     "url": "https://github.com/antonybudianto/angular2-starter.git"
   },
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./report/remap/lcov.info"
   },
   "keywords": [
     "angular2",
@@ -28,8 +29,8 @@
     "url": "https://github.com/antonybudianto/angular2-starter/issues"
   },
   "dependencies": {
-    "angular2": "2.0.0-beta.1",
-    "systemjs": "0.19.15",
+    "angular2": "2.0.0-beta.2",
+    "systemjs": "^0.19.17",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",
     "reflect-metadata": "0.1.2",
@@ -37,6 +38,7 @@
     "zone.js": "0.5.10"
   },
   "devDependencies": {
+    "coveralls": "^2.11.6",
     "del": "~2.2.0",
     "glob": "^6.0.4",
     "gulp": "^3.9.0",
@@ -46,22 +48,23 @@
     "gulp-protractor": "^2.1.0",
     "gulp-sass": "^2.1.1",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-tslint": "^4.3.0",
+    "gulp-tslint": "^4.3.1",
     "gulp-typescript": "~2.10.0",
     "gulp-uglify": "^1.5.1",
-    "gulp-useref": "~3.0.4",
+    "gulp-useref": "~3.0.5",
     "jasmine-core": "~2.4.1",
     "karma": "~0.13.19",
-    "karma-chrome-launcher": "~0.2.2",
     "karma-coverage": "~0.5.3",
     "karma-jasmine": "~0.3.6",
-    "live-server": "~0.9.0",
+    "karma-phantomjs2-launcher": "^0.4.0",
+    "live-server": "~0.9.1",
     "main-bower-files": "^2.11.1",
     "path": "^0.12.7",
     "remap-istanbul": "~0.5.1",
     "require-dir": "~0.3.0",
     "run-sequence": "^1.1.5",
-    "systemjs-builder": "~0.15.2",
-    "tslint": "^3.2.1"
+    "systemjs-builder": "~0.15.5",
+    "traceur": "0.0.96",
+    "tslint": "^3.3.0"
   }
 }
