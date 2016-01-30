@@ -7,6 +7,11 @@ var path = require('path');
 
 /* Initialize TS Project */
 var tsProject = ts.createProject(config.root + 'tsconfig.json');
+var typingFiles = [
+    'typings/main.d.ts',
+    'typings/main/*.d.ts',
+    'node_modules/angular2/typings/browser.d.ts'
+];
 var tsUnitFiles = [].concat(config.tsTestFiles.unit, config.tsTestFiles.helper);
 var tsE2EFiles = [].concat(config.tsTestFiles.e2e, config.tsTestFiles.helper);
 var tsFiles = [].concat(config.tsFiles, tsUnitFiles, tsE2EFiles);
@@ -63,7 +68,8 @@ function lintTs(files) {
 
 function compileTs(files, watchMode) {
     watchMode = watchMode || false;
-    var res = gulp.src(files, {
+    var allFiles = [].concat(files, typingFiles);
+    var res = gulp.src(allFiles, {
             base: '.'
         })
         .pipe(tslint())

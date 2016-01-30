@@ -45,7 +45,7 @@ describe('ChildComponent', () => {
             fixture.detectChanges();
             let compiled = fixture.debugElement.nativeElement;
             let childInstance: ChildComponent = fixture.debugElement
-                .componentViewChildren[0].componentInstance;
+                .children[0].children[0].componentInstance;
 
             expect(compiled).toBeDefined();
 

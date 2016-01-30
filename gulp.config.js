@@ -55,16 +55,27 @@ module.exports = function () {
         seleniumTarget: 'http://127.0.0.1:3000'
     };
 
-    var systemjsBuild = {
-        map: {
-            'angular2': 'node_modules/angular2',
-            'rxjs': 'node_modules/rxjs'
+    var systemJs = {
+        main: {
+            defaultJSExtensions: true,
+            paths: {
+                'angular2/*': 'node_modules/angular2/*',
+                'rxjs/*': 'node_modules/rxjs/*'
+            },
+            packages: {
+                'app': {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
         },
-        packages: {
-          app: {
-            format: 'register',
-            defaultExtension: 'js'
-          }
+        builder: {
+            normalize: true,
+            minify: true,
+            // TODO: remove this when angular2 bug is solved
+            mangle: false,
+            // TODO
+            globalDefs: { DEBUG: false }
         }
     };
 
@@ -83,7 +94,7 @@ module.exports = function () {
         tsFiles: tsFiles,
         tsTestFiles: tsTestFiles,
         liveServer: liveServer,
-        systemjsBuild: systemjsBuild
+        systemJs: systemJs
     };
 
     return config;

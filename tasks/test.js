@@ -44,7 +44,8 @@ function remapCoverage () {
             reports: {
                 'lcovonly': config.report.path + 'remap/lcov.info',
                 'json': config.report.path + 'remap/coverage.json',
-                'html': config.report.path + 'remap/html-report'
+                'html': config.report.path + 'remap/html-report',
+                'text-summary': config.report.path + 'remap/text-summary.txt'
             }
         }))
         .on('finish', function () {
