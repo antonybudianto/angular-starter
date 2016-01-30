@@ -50,14 +50,5 @@ function file2moduleName(filePath) {
 
 // Import module path
 function importModules(path) {
-    return System.import(path).then(executeSpec);
-}
-
-// Execute spec main method
-function executeSpec(module) {
-    if (module.hasOwnProperty('main')) {
-        module.main();
-    } else {
-        throw new Error('Module ' + path + ' does not implement main() method.');
-    }
+    return System.import(path);
 }

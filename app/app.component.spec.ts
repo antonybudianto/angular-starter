@@ -24,25 +24,23 @@ import { LoggerService } from './blocks/logger.service';
 class TestComponent {
 }
 
-export function main() {
-    describe('AppComponent', () => {
-        beforeEachProviders(() => [
-            LoggerService,
-            ROUTER_PROVIDERS,
-            provide(ROUTER_PRIMARY_COMPONENT, { useValue: AppComponent }),
-            provide(ApplicationRef, { useClass: MockApplicationRef }),
-            provide(APP_BASE_HREF, { useValue: '/' }),
-        ]);
+describe('AppComponent', () => {
+    beforeEachProviders(() => [
+        LoggerService,
+        ROUTER_PROVIDERS,
+        provide(ROUTER_PRIMARY_COMPONENT, { useValue: AppComponent }),
+        provide(ApplicationRef, { useClass: MockApplicationRef }),
+        provide(APP_BASE_HREF, { useValue: '/' }),
+    ]);
 
-        it('should have generate Angular 2', injectAsync([TestComponentBuilder],
-            (tsb: TestComponentBuilder) => {
-                return tsb.createAsync(TestComponent).then((fixture) => {
-                    fixture.detectChanges();
-                    let compiled = fixture.debugElement.nativeElement;
-                    expect(compiled).toBeDefined();
-                    expect(compiled.querySelector('a.navbar-brand'))
-                        .toHaveText('Angular 2 Starter');
-                });
-            }));
-    });
-}
+    it('should have generate Angular 2', injectAsync([TestComponentBuilder],
+        (tsb: TestComponentBuilder) => {
+            return tsb.createAsync(TestComponent).then((fixture) => {
+                fixture.detectChanges();
+                let compiled = fixture.debugElement.nativeElement;
+                expect(compiled).toBeDefined();
+                expect(compiled.querySelector('a.navbar-brand'))
+                    .toHaveText('Angular 2 Starter');
+            });
+        }));
+});
