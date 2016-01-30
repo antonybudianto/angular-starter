@@ -7,7 +7,8 @@ module.exports = function(config) {
     reporters: ['progress', 'coverage'],
 
     preprocessors: {
-      'app/**/!(*.spec)+(.js)': ['coverage']
+      'app/**/!(*.spec)+(.js)': ['sourcemap', 'coverage'],
+      'app/**/*.spec.js': ['sourcemap']
     },
 
     // Generate json used for remap-istanbul
