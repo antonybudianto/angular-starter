@@ -4,6 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/antonybudianto/angular2-starter/badge.svg?branch=master)](https://coveralls.io/github/antonybudianto/angular2-starter?branch=master)
 [![Dependency Status](https://david-dm.org/antonybudianto/angular2-starter.svg)](https://david-dm.org/antonybudianto/angular2-starter)
 [![devDependency Status](https://david-dm.org/antonybudianto/angular2-starter/dev-status.svg)](https://david-dm.org/antonybudianto/angular2-starter#info=devDependencies)
+[![npm version](https://badge.fury.io/js/angular2.svg)](http://badge.fury.io/js/angular2)
 
 
 > Angular 2 is still in Beta stage, please **don't** use this in production   
