@@ -23,6 +23,7 @@
 Welcome to Angular 2 Starter!
 This starter contains almost everything you need to start developing [Angular 2](https://angular.io/): 
 * [TypeScript](http://www.typescriptlang.org/) for the base language
+  * with [Typings](https://github.com/typings/typings) for TypeScript definition manager
 * [Gulp](http://gulpjs.com/) for workflow (from *serve*, *watch*, *compile*, *test* to *build*)
 * [Bower](http://bower.io/) for front-end package manager
 * [NPM](https://www.npmjs.com/) for angular2 & dev-tooling package manager

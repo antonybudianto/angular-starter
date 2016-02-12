@@ -1,9 +1,9 @@
 import {
     it,
+    expect,
     beforeEachProviders,
     injectAsync,
     describe,
-    expect,
     TestComponentBuilder,
     MockApplicationRef
 } from 'angular2/testing';

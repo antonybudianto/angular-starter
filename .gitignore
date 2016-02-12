@@ -2,6 +2,7 @@
 /bower_components
 /build
 /report
+/typings
 .DS_Store
 app/**/*.js
 app/**/*.js.map

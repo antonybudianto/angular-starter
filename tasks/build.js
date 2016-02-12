@@ -18,19 +18,12 @@ gulp.task('build-sjs', function (done) {
     runSequence('build-assets', 'tsc-app', buildSJS);
     function buildSJS () {
         var builder = new Builder('.');
-        builder.config(config.systemjsBuild);
+        builder.config(config.systemJs.main);
         builder.loader.defaultJSExtensions = true;
         builder
             .bundle(config.app + 'boot',
                     config.build.path + config.app + 'boot.js', 
-            {
-                normalize: true,
-                minify: true,
-                // TODO: remove this when angular2 bug is solved
-                mangle: false,
-                // TODO
-                globalDefs: { DEBUG: false }
-            })
+            config.systemJs.builder)
             .then(function () {
                 console.log('Build complete');
                 done();
