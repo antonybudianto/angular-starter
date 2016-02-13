@@ -17,7 +17,7 @@ gulp.task('build', function (done) {
 gulp.task('build-sjs', function (done) {
     runSequence('build-assets', 'tsc-app', buildSJS);
     function buildSJS () {
-        var builder = new Builder('.');
+        var builder = new Builder();
         builder.config(config.systemJs.main);
         builder.loader.defaultJSExtensions = true;
         builder
