@@ -57,6 +57,7 @@ module.exports = function () {
 
     var systemJs = {
         main: {
+            baseUrl: '.',
             defaultJSExtensions: true,
             paths: {
                 'angular2/*': 'node_modules/angular2/*',
