@@ -58,14 +58,22 @@ module.exports = function () {
     var systemJs = {
         main: {
             baseUrl: '.',
-            defaultJSExtensions: true,
             paths: {
-                'angular2/*': 'node_modules/angular2/*',
-                'rxjs/*': 'node_modules/rxjs/*'
+                'n:*': 'node_modules/*'
+            },
+            map: {
+                'angular2': 'n:angular2',
+                'rxjs': 'n:rxjs'
             },
             packages: {
                 'app': {
                     format: 'register',
+                    defaultExtension: 'js'
+                },
+                'angular2': {
+                    defaultExtension: 'js'
+                },
+                'rxjs': {
                     defaultExtension: 'js'
                 }
             }

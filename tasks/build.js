@@ -19,7 +19,6 @@ gulp.task('build-sjs', function (done) {
     function buildSJS () {
         var builder = new Builder();
         builder.config(config.systemJs.main);
-        builder.loader.defaultJSExtensions = true;
         builder
             .bundle(config.app + 'boot',
                     config.build.path + config.app + 'boot.js', 
