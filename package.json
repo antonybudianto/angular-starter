@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "angular2": "2.0.0-beta.6",
-    "systemjs": "^0.19.21",
+    "systemjs": "^0.19.22",
     "es6-promise": "^3.1.2",
     "es6-shim": "^0.33.3",
     "reflect-metadata": "0.1.2",
@@ -65,7 +65,7 @@
     "remap-istanbul": "~0.5.1",
     "require-dir": "~0.3.0",
     "run-sequence": "^1.1.5",
-    "systemjs-builder": "~0.15.8",
+    "systemjs-builder": "~0.15.9",
     "traceur": "~0.0.102",
     "tslint": "^3.3.0",
     "typings": "^0.6.8"
