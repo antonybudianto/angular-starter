@@ -40,14 +40,16 @@ module.exports = function () {
             host: "127.0.0.1",
             open: '/',
             file: "index.html",
-            wait: 1000
+            wait: 1000,
+            logLevel: 0
         },
         prod: {
             port: 3001,
             host: "127.0.0.1",
             root: 'build/',
             file: "index.html",
-            wait: 1000
+            wait: 1000,
+            logLevel: 0
         }
     };
 

@@ -59,7 +59,7 @@
     "karma-jasmine": "~0.3.7",
     "karma-phantomjs2-launcher": "^0.5.0",
     "karma-sourcemap-loader": "^0.3.7",
-    "live-server": "~0.9.1",
+    "live-server": "~0.9.2",
     "main-bower-files": "^2.11.1",
     "path": "^0.12.7",
     "remap-istanbul": "~0.5.1",
