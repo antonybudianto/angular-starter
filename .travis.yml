@@ -6,9 +6,9 @@ before_install:
   - sudo dpkg -i libicu52_52*.deb
 language: node_js
 node_js:
-  - "4.1"
-  - "4.0"
-  - "0.12"
+  - "5.6"
+  - "4.3"
+  - "0.12.10"
 script: gulp build
 after_script:
   - npm run-script coveralls
