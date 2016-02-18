@@ -103,7 +103,7 @@ gulp serve-build
 It uses [SystemJS Builder](https://github.com/systemjs/builder) to bundle your application so it's ready for production use
 
 ## Contributing
-Feel free to submit a PR if there are any issues or new features
+Feel free to submit a PR if there are any issues or new features, read [this](https://github.com/antonybudianto/angular2-starter/blob/master/CONTRIBUTING.md) before
 
 ## Special thanks
 * John Papa for his awesome [angular-styleguide](https://github.com/johnpapa/angular-styleguide) and [Tour of Heroes](https://github.com/johnpapa/angular2-tour-of-heroes)
