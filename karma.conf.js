@@ -3,12 +3,12 @@ module.exports = function(config) {
     basePath: './',
 
     frameworks: ['jasmine'],
-    browsers: ['PhantomJS2'],
+    browsers: ['PhantomJS'],
     reporters: ['progress', 'coverage'],
 
     preprocessors: {
-      'app/**/!(*.spec)+(.js)': ['sourcemap', 'coverage'],
-      'app/**/*.spec.js': ['sourcemap']
+      'app/**/!(*.spec)+(.js)': ['coverage'],
+      'app/**/*.js': ['sourcemap']
     },
 
     // Generate json used for remap-istanbul
@@ -25,7 +25,6 @@ module.exports = function(config) {
       // 'node_modules/zone.js/dist/zone-microtask.js',
       // 'node_modules/zone.js/dist/long-stack-trace-zone.js',
       // 'node_modules/zone.js/dist/jasmine-patch.js',
-      // 'node_modules/es6-module-loader/dist/es6-module-loader.js',
       'node_modules/systemjs/dist/system.src.js',
       'node_modules/reflect-metadata/Reflect.js',
       'karma-test-shim.js',
