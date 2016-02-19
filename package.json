@@ -1,6 +1,6 @@
 {
   "name": "angular2-starter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Antony Budianto",
   "description": "Angular 2 Starter with Gulp, Bower, Karma, Jasmine, Protractor using SystemJS",
   "main": "index.html",
@@ -30,13 +30,13 @@
     "url": "https://github.com/antonybudianto/angular2-starter/issues"
   },
   "dependencies": {
-    "angular2": "2.0.0-beta.6",
+    "angular2": "2.0.0-beta.7",
     "systemjs": "^0.19.22",
     "es6-promise": "^3.1.2",
     "es6-shim": "^0.33.3",
     "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-beta.0",
-    "zone.js": "0.5.14"
+    "rxjs": "5.0.0-beta.2",
+    "zone.js": "0.5.15"
   },
   "devDependencies": {
     "coveralls": "^2.11.6",
@@ -57,11 +57,12 @@
     "karma": "~0.13.21",
     "karma-coverage": "~0.5.3",
     "karma-jasmine": "~0.3.7",
-    "karma-phantomjs2-launcher": "^0.5.0",
+    "karma-phantomjs-launcher": "~1.0.0",
     "karma-sourcemap-loader": "^0.3.7",
     "live-server": "~0.9.2",
     "main-bower-files": "^2.11.1",
     "path": "^0.12.7",
+    "phantomjs-prebuilt": "^2.1.4",
     "remap-istanbul": "~0.5.1",
     "require-dir": "~0.3.0",
     "run-sequence": "^1.1.5",
