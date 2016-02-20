@@ -12,7 +12,7 @@ export class TodolistComponent {
     private list: Todo[];
 
     constructor() {
-        this.todo = Todo.create(new Todo('', false));
+        this.todo = new Todo('Add me to list!', false);
         this.list = [
             new Todo('Its cool'),
             new Todo('Hello', true)
@@ -20,7 +20,7 @@ export class TodolistComponent {
     }
 
     addTodo() {
-        this.list.push(Todo.create(this.todo));
+        this.list.push(Todo.clone(this.todo));
         this.todo.clear();
     }
 
