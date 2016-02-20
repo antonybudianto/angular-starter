@@ -4,11 +4,20 @@
     </div>
     <div class="panel-body">
         <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    Parent component: (the origin, all <strong>"Simple"</strong> comes from this component)
+            <div class="col-md-12">
+                <div class="well well-sm">
+                    <h5>Parent component</h5>
+                    All <strong>"Simple"</strong> comes from this component,
+                    2 way binding works using uni-directional data-flow, so it's not the same 2 way binding in AngularJS 1.x, fields flagged with "2-way" means it ables to update the data source then the data keeps flowing one way to all bindings.
                     <br>
                     <p>{{myname}}</p>
+                    <button class="btn btn-default" type="button" (click)="myname='Simple'">Reset</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
                     <div class="well">
                         <h5>Child component:</h5>
                         <child text="Custom 1-way Binding" [fromParent]="myname"></child>
