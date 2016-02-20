@@ -2,17 +2,13 @@ export class Todo {
     public name: string;
     public done: boolean;
 
-    static create(todo: Todo) {
+    static clone(todo: Todo): Todo {
         return new Todo(todo.name, todo.done);
     }
 
     constructor(name: string, done?: boolean) {
         this.name = name;
         this.done = done;
-    }
-
-    check() {
-        this.done = !this.done;
     }
 
     clear() {
