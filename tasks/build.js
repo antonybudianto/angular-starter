@@ -4,6 +4,8 @@ var config = require('../gulp.config')();
 var inject = require('gulp-inject');
 var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
+var rev = require('gulp-rev');
+var revReplace = require('gulp-rev-replace');
 var uglify = require('gulp-uglify');
 var cssnano = require('gulp-cssnano');
 var mainBowerFiles = require('main-bower-files');
@@ -59,6 +61,8 @@ gulp.task('build-assets', function (done) {
             .pipe(useref())
             .pipe(gulpif('*.js', uglify()))
             .pipe(gulpif('*.css', cssnano()))
+            .pipe(gulpif('!*.html', rev()))
+            .pipe(revReplace())
             .pipe(gulp.dest(config.build.path));
     });
 });
