@@ -19,8 +19,13 @@ module.exports = function(config) {
       ]
     },
 
-    files: [      
+    files: [
       'node_modules/traceur/bin/traceur-runtime.js',
+      //<!-- IE required polyfills, in this exact order -->
+      'node_modules/es6-shim/es6-shim.min.js',
+      'node_modules/systemjs/dist/system-polyfills.js',
+      'node_modules/angular2/es6/dev/src/testing/shims_for_IE.js',
+
       'node_modules/angular2/bundles/angular2-polyfills.js',
       // 'node_modules/zone.js/dist/zone-microtask.js',
       // 'node_modules/zone.js/dist/long-stack-trace-zone.js',
@@ -33,7 +38,6 @@ module.exports = function(config) {
       { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
       { pattern: 'app/**/*.js', included: false, watched: true },
       { pattern: 'test/test-helpers/*.js', included: false, watched: true },
-      { pattern: 'node_modules/systemjs/dist/system-polyfills.js', included: false, watched: false },
 
       // paths loaded via Angular's component compiler
       // (these paths need to be rewritten, see proxies section)
@@ -55,8 +59,14 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
-    singleRun: true
+    singleRun: true,
   };
+
+  if (process.env.APPVEYOR) {
+    configuration.browsers = ['IE'];
+    configuration.singleRun = true;
+    configuration.browserNoActivityTimeout = 90000; // Note: default value (10000) is not enough
+  }
 
   config.set(configuration);
 }
