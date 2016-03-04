@@ -9,7 +9,7 @@
     "url": "https://github.com/antonybudianto/angular2-starter.git"
   },
   "scripts": {
-    "postinstall": "typings install",
+    "postinstall": "typings install && bower install",
     "test": "gulp test",
     "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./report/remap/lcov.info"
   },
