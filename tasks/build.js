@@ -20,19 +20,21 @@ gulp.task('build-sjs', function (done) {
     runSequence('build-assets', 'tsc-app', buildSJS);
     function buildSJS () {
         var builder = new Builder();
-        builder.config(config.systemJs.main);
-        builder
-            .bundle(config.app + 'boot',
-                    config.build.path + config.app + 'boot.js', 
-            config.systemJs.builder)
-            .then(function () {
-                console.log('Build complete');
-                done();
-            })
-            .catch(function (ex) {
-                console.log('error', ex);
-                done('Build failed.');
-            });
+        builder.loadConfig('./systemjs.conf.js')
+        .then(function() {
+            return builder
+                .bundle(config.app + 'main',
+                        config.build.path + config.app + 'main.js', 
+                config.systemJs.builder);
+        })
+        .then(function() {
+            console.log('Build complete');
+            done();
+        })
+        .catch(function (ex) {
+            console.log('error', ex);
+            done('Build failed.');
+        });
     }
 });
 
