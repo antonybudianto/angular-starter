@@ -7,33 +7,6 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000;
 // we will call `__karma__.start()` later, once all the specs are loaded.
 __karma__.loaded = function() {};
 
-System.config({
-    baseURL: '/base/',
-    paths: {
-        'n:*': 'node_modules/*'
-    },
-    map: {
-        'angular2': 'n:angular2',
-        'rxjs': 'n:rxjs'
-    },
-    packages: {
-        'app': {
-            format: 'register',
-            defaultExtension: 'js'
-        },
-        'test': {
-            format: 'register',
-            defaultExtension: 'js'
-        },
-        'angular2': {
-            defaultExtension: 'js'
-        },
-        'rxjs': {
-            defaultExtension: 'js'
-        }
-    }
-});
-
 System.import('test/test-helpers/setup')
 .then(function() {
     return Promise.all(
@@ -46,7 +19,7 @@ System.import('test/test-helpers/setup')
 .then(function() {
     __karma__.start();
 }, function(error) {
-    __karma__.error(error.stack || error);
+    __karma__.error(error.name + ": " + error.message);
 });
 
 // Filter spec files

@@ -1,6 +1,8 @@
 module.exports = function(config) {
+  var dependencies = require('./package.json').dependencies;
+  var excludedDependencies = ['systemjs', 'zone.js'];
   var configuration = {
-    basePath: './',
+    basePath: '',
 
     frameworks: ['jasmine'],
     browsers: ['PhantomJS'],
@@ -21,38 +23,35 @@ module.exports = function(config) {
 
     files: [
       'node_modules/traceur/bin/traceur-runtime.js',
-      //<!-- IE required polyfills, in this exact order -->
+      // IE required polyfills, in this exact order
       'node_modules/es6-shim/es6-shim.min.js',
       'node_modules/systemjs/dist/system-polyfills.js',
       'node_modules/angular2/es6/dev/src/testing/shims_for_IE.js',
-
       'node_modules/angular2/bundles/angular2-polyfills.js',
-      // 'node_modules/zone.js/dist/zone-microtask.js',
-      // 'node_modules/zone.js/dist/long-stack-trace-zone.js',
-      // 'node_modules/zone.js/dist/jasmine-patch.js',
       'node_modules/systemjs/dist/system.src.js',
-      'node_modules/reflect-metadata/Reflect.js',
+
+      'systemjs.conf.js',
       'karma-test-shim.js',
 
-      { pattern: 'node_modules/angular2/**/*.js', included: false, watched: false },
-      { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
-      { pattern: 'app/**/*.js', included: false, watched: true },
-      { pattern: 'test/test-helpers/*.js', included: false, watched: true },
+      { pattern: 'app/**/*.js', included: false },
+      { pattern: 'test/test-helpers/*.js', included: false },
 
       // paths loaded via Angular's component compiler
       // (these paths need to be rewritten, see proxies section)
-      {pattern: 'app/**/*.html', included: false, watched: true},
-      {pattern: 'app/**/*.css', included: false, watched: true},
+      { pattern: 'app/**/*.html', included: false },
+      { pattern: 'app/**/*.css', included: false },
 
       // paths to support debugging with source maps in dev tools
-      {pattern: 'app/**/*.ts', included: false, watched: false},
-      {pattern: 'app/**/*.js.map', included: false, watched: false}
+      { pattern: 'app/**/*.ts', included: false, watched: false },
+      { pattern: 'app/**/*.js.map', included: false, watched: false }
     ],
 
     // proxied base paths
     proxies: {
       // required for component assests fetched by Angular's compiler
-      "/app/": "/base/app/"
+      "/app/": "/base/app/",
+      "/test/": "/base/test/",
+      "/node_modules/": "/base/node_modules/"
     },
 
     port: 9876,
@@ -61,6 +60,16 @@ module.exports = function(config) {
     autoWatch: false,
     singleRun: true,
   };
+
+  Object.keys(dependencies).forEach(function(key) {
+    if(excludedDependencies.indexOf(key) >= 0) { return; }
+
+    configuration.files.push({
+        pattern: 'node_modules/' + key + '/**/*.js',
+        included: false,
+        watched: false
+    });
+  });
 
   if (process.env.APPVEYOR) {
     configuration.browsers = ['IE'];

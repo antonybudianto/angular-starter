@@ -58,28 +58,6 @@ module.exports = function () {
     };
 
     var systemJs = {
-        main: {
-            baseUrl: '.',
-            paths: {
-                'n:*': 'node_modules/*'
-            },
-            map: {
-                'angular2': 'n:angular2',
-                'rxjs': 'n:rxjs'
-            },
-            packages: {
-                'app': {
-                    format: 'register',
-                    defaultExtension: 'js'
-                },
-                'angular2': {
-                    defaultExtension: 'js'
-                },
-                'rxjs': {
-                    defaultExtension: 'js'
-                }
-            }
-        },
         builder: {
             normalize: true,
             minify: true,
