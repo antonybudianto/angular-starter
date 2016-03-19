@@ -40,7 +40,6 @@ Please visit the [wiki](https://github.com/antonybudianto/angular2-starter/wiki)
 
 ## Installation
 Firstly, you need to have [Node.js](https://nodejs.org/en/) 
-- Support from v0.12.10 (LTS) or higher 
 - For v4, please use v4.3.x (LTS) or higher (**highly** recommended)
 - For v5, please use v5.6.x or higher, here is [why](https://nodejs.org/en/blog/vulnerability/february-2016-security-releases/)
 
