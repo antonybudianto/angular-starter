@@ -6,7 +6,6 @@ var sourcemaps = require('gulp-sourcemaps');
 var path = require('path');
 
 /* Initialize TS Project */
-var tsProject = ts.createProject(config.root + 'tsconfig.json');
 var typingFiles = [
     'typings/browser.d.ts',
     'node_modules/angular2/typings/browser.d.ts'
@@ -67,6 +66,7 @@ function lintTs(files) {
 
 function compileTs(files, watchMode) {
     watchMode = watchMode || false;
+    var tsProject = ts.createProject(config.root + 'tsconfig.json');
     var allFiles = [].concat(files, typingFiles);
     var res = gulp.src(allFiles, {
             base: '.'
