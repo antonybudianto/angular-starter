@@ -1,5 +1,6 @@
 import {Component} from 'angular2/core';
 import {ChildComponent} from './child.component';
+import _ from 'lodash';
 
 @Component({
     selector: 'simplebind',
@@ -11,5 +12,6 @@ export class SimplebindComponent {
 
     constructor() {
         this.myname = 'Simple';
+        console.log(_.map([1, 2, 3], val => val % 2 === 0 ? 'even' : 'odd'));
     }
 }
