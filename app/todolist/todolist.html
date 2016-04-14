@@ -32,6 +32,7 @@
                         <input required [(ngModel)]="todo.name" ngControl="name" #name="ngForm" id="todo" type="text" class="form-control" size="50">
                         <button type="submit" class="btn btn-primary">Add</button>
                     </div>
+                    <label><input type="checkbox" [(ngModel)]="showCompleted"> show completed</label>
                 </form>
             </div>
         </div>
@@ -39,7 +40,7 @@
     <div class="row">
         <div class="col-md-5">
             <ul class="list-group">
-                <li *ngFor="#todo of list; #i=index" class="list-group-item">
+                <li *ngFor="#todo of (list | completedFilter:showCompleted); #i=index" class="list-group-item">
                 <span title="Remove todo" class="badge" (click)="delTodo(i) ">x</span>
                 <label><input type="checkbox" [(ngModel)]="todo.done"> {{todo.name}}</label>
                 </li>

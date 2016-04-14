@@ -5,7 +5,8 @@ var SystemConfig = (function() {
     // List your node_modules packages here
     var packages = [
         'angular2',
-        'rxjs'
+        'rxjs',
+        'lodash'
     ];
 
     var config = {
@@ -33,6 +34,8 @@ var SystemConfig = (function() {
             defaultExtension: 'js'
         };
     }
+
+    config.packages['lodash'].main = 'index.js';
 
     System.config(config);
 })();
