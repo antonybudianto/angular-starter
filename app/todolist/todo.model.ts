@@ -6,7 +6,7 @@ export class Todo {
         return new Todo(todo.name, todo.done);
     }
 
-    constructor(name: string, done?: boolean) {
+    constructor(name: string, done = false) {
         this.name = name;
         this.done = done;
     }
