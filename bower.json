@@ -16,15 +16,8 @@
     "tests"
   ],
   "dependencies": {
-    "bootswatch-dist": "paper",
-    "components-font-awesome": "~4.5.0"
-  },
-  "overrides": {
-    "bootswatch-dist": {
-      "main": [
-        "css/bootstrap.css",
-        "js/bootstrap.js"
-      ]
-    }
+    "components-font-awesome": "~4.5.0",
+    "bootswatch": "^3.3.6",
+    "bootstrap-sass": "^3.3.6"
   }
 }
