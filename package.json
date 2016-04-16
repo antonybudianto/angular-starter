@@ -74,6 +74,7 @@
     "systemjs-builder": "~0.15.14",
     "traceur": "~0.0.106",
     "tslint": "^3.7.1",
-    "typings": "^0.7.12"
+    "typings": "^0.7.12",
+    "yargs": "^4.6.0"
   }
 }

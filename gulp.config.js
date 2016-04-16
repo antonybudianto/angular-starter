@@ -68,8 +68,6 @@ module.exports = function () {
         }
     };
 
-    var theme = 'paper';
-
     var config = {
         root: root,
         app: app,
@@ -85,7 +83,6 @@ module.exports = function () {
         tsFiles: tsFiles,
         tsTestFiles: tsTestFiles,
         liveServer: liveServer,
-        theme: theme,
         systemJs: systemJs
     };
 

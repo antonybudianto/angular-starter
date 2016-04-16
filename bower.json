@@ -17,7 +17,9 @@
   ],
   "dependencies": {
     "components-font-awesome": "~4.5.0",
-    "bootswatch": "^3.3.6",
     "bootstrap-sass": "^3.3.6"
+  },
+  "devDependencies": {
+    "bootswatch": "^3.3.6"
   }
 }
