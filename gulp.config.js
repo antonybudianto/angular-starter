@@ -61,9 +61,7 @@ module.exports = function () {
         builder: {
             normalize: true,
             minify: true,
-            // TODO: remove this when angular2 bug is solved
-            mangle: false,
-            // TODO
+            mangle: true,
             globalDefs: { DEBUG: false }
         }
     };
