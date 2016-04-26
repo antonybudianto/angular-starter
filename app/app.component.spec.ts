@@ -2,16 +2,19 @@ import {
     it,
     expect,
     beforeEachProviders,
-    injectAsync,
+    inject,
+    async,
     describe,
     TestComponentBuilder,
     MockApplicationRef
 } from 'angular2/testing';
 import {
-    APP_BASE_HREF,
     ROUTER_PRIMARY_COMPONENT,
     ROUTER_PROVIDERS
 } from 'angular2/router';
+import {
+    APP_BASE_HREF,
+} from 'angular2/platform/common';
 import { Component, provide, ApplicationRef } from 'angular2/core';
 import { AppComponent } from './app.component';
 import { LoggerService } from './blocks/logger.service';
@@ -33,14 +36,14 @@ describe('AppComponent', () => {
         provide(APP_BASE_HREF, { useValue: '/' }),
     ]);
 
-    it('should have brand Angular 2 Starter', injectAsync([TestComponentBuilder],
+    it('should have brand Angular 2 Starter', async(inject([TestComponentBuilder],
         (tsb: TestComponentBuilder) => {
-            return tsb.createAsync(TestComponent).then((fixture) => {
+            tsb.createAsync(TestComponent).then((fixture) => {
                 fixture.detectChanges();
                 let compiled = fixture.debugElement.nativeElement;
                 expect(compiled).toBeDefined();
                 expect(compiled.querySelector('a.navbar-brand'))
                     .toHaveText('Angular 2 Starter');
             });
-        }));
+        })));
 });

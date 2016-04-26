@@ -28,6 +28,8 @@ module.exports = function(config) {
       'node_modules/systemjs/dist/system-polyfills.js',
       'node_modules/angular2/es6/dev/src/testing/shims_for_IE.js',
       'node_modules/angular2/bundles/angular2-polyfills.js',
+      { pattern: 'node_modules/zone.js/dist/async-test.js', included: true, watched: true },
+      { pattern: 'node_modules/zone.js/dist/fake-async-test.js', included: true, watched: true },
       'node_modules/systemjs/dist/system.src.js',
 
       'systemjs.conf.js',

@@ -1,10 +1,11 @@
 import {
-it,
-injectAsync,
-describe,
-expect,
-TestComponentBuilder,
-ComponentFixture
+    it,
+    inject,
+    async,
+    describe,
+    expect,
+    TestComponentBuilder,
+    ComponentFixture
 } from 'angular2/testing';
 import { Component } from 'angular2/core';
 import { ChildComponent } from './child.component';
@@ -29,9 +30,9 @@ let childCompiled;
 let childCmp: ChildComponent;
 
 describe('ChildComponent', () => {
-    it('should print inputs correctly', injectAsync([TestComponentBuilder],
+    it('should print inputs correctly', async(inject([TestComponentBuilder],
     (tsb: TestComponentBuilder) => {
-        return tsb.createAsync(TestComponent).then((fixture) => {
+        tsb.createAsync(TestComponent).then((fixture) => {
             testFixture = fixture;
             testFixture.detectChanges();
 
@@ -45,7 +46,7 @@ describe('ChildComponent', () => {
             expect(childCompiled.querySelector('h5'))
                 .toHaveText('Hello test');
         });
-    }));
+    })));
 
     it('should trigger changeMe event correctly', () => {
         childCmp.changeMe();

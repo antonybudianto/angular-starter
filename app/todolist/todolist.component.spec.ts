@@ -1,10 +1,11 @@
 import {
-it,
-injectAsync,
-describe,
-expect,
-TestComponentBuilder,
-ComponentFixture
+    it,
+    inject,
+    async,
+    describe,
+    expect,
+    TestComponentBuilder,
+    ComponentFixture
 } from 'angular2/testing';
 import { Component } from 'angular2/core';
 import { Todo } from './todo.model';
@@ -23,9 +24,9 @@ let todoCompiled;
 let todolistCmp: TodolistComponent;
 
 describe('TodolistComponent', () => {
-    it('should have been created successfully', injectAsync([TestComponentBuilder],
+    it('should have been created successfully', async(inject([TestComponentBuilder],
         (tcb: TestComponentBuilder) => {
-            return tcb.createAsync(TestComponent).then((fixture) => {
+            tcb.createAsync(TestComponent).then((fixture) => {
                 testFixture = fixture;
                 fixture.detectChanges();
 
@@ -34,7 +35,7 @@ describe('TodolistComponent', () => {
                     .children[0].componentInstance;
                 expect(todoCompiled).toBeDefined();
             });
-    }));
+    })));
 
     it('should add todo successfully', () => {
         todolistCmp.todo = new Todo('test', true);
