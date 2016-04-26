@@ -6,7 +6,7 @@ import _ from 'lodash';
     name: 'completedFilter'
 })
 export class CompletedFilterPipe implements PipeTransform {
-    transform(todos: Todo[], [done]): Todo[] {
+    transform(todos: Todo[], done): Todo[] {
         if (done) {
             return todos;
         }

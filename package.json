@@ -1,6 +1,6 @@
 {
   "name": "angular2-starter",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "author": "Antony Budianto",
   "description": "Angular 2 Starter with Gulp, Bower, Karma, Jasmine, Protractor using SystemJS",
   "main": "index.html",
@@ -31,13 +31,13 @@
     "url": "https://github.com/antonybudianto/angular2-starter/issues"
   },
   "dependencies": {
-    "angular2": "2.0.0-beta.15",
+    "angular2": "2.0.0-beta.16",
     "es6-shim": "^0.35.0",
     "lodash": "^4.11.0",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
     "systemjs": "^0.19.25",
-    "zone.js": "^0.6.10"
+    "zone.js": "^0.6.12"
   },
   "devDependencies": {
     "coveralls": "^2.11.9",
