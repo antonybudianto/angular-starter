@@ -5,7 +5,7 @@ module.exports = function(config) {
     basePath: '',
 
     frameworks: ['jasmine'],
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
     reporters: ['progress', 'coverage'],
 
     preprocessors: {
