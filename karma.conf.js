@@ -1,6 +1,8 @@
 module.exports = function(config) {
   var dependencies = require('./package.json').dependencies;
-  var excludedDependencies = ['systemjs', 'zone.js'];
+  var excludedDependencies = [
+    'systemjs', 'zone.js', 'font-awesome'
+  ];
   var configuration = {
     basePath: '',
 
@@ -26,10 +28,10 @@ module.exports = function(config) {
       // IE required polyfills, in this exact order
       'node_modules/es6-shim/es6-shim.min.js',
       'node_modules/systemjs/dist/system-polyfills.js',
-      'node_modules/angular2/es6/dev/src/testing/shims_for_IE.js',
-      'node_modules/angular2/bundles/angular2-polyfills.js',
-      { pattern: 'node_modules/zone.js/dist/async-test.js', included: true, watched: true },
-      { pattern: 'node_modules/zone.js/dist/fake-async-test.js', included: true, watched: true },
+      'node_modules/zone.js/dist/zone.js',
+      'node_modules/reflect-metadata/Reflect.js',
+      'node_modules/zone.js/dist/async-test.js',
+      'node_modules/zone.js/dist/fake-async-test.js',
       'node_modules/systemjs/dist/system.src.js',
 
       'systemjs.conf.js',

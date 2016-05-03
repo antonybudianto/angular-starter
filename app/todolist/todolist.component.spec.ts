@@ -3,11 +3,13 @@ import {
     inject,
     async,
     describe,
-    expect,
+    expect
+} from '@angular/core/testing';
+import {
     TestComponentBuilder,
     ComponentFixture
-} from 'angular2/testing';
-import { Component } from 'angular2/core';
+} from '@angular/compiler/testing';
+import { Component } from '@angular/core';
 import { Todo } from './todo.model';
 import { TodolistComponent } from './todolist.component';
 
@@ -19,7 +21,7 @@ import { TodolistComponent } from './todolist.component';
 class TestComponent {
 }
 
-let testFixture: ComponentFixture;
+let testFixture: ComponentFixture<any>;
 let todoCompiled;
 let todolistCmp: TodolistComponent;
 

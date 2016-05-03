@@ -7,7 +7,7 @@
 [![devDependency Status](https://david-dm.org/antonybudianto/angular2-starter/dev-status.svg)](https://david-dm.org/antonybudianto/angular2-starter#info=devDependencies)
 
 
-> Angular 2 is still in Beta stage, please **don't** use this in production   
+> Angular 2 is still in **Release Candidate** stage, please **don't** use this in production
 > Follow it [here](https://splintercode.github.io/is-angular-2-ready/)
 
 ## Table of Content
@@ -22,12 +22,11 @@
 
 ## Introduction
 Welcome to Angular 2 Starter!
-This starter contains almost everything you need to start developing [Angular 2](https://angular.io/): 
+This starter contains almost everything you need to start developing [Angular 2](https://angular.io/):
 * [TypeScript](http://www.typescriptlang.org/) for the base language
   * with [Typings](https://github.com/typings/typings) for TypeScript definition manager
 * [Gulp](http://gulpjs.com/) for workflow (from *serve*, *watch*, *compile*, *test* to *build*)
-* [Bower](http://bower.io/) for front-end package manager
-* [NPM](https://www.npmjs.com/) for angular2 & dev-tooling package manager
+* [NPM](https://www.npmjs.com/) for package manager
 * [Live Server](https://github.com/tapio/live-server) for development server & reload capability
 * [SystemJS](https://github.com/systemjs/systemjs) for module loader
 * [Karma](http://karma-runner.github.io/) for test-runner
@@ -39,31 +38,27 @@ This starter contains almost everything you need to start developing [Angular 2]
 Please visit the [wiki](https://github.com/antonybudianto/angular2-starter/wiki) for more details.
 
 ## Installation
-Firstly, you need to have [Node.js](https://nodejs.org/en/) 
+Firstly, you need to have [Node.js](https://nodejs.org/en/)
 - For v4, please use v4.3.x (LTS) or higher (**highly** recommended)
 - For v5, please use v5.6.x or higher, here is [why](https://nodejs.org/en/blog/vulnerability/february-2016-security-releases/)
 
 > You need v4.x or higher for [Protractor](https://angular.github.io/protractor/#/)
 
-Then, install these packages globally:   
+Then, install these packages globally:
 ```bash
-npm install -g gulp bower
+npm install -g gulp
 ```
 
 After that, just run:
 ```bash
 npm install
 ```
-and to install bower dependencies:
-```bash
-bower install
-```
 
 ## Start
-Let's start up the server, run:   
+Let's start up the server, run:
 `gulp` or `gulp serve-dev`
 
-and done! The browser will popup and you can start trying Angular 2!   
+and done! The browser will popup and you can start trying Angular 2!
 Every changes to the file will refresh the browser automatically
 and it'll also compile your changed TypeScripts files to Javascript files.
 

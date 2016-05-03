@@ -1,4 +1,4 @@
-import {RouteDefinition} from 'angular2/router';
+import {RouteDefinition} from '@angular/router-deprecated';
 import {HomeComponent} from './home/home.component';
 import {TodolistComponent} from './todolist/todolist.component';
 import {SimplebindComponent} from './simplebind/simplebind.component';

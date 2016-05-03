@@ -1,6 +1,6 @@
-import {Pipe, PipeTransform} from 'angular2/core';
+import {Pipe, PipeTransform} from '@angular/core';
 import {Todo} from './todo.model';
-import _ from 'lodash';
+import {filter} from 'lodash';
 
 @Pipe({
     name: 'completedFilter'
@@ -11,6 +11,6 @@ export class CompletedFilterPipe implements PipeTransform {
             return todos;
         }
 
-        return _.filter(todos, {done});
+        return filter(todos, {done});
     }
 }

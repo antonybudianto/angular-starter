@@ -18,7 +18,7 @@
 </style>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">To Do List &nbsp;<span class="badge">{{list.length}}</span></h3>
+    <h3 class="panel-title"><i class="fa fa-list"></i> To Do List &nbsp;<span class="badge">{{list.length}}</span></h3>
   </div>
   <div class="panel-body">
     <div class="row">
@@ -39,7 +39,7 @@
     <div class="row">
         <div class="col-md-5">
             <ul class="list-group">
-                <li *ngFor="#todo of (list | completedFilter:showCompleted); #i=index" class="list-group-item">
+                <li *ngFor="let todo of (list | completedFilter:showCompleted); let i=index" class="list-group-item">
                 <span title="Remove todo" class="badge" (click)="delTodo(i) ">x</span>
                 <label><input type="checkbox" [(ngModel)]="todo.done"> {{todo.name}}</label>
                 </li>

@@ -3,10 +3,12 @@ import {
     inject,
     async,
     describe,
-    expect,
+    expect
+} from '@angular/core/testing';
+import {
     TestComponentBuilder
-} from 'angular2/testing';
-import { Component } from 'angular2/core';
+} from '@angular/compiler/testing';
+import { Component } from '@angular/core';
 import { SimplebindComponent } from './simplebind.component';
 
 @Component({
