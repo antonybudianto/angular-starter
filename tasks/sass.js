@@ -10,7 +10,7 @@ gulp.task('set-theme', function () {
     if (!theme) {
       console.log('ERROR: set-theme needs name argument like --name=paper');
     } else {
-      var p = 'bower_components/bootswatch/';
+      var p = 'node_modules/bootswatch/';
       try {
         if (fs.statSync(p + theme).isDirectory()) {
           if (fs.statSync(p + theme + '/_bootswatch.scss')){
@@ -31,7 +31,7 @@ gulp.task('sass', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest(config.assetsPath.styles));
 });
- 
+
 gulp.task('watch-sass', function () {
     gulp.watch(config.assetsPath.styles + '**/*.scss', ['sass']);
 });

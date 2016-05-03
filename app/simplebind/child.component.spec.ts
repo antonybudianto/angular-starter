@@ -3,11 +3,13 @@ import {
     inject,
     async,
     describe,
-    expect,
+    expect
+} from '@angular/core/testing';
+import {
     TestComponentBuilder,
     ComponentFixture
-} from 'angular2/testing';
-import { Component } from 'angular2/core';
+} from '@angular/compiler/testing';
+import { Component } from '@angular/core';
 import { ChildComponent } from './child.component';
 
 @Component({
@@ -25,7 +27,7 @@ class TestComponent {
     }
 }
 
-let testFixture: ComponentFixture;
+let testFixture: ComponentFixture<any>;
 let childCompiled;
 let childCmp: ChildComponent;
 

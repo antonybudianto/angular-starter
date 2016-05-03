@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- build:css assets/bundle.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.css">
-    <!-- endinject -->
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
     <!-- app:css -->
     <link rel="stylesheet" href="/assets/styles/main.css">
     <!-- endinject -->
@@ -19,22 +17,25 @@
     </main-app>
 
     <!-- build:js assets/bundle.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
-    <!-- endinject -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
 
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.js"></script>
     <!-- endbuild -->
 
     <!-- build:remove -->
     <script src="systemjs.conf.js"></script>
     <!-- endbuild -->
-    
+
     <script>
       System.import('app/main.js')
-            .then(null, console.error.bind(console));
+        .catch(function(err) { console.error(err); });
     </script>
   </body>
 </html>

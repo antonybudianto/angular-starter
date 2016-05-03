@@ -5,17 +5,19 @@ import {
     inject,
     async,
     describe,
-    TestComponentBuilder,
     MockApplicationRef
-} from 'angular2/testing';
+} from '@angular/core/testing';
+import {
+    TestComponentBuilder
+} from '@angular/compiler/testing';
 import {
     ROUTER_PRIMARY_COMPONENT,
     ROUTER_PROVIDERS
-} from 'angular2/router';
+} from '@angular/router-deprecated';
 import {
     APP_BASE_HREF,
-} from 'angular2/platform/common';
-import { Component, provide, ApplicationRef } from 'angular2/core';
+} from '@angular/common';
+import { Component, provide, ApplicationRef } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoggerService } from './blocks/logger.service';
 

@@ -5,7 +5,7 @@ import {
     expect,
     beforeEach,
     beforeEachProviders
-} from 'angular2/testing';
+} from '@angular/core/testing';
 import { LoggerService } from './logger.service';
 
 describe('AppComponent', () => {

@@ -1,6 +1,6 @@
-import {Component, Input, ChangeDetectionStrategy} from 'angular2/core';
-import {CORE_DIRECTIVES} from 'angular2/common';
-import {RouterLink, RouteDefinition} from 'angular2/router';
+import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
+import {CORE_DIRECTIVES} from '@angular/common';
+import {RouterLink, RouteDefinition} from '@angular/router-deprecated';
 
 @Component({
     selector: 'navbar',
