@@ -1,11 +1,11 @@
 before_script:
-  - npm install -g gulp bower
-  - bower install
+  - npm install -g gulp
 before_install:
   - wget http://security.ubuntu.com/ubuntu/pool/main/i/icu/libicu52_52.1-3ubuntu0.4_amd64.deb
   - sudo dpkg -i libicu52_52*.deb
 language: node_js
 node_js:
+  - "6.0"
   - "5.6"
   - "4.3"
 script: gulp build
