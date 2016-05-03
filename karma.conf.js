@@ -1,7 +1,7 @@
 module.exports = function(config) {
   var dependencies = require('./package.json').dependencies;
   var excludedDependencies = [
-    'systemjs', 'zone.js', 'font-awesome'
+    'systemjs', 'zone.js', 'font-awesome', 'bootswatch'
   ];
   var configuration = {
     basePath: '',

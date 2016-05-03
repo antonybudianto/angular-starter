@@ -70,7 +70,7 @@
     "jasmine-core": "~2.4.1",
     "karma": "~0.13.22",
     "karma-coverage": "~0.5.5",
-    "karma-ie-launcher": "^0.2.0",
+    "karma-ie-launcher": "^1.0.0",
     "karma-jasmine": "~0.3.8",
     "karma-phantomjs-launcher": "~1.0.0",
     "karma-sourcemap-loader": "^0.3.7",
@@ -82,7 +82,7 @@
     "run-sequence": "^1.1.5",
     "systemjs-builder": "~0.15.16",
     "traceur": "~0.0.108",
-    "tslint": "^3.8.1",
+    "tslint": "^3.9.0",
     "typings": "^0.8.1",
     "yargs": "^4.6.0"
   }
