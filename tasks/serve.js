@@ -1,10 +1,11 @@
 var gulp = require('gulp');
 var config = require('../gulp.config')();
+var bs = require("browser-sync");
 
 function startBrowsersync(config) {
-    var bs = require("browser-sync").create();
-    bs.init(config);
-    bs.reload();
+    bsIns = bs.create();
+    bsIns.init(config);
+    bsIns.reload();
 }
 
 /* Start live server dev mode */
