@@ -45,7 +45,7 @@ module.exports = function () {
             },
             files: [
                 "index.html",
-                "assets/**/*.*",
+                "assets/styles/main.css",
                 "app/**/*.js",
                 "app/**/*.html"
             ]
