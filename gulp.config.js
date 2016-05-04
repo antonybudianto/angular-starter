@@ -45,6 +45,7 @@ module.exports = function () {
             },
             files: [
                 "index.html",
+                "systemjs.conf.js",
                 "assets/styles/main.css",
                 "app/**/*.js",
                 "app/**/*.html"
