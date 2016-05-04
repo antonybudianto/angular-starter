@@ -1,3 +1,5 @@
+var historyApiFallback = require('connect-history-api-fallback')
+
 module.exports = function () {
     var root = '';
     var app = root + 'app/';
@@ -34,22 +36,26 @@ module.exports = function () {
     var report = {
         path: 'report/'
     };
-    var liveServer = {
+    var browserSync = {
         dev: {
             port: 3000,
-            host: "127.0.0.1",
-            open: '/',
-            file: "index.html",
-            wait: 1000,
-            logLevel: 0
+            server: {
+                baseDir: './',
+                middleware: [historyApiFallback()]
+            },
+            files: [
+                "index.html",
+                "assets/styles/main.css",
+                "app/**/*.js",
+                "app/**/*.html"
+            ]
         },
         prod: {
             port: 3001,
-            host: "127.0.0.1",
-            root: 'build/',
-            file: "index.html",
-            wait: 1000,
-            logLevel: 0
+            server: {
+                baseDir: './' + build.path,
+                middleware: [historyApiFallback()]
+            }
         }
     };
 
@@ -80,7 +86,7 @@ module.exports = function () {
         assetsPath: assetsPath,
         tsFiles: tsFiles,
         tsTestFiles: tsTestFiles,
-        liveServer: liveServer,
+        browserSync: browserSync,
         systemJs: systemJs
     };
 

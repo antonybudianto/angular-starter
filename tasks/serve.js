@@ -1,13 +1,19 @@
 var gulp = require('gulp');
-var liveServer = require('live-server');
 var config = require('../gulp.config')();
+var bs = require("browser-sync");
+
+function startBrowsersync(config) {
+    bsIns = bs.create();
+    bsIns.init(config);
+    bsIns.reload();
+}
 
 /* Start live server dev mode */
 gulp.task('serve-dev', ['sass', 'tsc-app', 'watch-ts', 'watch-sass'], function () {
-    liveServer.start(config.liveServer.dev);
+    startBrowsersync(config.browserSync.dev);
 });
 
 /* Start live server production mode */
 gulp.task('serve-build', ['build'], function () {
-    liveServer.start(config.liveServer.prod);
+    startBrowsersync(config.browserSync.prod);
 });
