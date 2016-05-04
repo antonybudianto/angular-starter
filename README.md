@@ -27,7 +27,7 @@ This starter contains almost everything you need to start developing [Angular 2]
   * with [Typings](https://github.com/typings/typings) for TypeScript definition manager
 * [Gulp](http://gulpjs.com/) for workflow (from *serve*, *watch*, *compile*, *test* to *build*)
 * [NPM](https://www.npmjs.com/) for package manager
-* [Live Server](https://github.com/tapio/live-server) for development server & reload capability
+* [Browsersync](https://www.browsersync.io/) for development server & reload capability
 * [SystemJS](https://github.com/systemjs/systemjs) for module loader
 * [Karma](http://karma-runner.github.io/) for test-runner
 * [Jasmine](http://jasmine.github.io/) for test framework
