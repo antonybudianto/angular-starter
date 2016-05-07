@@ -1,7 +1,7 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
-    selector: 'child',
+    selector: 'as-child',
     template: `
         <h5>{{text}}</h5>
         <h6>{{fromParent}}</h6>

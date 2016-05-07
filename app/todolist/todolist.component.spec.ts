@@ -14,8 +14,8 @@ import { Todo } from './todo.model';
 import { TodolistComponent } from './todolist.component';
 
 @Component({
-    selector: 'test',
-    template: '<todolist></todolist>',
+    selector: 'as-test',
+    template: '<as-todolist></as-todolist>',
     directives: [TodolistComponent]
 })
 class TestComponent {

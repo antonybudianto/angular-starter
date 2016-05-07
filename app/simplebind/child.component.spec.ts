@@ -13,9 +13,9 @@ import { Component } from '@angular/core';
 import { ChildComponent } from './child.component';
 
 @Component({
-    selector: 'test',
+    selector: 'as-test',
     template: `
-    <child text="Hello test" [(fromParent)]="testName"></child>
+    <as-child text="Hello test" [(fromParent)]="testName"></as-child>
     `,
     directives: [ChildComponent]
 })

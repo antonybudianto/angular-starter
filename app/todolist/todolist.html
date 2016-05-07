@@ -39,7 +39,7 @@
     <div class="row">
         <div class="col-md-5">
             <ul class="list-group">
-                <li *ngFor="let todo of (list | completedFilter:showCompleted); let i=index" class="list-group-item">
+                <li *ngFor="let todo of (list | asCompletedFilter:showCompleted); let i=index" class="list-group-item">
                 <span title="Remove todo" class="badge" (click)="delTodo(i) ">x</span>
                 <label><input type="checkbox" [(ngModel)]="todo.done"> {{todo.name}}</label>
                 </li>

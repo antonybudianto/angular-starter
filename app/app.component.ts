@@ -5,7 +5,7 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {LoggerService} from './blocks/logger.service';
 
 @Component({
-    selector: 'main-app',
+    selector: 'as-main-app',
     templateUrl: 'app/app.html',
     directives: [RouterOutlet, NavbarComponent]
 })

@@ -22,8 +22,8 @@ import { AppComponent } from './app.component';
 import { LoggerService } from './blocks/logger.service';
 
 @Component({
-    selector: 'test',
-    template: '<div><main-app></main-app></div>',
+    selector: 'as-test',
+    template: '<div><as-main-app></as-main-app></div>',
     directives: [AppComponent]
 })
 class TestComponent {

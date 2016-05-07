@@ -3,7 +3,7 @@ import {Todo} from './todo.model';
 import {filter} from 'lodash';
 
 @Pipe({
-    name: 'completedFilter'
+    name: 'asCompletedFilter'
 })
 export class CompletedFilterPipe implements PipeTransform {
     transform(todos: Todo[], done): Todo[] {

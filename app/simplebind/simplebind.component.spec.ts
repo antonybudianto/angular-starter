@@ -12,8 +12,8 @@ import { Component } from '@angular/core';
 import { SimplebindComponent } from './simplebind.component';
 
 @Component({
-    selector: 'test',
-    template: '<div><simplebind></simplebind></div>',
+    selector: 'as-test',
+    template: '<div><as-simplebind></as-simplebind></div>',
     directives: [SimplebindComponent]
 })
 class TestComponent {

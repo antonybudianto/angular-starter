@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var config = require('../gulp.config')();
-var inject = require('gulp-inject');
 var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
 var rev = require('gulp-rev');

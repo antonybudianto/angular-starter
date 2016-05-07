@@ -23,12 +23,13 @@
 ## Introduction
 Welcome to Angular 2 Starter!
 This starter contains almost everything you need to start developing [Angular 2](https://angular.io/):
+* [NPM](https://www.npmjs.com/) for package manager
 * [TypeScript](http://www.typescriptlang.org/) for the base language
   * with [Typings](https://github.com/typings/typings) for TypeScript definition manager
 * [Gulp](http://gulpjs.com/) for workflow (from *serve*, *watch*, *compile*, *test* to *build*)
-* [NPM](https://www.npmjs.com/) for package manager
 * [Browsersync](https://www.browsersync.io/) for development server & reload capability
 * [SystemJS](https://github.com/systemjs/systemjs) for module loader
+* [Codelyzer](https://github.com/mgechev/codelyzer) for static code analyzer
 * [Karma](http://karma-runner.github.io/) for test-runner
 * [Jasmine](http://jasmine.github.io/) for test framework
 * [Istanbul](https://github.com/gotwarlost/istanbul) for test coverage

@@ -22,12 +22,10 @@
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
         'app': {
-            defaultExtension: 'js',
-            format: 'register'
+            defaultExtension: 'js'
         },
         'test': {
-            defaultExtension: 'js',
-            format: 'register'
+            defaultExtension: 'js'
         },
         'rxjs': {
             defaultExtension: 'js'
