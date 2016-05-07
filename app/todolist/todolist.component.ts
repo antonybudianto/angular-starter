@@ -34,11 +34,9 @@ export class TodolistComponent {
         this._ref.markForCheck();
     }
 
-    delTodo(index: number) {
-        this.list = [].concat(
-            this.list.slice(0, index),
-            this.list.slice(index + 1, this.list.length)
-        );
+    delTodo(todoIndex: number) {
+        this.list = this.list.filter(
+            (todo, index) => index !== todoIndex);
         this._ref.markForCheck();
     }
 }
