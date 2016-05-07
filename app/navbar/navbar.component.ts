@@ -3,7 +3,7 @@ import {CORE_DIRECTIVES} from '@angular/common';
 import {RouterLink, RouteDefinition} from '@angular/router-deprecated';
 
 @Component({
-    selector: 'navbar',
+    selector: 'as-navbar',
     templateUrl: 'app/navbar/navbar.html',
     changeDetection: ChangeDetectionStrategy.OnPush,
     directives: [RouterLink, CORE_DIRECTIVES]
