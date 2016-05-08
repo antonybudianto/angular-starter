@@ -13,13 +13,7 @@ gulp.task('unit-test', ['tsc'], function (done) {
     }, karmaDone).start();
 
     function karmaDone (exitCode) {
-    	console.log('Test Done with exit code: ' + exitCode);
-    	remapCoverage();
-        if(exitCode === 0) {
-            done();
-        } else {
-            done('Unit test failed.');
-        }
+    	remapCoverage(done, exitCode);
     }
 });
 
@@ -37,7 +31,7 @@ gulp.task('e2e-test', ['driver-update', 'tsc-e2e'], function () {
     });
 });
 
-function remapCoverage () {
+function remapCoverage (done, exitCode) {
     console.log('Remapping coverage to TypeScript format...');
     gulp.src(config.report.path + 'report-json/coverage-final.json')
         .pipe(remapIstanbul({
@@ -49,6 +43,8 @@ function remapCoverage () {
             }
         }))
         .on('finish', function () {
+            console.log('Test Done with exit code: ' + exitCode);
+            done(exitCode);
             console.log('Remapping done! View the result in report/remap/html-report');
         });
 }

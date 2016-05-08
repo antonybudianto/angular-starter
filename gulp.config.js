@@ -69,6 +69,7 @@ module.exports = function () {
             normalize: true,
             minify: true,
             mangle: true,
+            runtime: false,
             globalDefs: { DEBUG: false }
         }
     };

@@ -11,18 +11,18 @@ var Builder = require('systemjs-builder');
 
 /* Prepare build using SystemJS Builder */
 gulp.task('build', function (done) {
-    runSequence('test', 'build-sjs', done);
+    runSequence('test', 'build-sjs', 'build-assets', done);
 });
 
 gulp.task('build-sjs', function (done) {
-    runSequence('build-assets', 'tsc-app', buildSJS);
+    runSequence('tsc-app', buildSJS);
     function buildSJS () {
         var builder = new Builder();
         builder.loadConfig('./systemjs.conf.js')
         .then(function() {
             return builder
-                .bundle(config.app + 'main.js',
-                        config.build.path + config.app + 'main.js',
+                .buildStatic(config.app + 'main.js',
+                        config.app + 'bundle.js',
                 config.systemJs.builder);
         })
         .then(function() {
@@ -39,8 +39,6 @@ gulp.task('build-sjs', function (done) {
 /* Concat and minify/uglify all css, js, and copy fonts */
 gulp.task('build-assets', function (done) {
     runSequence('clean-build', ['sass', 'fonts'], function () {
-        done();
-
         gulp.src(config.app + '**/*.html', {
             base: config.app
         })
@@ -57,13 +55,14 @@ gulp.task('build-assets', function (done) {
         })
         .pipe(gulp.dest(config.build.assetPath + 'images'));
 
-        return gulp.src(config.index)
+        gulp.src(config.index)
             .pipe(useref())
-            .pipe(gulpif('*.js', uglify()))
+            .pipe(gulpif('assets/lib.js', uglify()))
             .pipe(gulpif('*.css', cssnano()))
             .pipe(gulpif('!*.html', rev()))
             .pipe(revReplace())
-            .pipe(gulp.dest(config.build.path));
+            .pipe(gulp.dest(config.build.path))
+            .on('finish', done);
     });
 });
 

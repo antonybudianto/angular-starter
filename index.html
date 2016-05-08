@@ -16,7 +16,7 @@
       <i class="center-fix main-spinner fa fa-spin fa-spinner"></i>
     </as-main-app>
 
-    <!-- build:js assets/bundle.js -->
+    <!-- build:js assets/lib.js -->
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
 
@@ -26,16 +26,19 @@
 
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/systemjs/dist/system.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js assets/app.js -->
+    <script src="app/bundle.js"></script>
     <!-- endbuild -->
 
     <!-- build:remove -->
+    <script src="node_modules/systemjs/dist/system.js"></script>
     <script src="systemjs.conf.js"></script>
-    <!-- endbuild -->
-
     <script>
       System.import('app/main.js')
         .catch(function(err) { console.error(err); });
     </script>
+    <!-- endbuild -->
   </body>
 </html>
