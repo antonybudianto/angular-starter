@@ -1,8 +1,4 @@
-import {
-    Component,
-    ChangeDetectorRef,
-    ChangeDetectionStrategy
-} from '@angular/core';
+import {Component} from '@angular/core';
 import {CORE_DIRECTIVES} from '@angular/common';
 import {Todo} from './todo.model';
 import {CompletedFilterPipe} from './completed-filter.pipe';
@@ -11,15 +7,14 @@ import {CompletedFilterPipe} from './completed-filter.pipe';
     selector: 'as-todolist',
     templateUrl: 'app/todolist/todolist.html',
     directives: [CORE_DIRECTIVES],
-    pipes: [CompletedFilterPipe],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    pipes: [CompletedFilterPipe]
 })
 export class TodolistComponent {
     public todo: Todo;
     private list: Todo[];
     private showCompleted: Boolean;
 
-    constructor(private _ref: ChangeDetectorRef) {
+    constructor() {
         this.showCompleted = true;
         this.todo = new Todo('Add me to list!', false);
         this.list = [
@@ -31,12 +26,10 @@ export class TodolistComponent {
     addTodo() {
         this.list = this.list.concat(Todo.clone(this.todo));
         this.todo.clear();
-        this._ref.markForCheck();
     }
 
     delTodo(todoIndex: number) {
         this.list = this.list.filter(
             (todo, index) => index !== todoIndex);
-        this._ref.markForCheck();
     }
 }
