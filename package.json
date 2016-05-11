@@ -37,7 +37,7 @@
     "@angular/http": "2.0.0-rc.1",
     "@angular/platform-browser": "2.0.0-rc.1",
     "@angular/platform-browser-dynamic": "2.0.0-rc.1",
-    "@angular/router-deprecated": "2.0.0-rc.1",
+    "@angular/router": "2.0.0-rc.1",
     "bootstrap-sass": "^3.3.6",
     "bootswatch": "^3.3.6",
     "es6-shim": "^0.35.0",
@@ -50,7 +50,7 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
-    "browser-sync": "^2.12.5",
+    "browser-sync": "^2.12.7",
     "codelyzer": "0.0.19",
     "connect-history-api-fallback": "^1.2.0",
     "coveralls": "^2.11.9",
@@ -58,7 +58,7 @@
     "glob": "^7.0.3",
     "gulp": "^3.9.1",
     "gulp-cssnano": "^2.1.2",
-    "gulp-if": "~2.0.0",
+    "gulp-if": "~2.0.1",
     "gulp-protractor": "^2.3.0",
     "gulp-replace": "^0.5.4",
     "gulp-rev": "^7.0.0",
@@ -66,7 +66,7 @@
     "gulp-sass": "^2.3.1",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-tslint": "^5.0.0",
-    "gulp-typescript": "~2.13.0",
+    "gulp-typescript": "~2.13.4",
     "gulp-uglify": "~1.5.3",
     "gulp-useref": "~3.1.0",
     "jasmine-core": "~2.4.1",
@@ -83,8 +83,8 @@
     "run-sequence": "^1.1.5",
     "systemjs-builder": "~0.15.16",
     "traceur": "~0.0.108",
-    "tslint": "^3.9.0",
+    "tslint": "^3.10.1",
     "typings": "^0.8.1",
-    "yargs": "^4.6.0"
+    "yargs": "^4.7.0"
   }
 }
