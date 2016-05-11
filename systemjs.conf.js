@@ -5,6 +5,9 @@
  */
 
 (function(global) {
+    // ENV
+    global.ENV = 'development'
+
     // wildcard paths
     var paths = {
         'n:*': 'node_modules/*'

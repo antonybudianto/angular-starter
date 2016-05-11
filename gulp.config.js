@@ -70,7 +70,7 @@ module.exports = function () {
             minify: true,
             mangle: true,
             runtime: false,
-            globalDefs: { DEBUG: false }
+            globalDefs: { DEBUG: false, ENV: 'production' }
         }
     };
 
