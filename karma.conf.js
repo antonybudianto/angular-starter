@@ -11,8 +11,8 @@ module.exports = function(config) {
     reporters: ['progress', 'coverage'],
 
     preprocessors: {
-      'app/**/!(*.spec)+(.js)': ['coverage'],
-      'app/**/*.js': ['sourcemap']
+      'tmp/app/**/!(*.spec)+(.js)': ['coverage'],
+      'tmp/app/**/*.js': ['sourcemap']
     },
 
     // Generate json used for remap-istanbul
@@ -37,8 +37,8 @@ module.exports = function(config) {
       'systemjs.conf.js',
       'karma-test-shim.js',
 
-      { pattern: 'app/**/*.js', included: false },
-      { pattern: 'test/test-helpers/*.js', included: false },
+      { pattern: 'tmp/app/**/*.js', included: false },
+      { pattern: 'tmp/test/test-helpers/*.js', included: false },
 
       // paths loaded via Angular's component compiler
       // (these paths need to be rewritten, see proxies section)
@@ -47,14 +47,15 @@ module.exports = function(config) {
 
       // paths to support debugging with source maps in dev tools
       { pattern: 'app/**/*.ts', included: false, watched: false },
-      { pattern: 'app/**/*.js.map', included: false, watched: false }
+      { pattern: 'tmp/app/**/*.js.map', included: false, watched: false }
     ],
 
     // proxied base paths
     proxies: {
       // required for component assests fetched by Angular's compiler
       "/app/": "/base/app/",
-      "/test/": "/base/test/",
+      "/tmp/app/": "/base/tmp/app/",
+      "/tmp/test/": "/base/tmp/test/",
       "/node_modules/": "/base/node_modules/"
     },
 

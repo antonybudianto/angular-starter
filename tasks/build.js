@@ -22,7 +22,7 @@ gulp.task('build-sjs', function (done) {
         .then(function() {
             return builder
                 .buildStatic(config.app + 'main.js',
-                        config.app + 'bundle.js',
+                        config.tmp + config.app + 'bundle.js',
                 config.systemJs.builder);
         })
         .then(function() {

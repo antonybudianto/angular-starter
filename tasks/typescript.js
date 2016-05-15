@@ -68,7 +68,8 @@ function compileTs(files, watchMode) {
     var tsProject = ts.createProject(config.root + 'tsconfig.json');
     var allFiles = [].concat(files, typingFiles);
     var res = gulp.src(allFiles, {
-            base: '.'
+            base: '.',
+            outDir: 'tmp'
         })
         .pipe(tslint())
         .pipe(tslint.report('prose', {
@@ -84,10 +85,10 @@ function compileTs(files, watchMode) {
         .pipe(sourcemaps.write('.', {
               // Return relative source map root directories per file.
               includeContent: false,
-              sourceRoot: function (file) {
-                var sourceFile = path.join(file.cwd, file.sourceMap.file);
-                return path.relative(path.dirname(sourceFile), file.cwd);
-              }
+            //   sourceRoot: function (file) {
+            //     var sourceFile = path.join(file.cwd, file.sourceMap.file);
+            //     return path.relative(path.dirname(sourceFile), file.cwd);
+            //   }
             }))
-        .pipe(gulp.dest(config.root));
+        .pipe(gulp.dest('tmp'));
 }
