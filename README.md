@@ -8,7 +8,7 @@
 
 
 > Angular 2 is still in **Release Candidate** stage, please **don't** use this in production
-> Follow it [here](https://splintercode.github.io/is-angular-2-ready/)
+> Follow Angular 2 Changelog [here](https://github.com/angular/angular/blob/master/CHANGELOG.md)
 
 ## Table of Content
 * [Introduction](#introduction)
@@ -92,7 +92,7 @@ You can create production build by running:
 ```bash
 gulp build
 ```
-or you can create production build and then serve it using `live-server` by running:
+or you can create production build and then serve it using Browsersync by running:
 ```bash
 gulp serve-build
 ```
