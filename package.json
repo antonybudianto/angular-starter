@@ -50,7 +50,7 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
-    "browser-sync": "^2.12.7",
+    "browser-sync": "^2.12.8",
     "codelyzer": "0.0.19",
     "connect-history-api-fallback": "^1.2.0",
     "coveralls": "^2.11.9",
@@ -77,13 +77,13 @@
     "karma-phantomjs-launcher": "~1.0.0",
     "karma-sourcemap-loader": "^0.3.7",
     "phantomjs-prebuilt": "^2.1.7",
-    "remap-istanbul": "~0.6.3",
+    "remap-istanbul": "~0.6.4",
     "require-dir": "~0.3.0",
-    "run-sequence": "^1.1.5",
+    "run-sequence": "^1.2.0",
     "systemjs-builder": "~0.15.16",
     "traceur": "~0.0.108",
-    "tslint": "^3.10.1",
-    "typings": "^0.8.1",
-    "yargs": "^4.7.0"
+    "tslint": "^3.10.2",
+    "typings": "^1.0.3",
+    "yargs": "^4.7.1"
   }
 }
