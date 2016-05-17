@@ -5,6 +5,9 @@
  */
 
 (function(global) {
+    // ENV
+    global.ENV = 'development'
+
     // wildcard paths
     var paths = {
         'n:*': 'node_modules/*'
@@ -12,8 +15,8 @@
 
     // map tells the System loader where to look for things
     var map = {
-        'app': 'app',
-        'test': 'test',
+        'app': 'tmp/app',
+        'test': 'tmp/test',
         'rxjs': 'n:rxjs',
         '@angular': 'n:@angular',
         'lodash': 'n:lodash'
@@ -40,7 +43,6 @@
         '@angular/platform-browser',
         '@angular/platform-browser-dynamic',
         '@angular/router',
-        '@angular/router-deprecated',
         '@angular/testing',
         'lodash'
     ];

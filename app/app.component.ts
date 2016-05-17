@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {RouterOutlet, RouteConfig, RouteDefinition} from '@angular/router-deprecated';
+import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 import {APP_ROUTES} from './app.routes';
 import {NavbarComponent} from './navbar/navbar.component';
 import {LoggerService} from './blocks/logger.service';
@@ -7,11 +7,11 @@ import {LoggerService} from './blocks/logger.service';
 @Component({
     selector: 'as-main-app',
     templateUrl: 'app/app.html',
-    directives: [RouterOutlet, NavbarComponent]
+    directives: [NavbarComponent, ROUTER_DIRECTIVES]
 })
-@RouteConfig(APP_ROUTES)
+@Routes(APP_ROUTES)
 export class AppComponent {
-    public appRoutes: RouteDefinition[];
+    public appRoutes: any[];
     private logger: LoggerService;
 
     constructor(logger: LoggerService) {

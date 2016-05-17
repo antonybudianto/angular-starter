@@ -5,19 +5,10 @@ import {
     inject,
     async,
     describe,
-    MockApplicationRef
 } from '@angular/core/testing';
-import {
-    TestComponentBuilder
-} from '@angular/compiler/testing';
-import {
-    ROUTER_PRIMARY_COMPONENT,
-    ROUTER_PROVIDERS
-} from '@angular/router-deprecated';
-import {
-    APP_BASE_HREF,
-} from '@angular/common';
-import { Component, provide, ApplicationRef } from '@angular/core';
+import { TestComponentBuilder } from '@angular/compiler/testing';
+import { ROUTER_FAKE_PROVIDERS } from '@angular/router/testing';
+import { Component } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoggerService } from './blocks/logger.service';
 
@@ -32,10 +23,7 @@ class TestComponent {
 describe('AppComponent', () => {
     beforeEachProviders(() => [
         LoggerService,
-        ROUTER_PROVIDERS,
-        provide(ROUTER_PRIMARY_COMPONENT, { useValue: AppComponent }),
-        provide(ApplicationRef, { useClass: MockApplicationRef }),
-        provide(APP_BASE_HREF, { useValue: '/' }),
+        ROUTER_FAKE_PROVIDERS
     ]);
 
     it('should have brand Angular 2 Starter', async(inject([TestComponentBuilder],

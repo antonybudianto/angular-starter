@@ -21,20 +21,22 @@ gulp.task('clean-sass', function () {
 });
 
 /* Clean js and map */
-gulp.task('clean-ts', ['clean-ts-app', 'clean-ts-test']);
+gulp.task('clean-ts', function () {
+    return del([config.tmp]);
+});
 
 gulp.task('clean-ts-app', function () {
     return del([
-        config.app + '**/*.js',
-        config.app + '**/*.js.map'
+        config.tmp + config.app + '**/*.js',
+        config.tmp + config.app + '**/*.js.map'
     ]);
 });
 
 gulp.task('clean-ts-test', function () {
     return del([
-        config.app + '**/*.spec.js',
-        config.app + '**/*.spec.js.map',
-        config.test + '**/*.js',
-        config.test + '**/*.js.map'
+        config.tmp + config.app + '**/*.spec.js',
+        config.tmp + config.app + '**/*.spec.js.map',
+        config.tmp + config.test + '**/*.js',
+        config.tmp + config.test + '**/*.js.map'
     ]);
 });

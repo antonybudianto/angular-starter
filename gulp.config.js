@@ -4,6 +4,7 @@ module.exports = function () {
     var root = '';
     var app = root + 'app/';
     var test = root + 'test/';
+    var tmp = root + 'tmp/';
     var testHelper = test + 'test-helpers/';
     var e2e = test + 'e2e/';
     var assets = root + 'assets/';
@@ -47,7 +48,8 @@ module.exports = function () {
                 "index.html",
                 "systemjs.conf.js",
                 "assets/styles/main.css",
-                "app/**/*.js",
+                "tmp/app/**/*.js",
+                "app/**/*.css",
                 "app/**/*.html"
             ]
         },
@@ -69,7 +71,8 @@ module.exports = function () {
             normalize: true,
             minify: true,
             mangle: true,
-            globalDefs: { DEBUG: false }
+            runtime: false,
+            globalDefs: { DEBUG: false, ENV: 'production' }
         }
     };
 
@@ -77,6 +80,7 @@ module.exports = function () {
         root: root,
         app: app,
         test: test,
+        tmp: tmp,
         testHelper: testHelper,
         e2e: e2e,
         e2eConfig: e2eConfig,
