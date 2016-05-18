@@ -1,3 +1,5 @@
+<GitHub issues are only for bug reports and feature requests,
+question, support, or help can be send to Stackoverflow>
 <Have you checked issues section which may have your similar issue?>
 <Please take your time filling these required information for posting issue>
 
