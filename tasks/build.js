@@ -7,33 +7,11 @@ var rev = require('gulp-rev');
 var revReplace = require('gulp-rev-replace');
 var uglify = require('gulp-uglify');
 var cssnano = require('gulp-cssnano');
-var Builder = require('systemjs-builder');
 
-/* Prepare build using SystemJS Builder */
+require('ngstarter-systemjs-tasks');
+
 gulp.task('build', function (done) {
-    runSequence('test', 'build-sjs', 'build-assets', done);
-});
-
-gulp.task('build-sjs', function (done) {
-    runSequence('tsc-app', buildSJS);
-    function buildSJS () {
-        var builder = new Builder();
-        builder.loadConfig('./systemjs.conf.js')
-        .then(function() {
-            return builder
-                .buildStatic(config.app + 'main.js',
-                        config.tmp + config.app + 'bundle.js',
-                config.systemJs.builder);
-        })
-        .then(function() {
-            console.log('Build complete');
-            done();
-        })
-        .catch(function (ex) {
-            console.log('error', ex);
-            done('Build failed.');
-        });
-    }
+    runSequence('test', 'build-systemjs', 'build-assets', done);
 });
 
 /* Concat and minify/uglify all css, js, and copy fonts */

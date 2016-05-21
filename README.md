@@ -35,7 +35,7 @@ This starter contains almost everything you need to start developing [Angular 2]
 * [Jasmine](http://jasmine.github.io/) for test framework
 * [Istanbul](https://github.com/gotwarlost/istanbul) for test coverage
   * with [Remap Istanbul](https://github.com/SitePen/remap-istanbul) for remapping Javascript to TypeScript coverage
-* [SystemJS Builder](https://github.com/systemjs/builder) for module bundling in production
+* [SystemJS Builder](https://github.com/systemjs/builder) or [Webpack](https://webpack.github.io/) for module bundling in production
 
 Please visit the [wiki](https://github.com/antonybudianto/angular2-starter/wiki) for more details.
 
@@ -97,7 +97,8 @@ or you can create production build and then serve it using Browsersync by runnin
 ```bash
 gulp serve-build
 ```
-It uses [SystemJS Builder](https://github.com/systemjs/builder) to bundle your application so it's ready for production use
+The starter defaults to bundle using [SystemJS Builder extension](https://github.com/ngstarter/ngstarter-systemjs-tasks).
+There is [Webpack extension](https://github.com/ngstarter/ngstarter-webpack-tasks) available too, feel free to swap it as you like.
 
 ## Extension
 You can extend this starter with many extensions built by open source community. Browse the extensions [here](https://github.com/ngstarter)
