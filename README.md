@@ -16,6 +16,7 @@
 * [Start](#start)
 * [Testing](#testing)
 * [Production](#production)
+* [Extension](#extension)
 * [Contributing](#contributing)
 * [Special thanks](#special-thanks)
 * [License](#license)
@@ -97,6 +98,9 @@ or you can create production build and then serve it using Browsersync by runnin
 gulp serve-build
 ```
 It uses [SystemJS Builder](https://github.com/systemjs/builder) to bundle your application so it's ready for production use
+
+## Extension
+You can extend this starter with many extensions built by open source community. Browse the extensions [here](https://github.com/ngstarter)
 
 ## Contributing
 Feel free to submit a PR if there are any issues or new features, read [this](https://github.com/antonybudianto/angular2-starter/blob/master/CONTRIBUTING.md) before
