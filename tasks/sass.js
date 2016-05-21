@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var config = require('../gulp.config')();
-require('ngstarter-bootswatch-tasks');
 
 gulp.task('sass', function () {
     return gulp.src(config.assetsPath.styles + 'main.scss')
