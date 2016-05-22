@@ -3,13 +3,27 @@ var config = require('../gulp.config')();
 var Server = require('karma').Server;
 var gulpProtractor = require('gulp-protractor');
 var remapIstanbul = require('remap-istanbul/lib/gulpRemapIstanbul');
+var runSequence = require('run-sequence');
+var argv = require('yargs')
+            .alias('w', 'watch')
+            .argv;
 
 gulp.task('test', ['clean-report', 'unit-test']);
 
 gulp.task('unit-test', ['tsc'], function (done) {
+    var watch = argv.watch || false;
+
+    if (watch) {
+        runSequence('watch-ts');
+        console.log('=== Unit Test Watch Mode ===');
+        console.log('- It will autowatch the changed files and re-run the test');
+        console.log('- Press Cmd/Ctrl + C to exit and get the coverage result');
+        console.log('- Press Cmd/Ctrl + C again to close the TSC watch.');
+    }
+
     new Server({
         configFile: __dirname + '/../karma.conf.js',
-        singleRun: true
+        singleRun: !watch
     }, karmaDone).start();
 
     function karmaDone (exitCode) {
