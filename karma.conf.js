@@ -12,7 +12,8 @@ module.exports = function(config) {
 
     preprocessors: {
       'tmp/app/**/!(*.spec)+(.js)': ['coverage'],
-      'tmp/app/**/*.js': ['sourcemap']
+      'tmp/app/**/*.js': ['sourcemap'],
+      'tmp/test/**/*.js': ['sourcemap']
     },
 
     // Generate json used for remap-istanbul
@@ -34,6 +35,7 @@ module.exports = function(config) {
       'node_modules/zone.js/dist/fake-async-test.js',
       'node_modules/systemjs/dist/system.src.js',
 
+      'tmp/test/test-helpers/global/**/*.js',
       'systemjs.conf.js',
       'karma-test-shim.js',
 
