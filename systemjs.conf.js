@@ -6,7 +6,7 @@
 
 (function(global) {
     // ENV
-    global.ENV = 'development'
+    global.ENV = global.ENV || 'development';
 
     // wildcard paths
     var paths = {
@@ -35,19 +35,29 @@
         }
     };
 
+    // Add package entries for angular packages
+    var ngPackageNames = [
+        'common',
+        'compiler',
+        'core',
+        'http',
+        'platform-browser',
+        'platform-browser-dynamic',
+        'router'
+    ];
+
+    // add package entries for packages that expose barrels using index.js
     var packageNames = [
-        '@angular/common',
-        '@angular/compiler',
-        '@angular/core',
-        '@angular/http',
-        '@angular/platform-browser',
-        '@angular/platform-browser-dynamic',
-        '@angular/router',
-        '@angular/testing',
         'lodash'
     ];
 
-    // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
+    ngPackageNames.forEach(function(pkgName) {
+        var main = global.ENV === 'testing' ? 'index.js' :
+            pkgName + '.umd.js';
+
+        packages['@angular/'+pkgName] = { main: main, defaultExtension: 'js' };
+    });
+
     packageNames.forEach(function(pkgName) {
         packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
     });
