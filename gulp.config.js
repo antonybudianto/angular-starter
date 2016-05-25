@@ -52,12 +52,12 @@ module.exports = function () {
                 }
             },
             files: [
-                "index.html",
-                "systemjs.conf.js",
-                "assets/styles/main.css",
-                "tmp/app/**/*.js",
-                "app/**/*.css",
-                "app/**/*.html"
+                src + "index.html",
+                src + "systemjs.conf.js",
+                src + "assets/styles/main.css",
+                tmpApp + "**/*.js",
+                app + "**/*.css",
+                app + "**/*.html"
             ]
         },
         prod: {
