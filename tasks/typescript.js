@@ -65,10 +65,10 @@ function lintTs(files) {
 
 function compileTs(files, watchMode) {
     watchMode = watchMode || false;
-    var tsProject = ts.createProject(config.root + 'tsconfig.json');
+    var tsProject = ts.createProject('tsconfig.json');
     var allFiles = [].concat(files, typingFiles);
     var res = gulp.src(allFiles, {
-            base: '.',
+            base: config.root,
             outDir: config.tmp
         })
         .pipe(tslint())

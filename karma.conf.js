@@ -4,16 +4,16 @@ module.exports = function(config) {
     'systemjs', 'zone.js', 'font-awesome'
   ];
   var configuration = {
-    basePath: '',
+    basePath: './',
 
     frameworks: ['jasmine'],
     browsers: ['PhantomJS'],
     reporters: ['progress', 'coverage'],
 
     preprocessors: {
-      'tmp/app/**/!(*.spec)+(.js)': ['coverage'],
-      'tmp/app/**/*.js': ['sourcemap'],
-      'tmp/test/**/*.js': ['sourcemap']
+      'src/tmp/app/**/!(*.spec)+(.js)': ['coverage'],
+      'src/tmp/app/**/*.js': ['sourcemap'],
+      'src/tmp/test/**/*.js': ['sourcemap']
     },
 
     // Generate json used for remap-istanbul
@@ -35,29 +35,28 @@ module.exports = function(config) {
       'node_modules/zone.js/dist/fake-async-test.js',
       'node_modules/systemjs/dist/system.src.js',
 
-      'tmp/test/test-helpers/global/**/*.js',
-      'systemjs.conf.js',
+      'src/tmp/test/test-helpers/global/**/*.js',
+      'src/systemjs.conf.js',
       'karma-test-shim.js',
 
-      { pattern: 'tmp/app/**/*.js', included: false },
-      { pattern: 'tmp/test/test-helpers/*.js', included: false },
+      { pattern: 'src/tmp/app/**/*.js', included: false },
+      { pattern: 'src/tmp/test/test-helpers/*.js', included: false },
 
       // paths loaded via Angular's component compiler
       // (these paths need to be rewritten, see proxies section)
-      { pattern: 'app/**/*.html', included: false },
-      { pattern: 'app/**/*.css', included: false },
+      { pattern: 'src/app/**/*.html', included: false },
+      { pattern: 'src/app/**/*.css', included: false },
 
       // paths to support debugging with source maps in dev tools
-      { pattern: 'app/**/*.ts', included: false, watched: false },
-      { pattern: 'tmp/app/**/*.js.map', included: false, watched: false }
+      { pattern: 'src/app/**/*.ts', included: false, watched: false },
+      { pattern: 'src/tmp/app/**/*.js.map', included: false, watched: false }
     ],
 
     // proxied base paths
     proxies: {
       // required for component assests fetched by Angular's compiler
-      "/app/": "/base/app/",
-      "/tmp/app/": "/base/tmp/app/",
-      "/tmp/test/": "/base/tmp/test/",
+      "/app/": "/base/src/app/",
+      "/tmp/": "/base/src/tmp/",
       "/node_modules/": "/base/node_modules/"
     },
 
