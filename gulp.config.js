@@ -1,22 +1,23 @@
 var historyApiFallback = require('connect-history-api-fallback')
 
 module.exports = function () {
-    var root = 'src/';
-    var app = root + 'app/';
-    var test = root + 'test/';
-    var tmp = root + 'tmp/';
+    var root = '';
+    var src = root + 'src/';
+    var app = src + 'app/';
+    var test = src + 'test/';
+    var tmp = src + 'tmp/';
     var tmpApp = tmp + 'app/';
     var tmpTest = tmp + 'test/';
     var testHelper = test + 'test-helpers/';
     var e2e = test + 'e2e/';
     var tmpE2E = tmpTest + 'e2e/';
-    var assets = root + 'assets/';
+    var assets = src + 'assets/';
     var assetsPath = {
         styles: assets + 'styles/',
         images: assets + 'images/',
         fonts: assets + 'fonts/'
     };
-    var index = root + 'index.html';
+    var index = src + 'index.html';
     var tsFiles = [
         app + '**/!(*.spec)+(.ts)'
     ];
@@ -84,6 +85,7 @@ module.exports = function () {
 
     var config = {
         root: root,
+        src: src,
         app: app,
         test: test,
         tmp: tmp,

@@ -3,6 +3,6 @@
 /build
 /report
 /typings
-/tmp
+/src/tmp
 .DS_Store
-assets/styles/*.css
+/src/assets/styles/*.css
