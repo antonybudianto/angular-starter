@@ -26,17 +26,12 @@ gulp.task('clean-ts', function () {
 });
 
 gulp.task('clean-ts-app', function () {
-    return del([
-        config.tmp + config.app + '**/*.js',
-        config.tmp + config.app + '**/*.js.map'
-    ]);
+    return del([config.tmpApp]);
 });
 
 gulp.task('clean-ts-test', function () {
     return del([
-        config.tmp + config.app + '**/*.spec.js',
-        config.tmp + config.app + '**/*.spec.js.map',
-        config.tmp + config.test + '**/*.js',
-        config.tmp + config.test + '**/*.js.map'
+        config.tmpApp,
+        config.tmpTest,
     ]);
 });
