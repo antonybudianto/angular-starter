@@ -11,6 +11,8 @@
 
 > Follow Angular 2 Changelog [here](https://github.com/angular/angular/blob/master/CHANGELOG.md)
 
+> Live Production Build [Demo](https://antonybudianto.github.io/angular2-starter/)
+
 ## Table of Content
 * [Introduction](#introduction)
 * [Installation](#installation)
