@@ -50,6 +50,8 @@ Firstly, you need to have [Node.js](https://nodejs.org/en/)
 
 > You need v4.x or higher for [Protractor](https://angular.github.io/protractor/#/)
 
+Get the starter from [releases page](https://github.com/antonybudianto/angular2-starter/releases)
+
 Then, install these packages globally:
 ```bash
 npm install -g gulp
