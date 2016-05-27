@@ -1,0 +1,51 @@
+<style>
+    .badge:hover {
+        background-color: orangered;
+        cursor: pointer;
+    }
+    .list-options {
+        vertical-align: middle;
+        display: inline-block;
+    }
+    [hidden] {
+        display: none;
+    }
+    .ng-valid[required] {
+      border-left: 5px solid #42A948; /* green */
+    }
+    .ng-invalid {
+      border-left: 5px solid orange; /* orange */
+    }
+</style>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-list"></i> To Do List &nbsp;<span class="badge">{{list.length}}</span></h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <form (ngSubmit)="addTodo()" #todoForm="ngForm">
+                    <label for="todo">To Do</label>
+                    <span [hidden]="name.valid" class="badge badge-warning">Required</span>
+                    <div class="form-inline">
+                        <input required [(ngModel)]="todo.name" ngControl="name" #name="ngForm" id="todo" type="text" class="form-control" size="50">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                    <label><input type="checkbox" [(ngModel)]="showCompleted"> show completed</label>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <ul class="list-group">
+                <li *ngFor="let todo of (list | asCompletedFilter:showCompleted); let i=index" class="list-group-item">
+                <span title="Remove todo" class="badge" (click)="delTodo(i) ">x</span>
+                <label><input type="checkbox" [(ngModel)]="todo.done"> {{todo.name}}</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</div>
