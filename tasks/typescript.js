@@ -65,10 +65,10 @@ function lintTs(files) {
 
 function compileTs(files, watchMode) {
     watchMode = watchMode || false;
-    var tsProject = ts.createProject(config.root + 'tsconfig.json');
+    var tsProject = ts.createProject('tsconfig.json');
     var allFiles = [].concat(files, typingFiles);
     var res = gulp.src(allFiles, {
-            base: '.',
+            base: config.src,
             outDir: config.tmp
         })
         .pipe(tslint())
@@ -79,11 +79,14 @@ function compileTs(files, watchMode) {
         .pipe(sourcemaps.init())
         .pipe(ts(tsProject))
         .on('error', function () {
+            if (watchMode) {
+                return;
+            }
             process.exit(1);
         });
     return res.js
         .pipe(sourcemaps.write('.', {
-              includeContent: false
-            }))
+            includeContent: false
+        }))
         .pipe(gulp.dest(config.tmp));
 }

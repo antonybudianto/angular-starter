@@ -28,6 +28,9 @@ gulp.task('build-assets', function (done) {
         .pipe(cssnano())
         .pipe(gulp.dest(config.build.app));
 
+        gulp.src(config.src + 'favicon.ico')
+        .pipe(gulp.dest(config.build.path));
+
         gulp.src(config.assetsPath.images + '**/*.*', {
             base: config.assetsPath.images
         })

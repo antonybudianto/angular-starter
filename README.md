@@ -8,7 +8,10 @@
 
 
 > Angular 2 is still in **Release Candidate** stage, please **don't** use this in production
+
 > Follow Angular 2 Changelog [here](https://github.com/angular/angular/blob/master/CHANGELOG.md)
+
+> Live Production Build [Demo](https://antonybudianto.github.io/angular2-starter/)
 
 ## Table of Content
 * [Introduction](#introduction)
@@ -43,8 +46,11 @@ Please visit the [wiki](https://github.com/antonybudianto/angular2-starter/wiki)
 Firstly, you need to have [Node.js](https://nodejs.org/en/)
 - For v4, please use v4.3.x (LTS) or higher (**highly** recommended)
 - For v5, please use v5.6.x or higher, here is [why](https://nodejs.org/en/blog/vulnerability/february-2016-security-releases/)
+- Ready for v6
 
 > You need v4.x or higher for [Protractor](https://angular.github.io/protractor/#/)
+
+Get the starter from [releases page](https://github.com/antonybudianto/angular2-starter/releases)
 
 Then, install these packages globally:
 ```bash
@@ -84,7 +90,7 @@ To begin testing, run:
 ```bash
 gulp e2e
 ```
-and it'll compile all E2E spec files in `/test/e2e/*.spec.ts`, boot up Selenium server then launches Chrome browser.
+and it'll compile all E2E spec files in `/src/test/e2e/*.spec.ts`, boot up Selenium server then launches Chrome browser.
 
 ## Production
 > All build tasks will run the `gulp test`, the bundle will only be created if the test passed.
@@ -101,7 +107,7 @@ The starter defaults to bundle using [SystemJS Builder extension](https://github
 There is [Webpack extension](https://github.com/ngstarter/ngstarter-webpack-tasks) available too, feel free to swap it as you like.
 
 ## Extension
-You can extend this starter with many extensions built by open source community. Browse the extensions [here](https://github.com/ngstarter)
+You can extend this starter with many extensions built by the community. Browse the extensions [here](https://github.com/ngstarter)
 
 ## Contributing
 Feel free to submit a PR if there are any issues or new features, read [this](https://github.com/antonybudianto/angular2-starter/blob/master/CONTRIBUTING.md) before

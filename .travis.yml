@@ -10,4 +10,5 @@ node_js:
   - "4.3"
 script: gulp build
 after_script:
+  - npm install coveralls
   - npm run-script coveralls
