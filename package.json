@@ -54,7 +54,6 @@
     "browser-sync": "^2.12.8",
     "codelyzer": "0.0.19",
     "connect-history-api-fallback": "^1.2.0",
-    "coveralls": "^2.11.9",
     "del": "~2.2.0",
     "glob": "^7.0.3",
     "gulp": "^3.9.1",
