@@ -79,6 +79,9 @@ function compileTs(files, watchMode) {
         .pipe(sourcemaps.init())
         .pipe(ts(tsProject))
         .on('error', function () {
+            if (watchMode) {
+                return;
+            }
             process.exit(1);
         });
     return res.js
