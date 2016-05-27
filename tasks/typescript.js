@@ -85,6 +85,8 @@ function compileTs(files, watchMode) {
             process.exit(1);
         });
     return res.js
-        .pipe(sourcemaps.write('.'))
+        .pipe(sourcemaps.write('.', {
+            includeContent: false
+        }))
         .pipe(gulp.dest(config.tmp));
 }
