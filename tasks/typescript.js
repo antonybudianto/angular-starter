@@ -86,7 +86,8 @@ function compileTs(files, watchMode) {
         });
     return res.js
         .pipe(sourcemaps.write('.', {
-            includeContent: false
+            includeContent: false,
+            sourceRoot: '../../../'
         }))
         .pipe(gulp.dest(config.tmp));
 }
