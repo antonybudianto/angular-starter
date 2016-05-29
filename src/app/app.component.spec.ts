@@ -10,7 +10,6 @@ import { TestComponentBuilder } from '@angular/compiler/testing';
 import { ROUTER_FAKE_PROVIDERS } from '@angular/router/testing';
 import { Component } from '@angular/core';
 import { AppComponent } from './app.component';
-import { LoggerService } from './blocks/logger.service';
 
 @Component({
     selector: 'as-test',
@@ -22,7 +21,6 @@ class TestComponent {
 
 describe('AppComponent', () => {
     beforeEachProviders(() => [
-        LoggerService,
         ROUTER_FAKE_PROVIDERS
     ]);
 
