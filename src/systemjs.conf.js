@@ -8,19 +8,18 @@
     // ENV
     global.ENV = global.ENV || 'development';
 
-    // wildcard paths
-    var paths = {
-        'n:*': 'node_modules/*'
-    };
-
     // map tells the System loader where to look for things
     var map = {
         'app': 'src/tmp/app',
-        'test': 'src/tmp/test',
-        'rxjs': 'n:rxjs',
-        '@angular': 'n:@angular',
-        'lodash': 'n:lodash'
+        'test': 'src/tmp/test'
     };
+
+    // list npm packages here
+    var npmPackages = [
+        '@angular',
+        'rxjs',
+        'lodash'
+    ];
 
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
@@ -55,6 +54,10 @@
         'router'
     ];
 
+    npmPackages.forEach(function (pkgName) {
+        map[pkgName] = 'node_modules/' + pkgName;
+    })
+
     ngPackageNames.forEach(function(pkgName) {
         var main = global.ENV === 'testing' ? 'index.js' :
             pkgName + '.umd.js';
@@ -68,13 +71,16 @@
 
     var config = {
         map: map,
-        packages: packages,
-        paths: paths
+        packages: packages
     };
 
     // filterSystemConfig - index.html's chance to modify config before we register it.
     if (global.filterSystemConfig) { global.filterSystemConfig(config); }
 
     System.config(config);
+
+    function mapNpmPackage(params) {
+
+    }
 
 })(this);
