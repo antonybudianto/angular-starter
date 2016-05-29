@@ -30,7 +30,7 @@ function onlySpecFiles(path) {
 // Normalize paths to module names.
 function file2moduleName(filePath) {
   return filePath.replace(/\\/g, '/')
-    .replace(/^\/base\/src\/tmp\//, '')
+    .replace(/^\/base\//, '')
     .replace(/\.js/, '');
 }
 

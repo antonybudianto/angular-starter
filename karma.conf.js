@@ -36,7 +36,7 @@ module.exports = function(config) {
     proxies: {
       // required for component assests fetched by Angular's compiler
       "/app/": "/base/src/app/",
-      "/tmp/": "/base/src/tmp/",
+      "/src/": "/base/src/",
       "/node_modules/": "/base/node_modules/"
     },
 

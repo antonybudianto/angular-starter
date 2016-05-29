@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 import {APP_ROUTES} from './app.routes';
 import {NavbarComponent} from './navbar/navbar.component';
-import {CONSTANTS} from './shared/index';
+import {CONSTANTS} from './shared';
 
 @Component({
     selector: 'as-main-app',

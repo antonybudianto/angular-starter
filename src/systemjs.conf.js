@@ -15,8 +15,8 @@
 
     // map tells the System loader where to look for things
     var map = {
-        'app': 'tmp/app',
-        'test': 'tmp/test',
+        'app': 'src/tmp/app',
+        'test': 'src/tmp/test',
         'rxjs': 'n:rxjs',
         '@angular': 'n:@angular',
         'lodash': 'n:lodash'
@@ -24,9 +24,6 @@
 
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
-        'src/tmp/app': {
-            defaultExtension: 'js'
-        },
         'app': {
             defaultExtension: 'js'
         },
@@ -38,6 +35,15 @@
         }
     };
 
+    // Add package entries for packages that expose barrels using index.js
+    var packageNames = [
+        // App barrels
+        'app/shared',
+
+        // 3rd party barrels
+        'lodash'
+    ];
+
     // Add package entries for angular packages
     var ngPackageNames = [
         'common',
@@ -47,11 +53,6 @@
         'platform-browser',
         'platform-browser-dynamic',
         'router'
-    ];
-
-    // add package entries for packages that expose barrels using index.js
-    var packageNames = [
-        'lodash'
     ];
 
     ngPackageNames.forEach(function(pkgName) {
