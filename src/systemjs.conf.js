@@ -79,8 +79,4 @@
 
     System.config(config);
 
-    function mapNpmPackage(params) {
-
-    }
-
 })(this);
