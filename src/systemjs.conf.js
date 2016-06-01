@@ -8,25 +8,14 @@
     // ENV
     global.ENV = global.ENV || 'development';
 
-    // wildcard paths
-    var paths = {
-        'n:*': 'node_modules/*'
-    };
-
     // map tells the System loader where to look for things
     var map = {
-        'app': 'tmp/app',
-        'test': 'tmp/test',
-        'rxjs': 'n:rxjs',
-        '@angular': 'n:@angular',
-        'lodash': 'n:lodash'
+        'app': 'src/tmp/app',
+        'test': 'src/tmp/test'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
-        'src/tmp/app': {
-            defaultExtension: 'js'
-        },
         'app': {
             defaultExtension: 'js'
         },
@@ -37,6 +26,22 @@
             defaultExtension: 'js'
         }
     };
+
+    // List npm packages here
+    var npmPackages = [
+        '@angular',
+        'rxjs',
+        'lodash'
+    ];
+
+    // Add package entries for packages that expose barrels using index.js
+    var packageNames = [
+        // App barrels
+        'app/shared',
+
+        // 3rd party barrels
+        'lodash'
+    ];
 
     // Add package entries for angular packages
     var ngPackageNames = [
@@ -49,10 +54,13 @@
         'router'
     ];
 
-    // add package entries for packages that expose barrels using index.js
-    var packageNames = [
-        'lodash'
-    ];
+    npmPackages.forEach(function (pkgName) {
+        map[pkgName] = 'node_modules/' + pkgName;
+    });
+
+    packageNames.forEach(function(pkgName) {
+        packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
+    });
 
     ngPackageNames.forEach(function(pkgName) {
         var main = global.ENV === 'testing' ? 'index.js' :
@@ -61,14 +69,9 @@
         packages['@angular/'+pkgName] = { main: main, defaultExtension: 'js' };
     });
 
-    packageNames.forEach(function(pkgName) {
-        packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
-    });
-
     var config = {
         map: map,
-        packages: packages,
-        paths: paths
+        packages: packages
     };
 
     // filterSystemConfig - index.html's chance to modify config before we register it.

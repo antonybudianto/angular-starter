@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 import {APP_ROUTES} from './app.routes';
 import {NavbarComponent} from './navbar/navbar.component';
-import {LoggerService} from './blocks/logger.service';
+import {CONSTANTS} from './shared';
 
 @Component({
     selector: 'as-main-app',
@@ -12,10 +12,10 @@ import {LoggerService} from './blocks/logger.service';
 @Routes(APP_ROUTES)
 export class AppComponent {
     public appRoutes: any[];
-    private logger: LoggerService;
+    public appBrand: string;
 
-    constructor(logger: LoggerService) {
-        this.logger = logger;
+    constructor() {
         this.appRoutes = APP_ROUTES;
+        this.appBrand = CONSTANTS.MAIN.APP.BRAND;
     }
 }
