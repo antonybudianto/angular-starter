@@ -3,6 +3,7 @@ var config = require('../gulp.config')();
 var ts = require('gulp-typescript');
 var tslint = require('gulp-tslint');
 var sourcemaps = require('gulp-sourcemaps');
+var argv = require('yargs').argv;
 
 /* Initialize TS Project */
 var typingFiles = [
@@ -64,7 +65,9 @@ function lintTs(files) {
 }
 
 function compileTs(files, watchMode) {
+    var inline = !argv.excludeSource;
     watchMode = watchMode || false;
+
     var tsProject = ts.createProject('tsconfig.json');
     var allFiles = [].concat(files, typingFiles);
     var res = gulp.src(allFiles, {
@@ -85,6 +88,8 @@ function compileTs(files, watchMode) {
             process.exit(1);
         });
     return res.js
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('.', {
+            includeContent: inline
+        }))
         .pipe(gulp.dest(config.tmp));
 }
