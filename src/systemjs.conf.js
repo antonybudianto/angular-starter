@@ -14,13 +14,6 @@
         'test': 'src/tmp/test'
     };
 
-    // list npm packages here
-    var npmPackages = [
-        '@angular',
-        'rxjs',
-        'lodash'
-    ];
-
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
         'app': {
@@ -33,6 +26,13 @@
             defaultExtension: 'js'
         }
     };
+
+    // List npm packages here
+    var npmPackages = [
+        '@angular',
+        'rxjs',
+        'lodash'
+    ];
 
     // Add package entries for packages that expose barrels using index.js
     var packageNames = [
@@ -56,17 +56,17 @@
 
     npmPackages.forEach(function (pkgName) {
         map[pkgName] = 'node_modules/' + pkgName;
-    })
+    });
+
+    packageNames.forEach(function(pkgName) {
+        packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
+    });
 
     ngPackageNames.forEach(function(pkgName) {
         var main = global.ENV === 'testing' ? 'index.js' :
             pkgName + '.umd.js';
 
         packages['@angular/'+pkgName] = { main: main, defaultExtension: 'js' };
-    });
-
-    packageNames.forEach(function(pkgName) {
-        packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
     });
 
     var config = {
