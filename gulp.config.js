@@ -49,7 +49,7 @@ module.exports = function () {
                 middleware: [historyApiFallback()],
                 routes: {
                     "/node_modules": "node_modules",
-                    "/src/tmp/app": "src/tmp/app"
+                    "/src": "src"
                 }
             },
             files: [
