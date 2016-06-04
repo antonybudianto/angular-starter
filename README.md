@@ -79,7 +79,8 @@ Just run
 gulp test
 ```
 and it'll compile all TypeScript files, start Karma, then remap Istanbul coverage so that it shows TypeScript coverage, not the transpiled Javascript coverage.
-![Coverage result](http://s9.postimg.org/ij32cv5dr/test.png)
+
+![Coverage result](http://s33.postimg.org/w7m9ckdkf/Screen_Shot_2016_06_04_at_8_15_53_AM.png)
 
 ### E2E testing
 Firstly start the server:
