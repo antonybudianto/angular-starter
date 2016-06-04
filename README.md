@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/antonybudianto/angular2-starter.svg?branch=master)](https://travis-ci.org/antonybudianto/angular2-starter)
 [![Build status](https://ci.appveyor.com/api/projects/status/d5b3a9nnxnv5bxa5/branch/master?svg=true)](https://ci.appveyor.com/project/antonybudianto/angular2-starter/branch/master)
-[![Coverage Status](https://coveralls.io/repos/github/antonybudianto/angular2-starter/badge.svg?branch=master)](https://coveralls.io/github/antonybudianto/angular2-starter?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/antonybudianto/angular2-starter/badge.svg?branch=master)](https://coveralls.io/github/antonybudianto/angular2-starter?branch=master)e
 [![Dependency Status](https://david-dm.org/antonybudianto/angular2-starter.svg)](https://david-dm.org/antonybudianto/angular2-starter)
 [![devDependency Status](https://david-dm.org/antonybudianto/angular2-starter/dev-status.svg)](https://david-dm.org/antonybudianto/angular2-starter#info=devDependencies)
 
@@ -104,8 +104,8 @@ or you can create production build and then serve it using Browsersync by runnin
 ```bash
 gulp serve-build
 ```
-The starter defaults to bundle using [SystemJS Builder extension](https://github.com/ngstarter/ngstarter-systemjs-tasks).
-There is [Webpack extension](https://github.com/ngstarter/ngstarter-webpack-tasks) available too, feel free to swap it as you like.
+The starter defaults to bundle using [SystemJS Builder extension](https://github.com/ngstarter/systemjs-extension).
+There is [Webpack extension](https://github.com/ngstarter/webpack-extension) available too, feel free to swap it as you like.
 
 ## Extension
 You can extend this starter with many extensions built by the community. Browse the extensions [here](https://github.com/ngstarter)
