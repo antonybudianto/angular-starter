@@ -93,7 +93,6 @@ module.exports = function () {
 
     var config = {
         root: root,
-        translations: translations,
         src: src,
         app: app,
         test: test,
