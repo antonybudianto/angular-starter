@@ -1,5 +1,6 @@
 var argv = require('yargs').argv;
 
+global.env = 'dev';
 global.env = argv.prod ? 'prod': 'dev';
 
 var gulp = require('gulp');
