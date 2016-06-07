@@ -1,4 +1,7 @@
-if (global.env === 'dev')
+var argv = require('yargs').argv;
+var environment = argv.env || 'dev';
+
+if (environment === 'dev')
 {
     var gulp = require('gulp');
     var config = require('../gulp.config')();

@@ -1,4 +1,8 @@
-if (global.env === 'dev') {
+var argv = require('yargs').argv;
+
+var environment = argv.env || 'dev';
+console.log(environment);
+if (environment === 'dev') {
     var historyApiFallback = require('connect-history-api-fallback');
 }
 
@@ -44,7 +48,7 @@ module.exports = function () {
         path: 'report/'
     };
 
-    if (global.env === 'dev')
+    if (environment === 'dev')
     {
         var browserSync = {
             dev: {
@@ -113,7 +117,7 @@ module.exports = function () {
         systemJs: systemJs
     };
 
-    if (global.env === 'dev')
+    if (environment === 'dev')
     {
         config.browserSync = browserSync;
 
