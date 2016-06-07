@@ -1,8 +1,11 @@
-var historyApiFallback = require('connect-history-api-fallback')
+if (global.env === 'dev') {
+    var historyApiFallback = require('connect-history-api-fallback');
+}
 
 module.exports = function () {
     var root = '';
     var src = root + 'src/';
+    var translations = src + 'i18n/*.json';
     var app = src + 'app/';
     var test = src + 'test/';
     var tmp = src + 'tmp/';
@@ -31,6 +34,7 @@ module.exports = function () {
         app: 'build/app/',
         fonts: 'build/fonts',
         assetPath: 'build/assets/',
+        translate: 'build/i18n/',
         assets: {
             lib: {
                 js: 'lib.js',
@@ -41,34 +45,39 @@ module.exports = function () {
     var report = {
         path: 'report/'
     };
-    var browserSync = {
-        dev: {
-            port: 3000,
-            server: {
-                baseDir: './src/',
-                middleware: [historyApiFallback()],
-                routes: {
-                    "/node_modules": "node_modules",
-                    "/src": "src"
-                }
+
+    if (global.env === 'dev')
+    {
+        var browserSync = {
+            dev: {
+                port: 3000,
+                server: {
+                    baseDir: './src/',
+                    middleware: [historyApiFallback()],
+                    routes: {
+                        "/node_modules": "node_modules",
+                        "/src": "src"
+                    }
+                },
+                files: [
+                    src + "index.html",
+                    src + "systemjs.conf.js",
+                    src + "assets/styles/main.css",
+                    tmpApp + "**/*.js",
+                    app + "**/*.css",
+                    app + "**/*.html"
+                ]
             },
-            files: [
-                src + "index.html",
-                src + "systemjs.conf.js",
-                src + "assets/styles/main.css",
-                tmpApp + "**/*.js",
-                app + "**/*.css",
-                app + "**/*.html"
-            ]
-        },
-        prod: {
-            port: 3001,
-            server: {
-                baseDir: './' + build.path,
-                middleware: [historyApiFallback()]
+            prod: {
+                port: 3001,
+                server: {
+                    baseDir: './' + build.path,
+                    middleware: [historyApiFallback()]
+                }
             }
-        }
-    };
+        };
+    }
+
 
     var e2eConfig = {
         seleniumTarget: 'http://127.0.0.1:3000'
@@ -86,6 +95,7 @@ module.exports = function () {
 
     var config = {
         root: root,
+        translations: translations,
         src: src,
         app: app,
         test: test,
@@ -103,9 +113,14 @@ module.exports = function () {
         assetsPath: assetsPath,
         tsFiles: tsFiles,
         tsTestFiles: tsTestFiles,
-        browserSync: browserSync,
         systemJs: systemJs
     };
+
+    if (global.env === 'dev')
+    {
+        config.browserSync = browserSync;
+
+    }
 
     return config;
 };
