@@ -1,8 +1,15 @@
 module.exports = function(config) {
   var gulpConfig = require('./gulp.config')();
-  var dependencies = require('./package.json').dependencies;
-  var excludedDependencies = [
-    'systemjs', 'zone.js', 'font-awesome'
+  var dependencies = [
+    '@angular/common',
+    '@angular/compiler',
+    '@angular/core',
+    '@angular/http',
+    '@angular/platform-browser',
+    '@angular/platform-browser-dynamic',
+    '@angular/router',
+    'lodash',
+    'rxjs'
   ];
   var configuration = {
     basePath: './',
@@ -64,9 +71,7 @@ module.exports = function(config) {
 
   configuration.files = configuration.files.concat(files);
 
-  Object.keys(dependencies).forEach(function(key) {
-    if(excludedDependencies.indexOf(key) >= 0) { return; }
-
+  dependencies.forEach(function(key) {
     configuration.files.push({
         pattern: 'node_modules/' + key + '/**/*.js',
         included: false,

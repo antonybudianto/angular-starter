@@ -79,7 +79,8 @@ Just run
 gulp test
 ```
 and it'll compile all TypeScript files, start Karma, then remap Istanbul coverage so that it shows TypeScript coverage, not the transpiled Javascript coverage.
-![Coverage result](http://s9.postimg.org/ij32cv5dr/test.png)
+
+![Coverage result](http://s33.postimg.org/w7m9ckdkf/Screen_Shot_2016_06_04_at_8_15_53_AM.png)
 
 ### E2E testing
 Firstly start the server:
@@ -103,8 +104,8 @@ or you can create production build and then serve it using Browsersync by runnin
 ```bash
 gulp serve-build
 ```
-The starter defaults to bundle using [SystemJS Builder extension](https://github.com/ngstarter/ngstarter-systemjs-tasks).
-There is [Webpack extension](https://github.com/ngstarter/ngstarter-webpack-tasks) available too, feel free to swap it as you like.
+The starter defaults to bundle using [SystemJS Builder extension](https://github.com/ngstarter/systemjs-extension).
+There is [Webpack extension](https://github.com/ngstarter/webpack-extension) available too, feel free to swap it as you like.
 
 ## Extension
 You can extend this starter with many extensions built by the community. Browse the extensions [here](https://github.com/ngstarter)
@@ -113,6 +114,7 @@ You can extend this starter with many extensions built by the community. Browse 
 Feel free to submit a PR if there are any issues or new features, read [this](https://github.com/antonybudianto/angular2-starter/blob/master/CONTRIBUTING.md) before
 
 ## Special thanks
+* For all contributors who have helped this starter improvement
 * John Papa for his awesome [angular-styleguide](https://github.com/johnpapa/angular-styleguide) and [Tour of Heroes](https://github.com/johnpapa/angular2-tour-of-heroes)
 * Julie Ralph for her [ng2-test-seed](https://github.com/juliemr/ng2-test-seed) which helped me a lot to get started with testing feature
 
