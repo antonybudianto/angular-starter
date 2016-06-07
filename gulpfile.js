@@ -4,7 +4,7 @@ var argv = require('yargs').argv,
     tasks = requireDir('./tasks');
 
 global.env = argv.env || 'dev';
-console.log(global.env);
+
 var config = require('./gulp.config')();
 
 /* Default task */
