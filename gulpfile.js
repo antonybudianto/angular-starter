@@ -1,7 +1,7 @@
 var argv = require('yargs').argv;
 
 global.env = 'dev';
-global.env = argv.prod ? 'prod': 'dev';
+global.env = argv.env ? 'prod': 'dev';
 
 var gulp = require('gulp');
 var requireDir = require('require-dir');
