@@ -5,7 +5,6 @@ if (global.env === 'dev') {
 module.exports = function () {
     var root = '';
     var src = root + 'src/';
-    var translations = src + 'i18n/*.json';
     var app = src + 'app/';
     var test = src + 'test/';
     var tmp = src + 'tmp/';
@@ -34,7 +33,6 @@ module.exports = function () {
         app: 'build/app/',
         fonts: 'build/fonts',
         assetPath: 'build/assets/',
-        translate: 'build/i18n/',
         assets: {
             lib: {
                 js: 'lib.js',
