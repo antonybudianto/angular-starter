@@ -6,46 +6,46 @@ if (environment === 'dev') {
 }
 
 module.exports = function () {
-    var root = '';
-    var src = root + 'src/';
-    var app = src + 'app/';
-    var test = src + 'test/';
-    var tmp = src + 'tmp/';
-    var tmpApp = tmp + 'app/';
-    var tmpTest = tmp + 'test/';
-    var testHelper = test + 'test-helpers/';
-    var e2e = test + 'e2e/';
-    var tmpE2E = tmpTest + 'e2e/';
-    var assets = src + 'assets/';
-    var assetsPath = {
-        styles: assets + 'styles/',
-        images: assets + 'images/',
-        fonts: assets + 'fonts/'
-    };
-    var index = src + 'index.html';
-    var tsFiles = [
-        app + '**/!(*.spec)+(.ts)'
-    ];
-    var tsTestFiles = {
-        unit: [app + '**/*.spec.ts'],
-        e2e: [e2e + '**/*.ts'],
-        helper: [testHelper + '**/*.ts']
-    };
-    var build = {
-        path: 'build/',
-        app: 'build/app/',
-        fonts: 'build/fonts',
-        assetPath: 'build/assets/',
-        assets: {
-            lib: {
-                js: 'lib.js',
-                css: 'lib.css'
+    var root = '',
+        src = root + 'src/',
+        app = src + 'app/',
+        test = src + 'test/',
+        tmp = src + 'tmp/',
+        tmpApp = tmp + 'app/',
+        tmpTest = tmp + 'test/',
+        testHelper = test + 'test-helpers/',
+        e2e = test + 'e2e/',
+        tmpE2E = tmpTest + 'e2e/',
+        assets = src + 'assets/',
+        assetsPath = {
+            styles: assets + 'styles/',
+            images: assets + 'images/',
+            fonts: assets + 'fonts/'
+        },
+        index = src + 'index.html',
+        tsFiles = [
+            app + '**/!(*.spec)+(.ts)'
+        ],
+        tsTestFiles = {
+            unit: [app + '**/*.spec.ts'],
+            e2e: [e2e + '**/*.ts'],
+            helper: [testHelper + '**/*.ts']
+        },
+        build = {
+            path: 'build/',
+            app: 'build/app/',
+            fonts: 'build/fonts',
+            assetPath: 'build/assets/',
+            assets: {
+                lib: {
+                    js: 'lib.js',
+                    css: 'lib.css'
+                }
             }
-        }
-    };
-    var report = {
-        path: 'report/'
-    };
+        },
+        report = {
+            path: 'report/'
+        };
 
     if (environment === 'dev')
     {
@@ -119,7 +119,6 @@ module.exports = function () {
     if (environment === 'dev')
     {
         config.browserSync = browserSync;
-
     }
 
     return config;
