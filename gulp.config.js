@@ -1,7 +1,6 @@
 var argv = require('yargs').argv;
-
 var environment = argv.env || 'dev';
-console.log(environment);
+
 if (environment === 'dev') {
     var historyApiFallback = require('connect-history-api-fallback');
 }
