@@ -1,9 +1,21 @@
-import {HomeComponent} from './home/home.component';
-import {TodolistComponent} from './todolist/todolist.component';
-import {SimplebindComponent} from './simplebind/simplebind.component';
+import { provideRouter, RouterConfig } from '@angular/router';
 
-export var APP_ROUTES: any[] = [
-    { path: '/', name: 'Home', component: HomeComponent },
-    { path: '/simplebind', name: 'Simplebind', component: SimplebindComponent },
-    { path: '/todolist', name: 'Todolist', component: TodolistComponent }
+import {HomeRoutes} from './home/home.routes';
+import {TodolistRoutes} from './todolist/todolist.routes';
+import {SimplebindRoutes} from './simplebind/simplebind.routes';
+
+const routes: RouterConfig = [
+  ...HomeRoutes,
+  ...TodolistRoutes,
+  ...SimplebindRoutes
 ];
+
+export const APP_ROUTER_PROVIDERS = [
+  provideRouter(routes)
+];
+
+// export var APP_ROUTES: any[] = [
+//     { path: '/', name: 'Home', component: HomeComponent },
+//     { path: '/simplebind', name: 'Simplebind', component: SimplebindComponent },
+//     { path: '/todolist', name: 'Todolist', component: TodolistComponent }
+// ];
