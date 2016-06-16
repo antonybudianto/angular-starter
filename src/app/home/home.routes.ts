@@ -1,5 +1,5 @@
 import {HomeComponent} from './home.component';
 
 export const HomeRoutes = [
-  { path: '/home',  component: HomeComponent, index: true }
+  { path: '/',  component: HomeComponent, index: true }
 ];

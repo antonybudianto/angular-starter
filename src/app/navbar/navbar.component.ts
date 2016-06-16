@@ -10,5 +10,4 @@ import {ROUTER_DIRECTIVES} from '@angular/router';
 })
 export class NavbarComponent {
     @Input() brand: string;
-    @Input() routes: any[];
 }

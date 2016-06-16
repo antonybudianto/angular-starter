@@ -9,7 +9,6 @@ import {CONSTANTS} from './shared';
     directives: [NavbarComponent, ROUTER_DIRECTIVES]
 })
 export class AppComponent {
-    public appRoutes: any[];
     public appBrand: string;
 
     constructor() {
