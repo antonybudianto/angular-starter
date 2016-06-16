@@ -17,15 +17,18 @@
     </as-main-app>
 
     <!-- build:js assets/lib.js -->
+
+    <!-- Non-module JS libs -->
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="../node_modules/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
 
-    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="../node_modules/core-js/client/shim.min.js"></script>
+
+    <!-- Load libraries -->
     <script src="../node_modules/zone.js/dist/zone.js"></script>
     <script src="../node_modules/reflect-metadata/Reflect.js"></script>
 
-    <!-- Polyfill(s) for older browsers -->
-    <script src="../node_modules/core-js/client/shim.min.js"></script>
     <!-- endbuild -->
 
     <!-- build:js assets/app.js -->

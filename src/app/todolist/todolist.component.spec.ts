@@ -3,15 +3,19 @@ import {
     inject,
     async,
     describe,
-    expect
+    expect,
+    beforeEachProviders
 } from '@angular/core/testing';
+
 import {
     TestComponentBuilder,
     ComponentFixture
 } from '@angular/compiler/testing';
+
 import { Component } from '@angular/core';
 import { Todo } from './todo.model';
 import { TodolistComponent } from './todolist.component';
+import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
 @Component({
     selector: 'as-test',
@@ -26,6 +30,11 @@ let todoCompiled;
 let todolistCmp: TodolistComponent;
 
 describe('TodolistComponent', () => {
+    beforeEachProviders(() => [
+        disableDeprecatedForms(),
+        provideForms()
+    ]);
+
     it('should have been created successfully', async(inject([TestComponentBuilder],
         (tcb: TestComponentBuilder) => {
             tcb.createAsync(TestComponent).then((fixture) => {

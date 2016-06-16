@@ -1,16 +1,15 @@
 module.exports = function(config) {
   var gulpConfig = require('./gulp.config')();
+
+  /**
+   * List of npm packages that imported via `import` syntax
+   */
   var dependencies = [
-    '@angular/common',
-    '@angular/compiler',
-    '@angular/core',
-    '@angular/http',
-    '@angular/platform-browser',
-    '@angular/platform-browser-dynamic',
-    '@angular/router',
+    '@angular',
     'lodash',
     'rxjs'
   ];
+
   var configuration = {
     basePath: './',
 
@@ -33,24 +32,24 @@ module.exports = function(config) {
       'node_modules/core-js/client/shim.min.js',
       'node_modules/systemjs/dist/system-polyfills.js',
       'node_modules/zone.js/dist/zone.js',
-      'node_modules/reflect-metadata/Reflect.js',
       'node_modules/zone.js/dist/async-test.js',
       'node_modules/zone.js/dist/fake-async-test.js',
+      'node_modules/reflect-metadata/Reflect.js',
       'node_modules/systemjs/dist/system.src.js'
     ],
 
     // proxied base paths
     proxies: {
       // required for component assests fetched by Angular's compiler
-      "/app/": "/base/src/app/",
       "/src/": "/base/src/",
+      "/app/": "/base/src/app/",
       "/node_modules/": "/base/node_modules/"
     },
 
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
+    autoWatch: true
   };
 
   configuration.preprocessors[gulpConfig.tmpApp + '**/!(*.spec)+(.js)'] = ['coverage'];
