@@ -8,7 +8,7 @@ var revReplace = require('gulp-rev-replace');
 var uglify = require('gulp-uglify');
 var cssnano = require('gulp-cssnano');
 
-require('ngstarter-systemjs-tasks');
+require('@ngstarter/systemjs-extension');
 
 gulp.task('build', function (done) {
     runSequence('test', 'build-systemjs', 'build-assets', done);

@@ -40,6 +40,7 @@
         'app/shared',
 
         // 3rd party barrels
+        '@angular/router',
         'lodash'
     ];
 
@@ -48,10 +49,10 @@
         'common',
         'compiler',
         'core',
+        'forms',
         'http',
         'platform-browser',
-        'platform-browser-dynamic',
-        'router'
+        'platform-browser-dynamic'
     ];
 
     npmPackages.forEach(function (pkgName) {
@@ -64,7 +65,7 @@
 
     ngPackageNames.forEach(function(pkgName) {
         var main = global.ENV === 'testing' ? 'index.js' :
-            pkgName + '.umd.js';
+            'bundles/' + pkgName + '.umd.js';
 
         packages['@angular/'+pkgName] = { main: main, defaultExtension: 'js' };
     });
