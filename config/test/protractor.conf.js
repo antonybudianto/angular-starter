@@ -1,5 +1,5 @@
 var glob = require('glob');
-var seleniumPath = './node_modules/gulp-protractor/node_modules/protractor/selenium/';
+var seleniumPath = '../node_modules/gulp-protractor/node_modules/protractor/selenium/';
 var seleniumJarPath = '';
 
 glob(seleniumPath + '*.jar',

@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var config = require('../gulp.config')();
+var config = require('../config')();
 var Server = require('karma').Server;
 var gulpProtractor = require('gulp-protractor');
 var remapIstanbul = require('remap-istanbul/lib/gulpRemapIstanbul');
@@ -22,7 +22,7 @@ gulp.task('unit-test', ['tsc'], function (done) {
     }
 
     new Server({
-        configFile: __dirname + '/../karma.conf.js',
+        configFile: __dirname + '/../../test/karma.conf.js',
         singleRun: !watch
     }, karmaDone).start();
 
@@ -36,7 +36,7 @@ gulp.task('driver-update', gulpProtractor['webdriver_update']);
 gulp.task('e2e-test', ['driver-update', 'tsc-e2e'], function () {
     gulp.src(config.tmpE2E + '**/*.spec.js')
     .pipe(gulpProtractor.protractor({
-        configFile: 'protractor.conf.js',
+        configFile: 'config/test/protractor.conf.js',
         args: ['--baseUrl', config.e2eConfig.seleniumTarget]
     }))
     .on('error', function(e) {

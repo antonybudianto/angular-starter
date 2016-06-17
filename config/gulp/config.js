@@ -1,4 +1,4 @@
-var envConfig = require('./gulp.env');
+var envConfig = require('./env');
 
 module.exports = function () {
     var root = '',
