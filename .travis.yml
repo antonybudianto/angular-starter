@@ -8,7 +8,7 @@ node_js:
   - "6.0"
   - "5.6"
   - "4.3"
-script: gulp build --exclude-source --env=prod
+script: gulp build --exclude-source
 after_script:
   - npm install coveralls
   - npm run-script coveralls
