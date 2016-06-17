@@ -63,7 +63,7 @@ module.exports = function () {
                 files: [
                     src + "index.html",
                     src + "systemjs.conf.js",
-                    src + "assets/styles/main.css",
+                    assetsPath.styles + "main.css",
                     tmpApp + "**/*.js",
                     app + "**/*.css",
                     app + "**/*.html"
