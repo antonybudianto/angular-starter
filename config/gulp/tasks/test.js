@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var config = require('../gulp.config')();
+var config = require('../config')();
 var Server = require('karma').Server;
 var gulpProtractor = require('gulp-protractor');
 var remapIstanbul = require('remap-istanbul/lib/gulpRemapIstanbul');
@@ -22,7 +22,7 @@ gulp.task('unit-test', ['tsc'], function (done) {
     }
 
     new Server({
-        configFile: __dirname + '/../karma.conf.js',
+        configFile: __dirname + '/../../test/karma.conf.js',
         singleRun: !watch
     }, karmaDone).start();
 
