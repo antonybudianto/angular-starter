@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var config = require('../gulp.config')();
+var config = require('../config')();
 var ts = require('gulp-typescript');
 var tslint = require('gulp-tslint');
 var sourcemaps = require('gulp-sourcemaps');

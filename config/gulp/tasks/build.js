@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
-var config = require('../gulp.config')();
+var config = require('../config')();
 var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
 var rev = require('gulp-rev');
@@ -8,7 +8,7 @@ var revReplace = require('gulp-rev-replace');
 var uglify = require('gulp-uglify');
 var cssnano = require('gulp-cssnano');
 
-require('@ngstarter/systemjs-extension');
+require('@ngstarter/systemjs-extension')(config);
 
 gulp.task('build', function (done) {
     runSequence('test', 'build-systemjs', 'build-assets', done);

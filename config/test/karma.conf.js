@@ -1,5 +1,5 @@
 module.exports = function(config) {
-  var gulpConfig = require('./gulp.config')();
+  var gulpConfig = require('../gulp/config')();
 
   /**
    * List of npm packages that imported via `import` syntax
@@ -11,7 +11,7 @@ module.exports = function(config) {
   ];
 
   var configuration = {
-    basePath: './',
+    basePath: '../../',
 
     frameworks: ['jasmine'],
     browsers: ['PhantomJS'],
@@ -59,7 +59,7 @@ module.exports = function(config) {
   var files = [
     gulpConfig.tmpTest + 'test-helpers/global/**/*.js',
     gulpConfig.src + 'systemjs.conf.js',
-    'karma-test-shim.js',
+    'config/test/karma-test-shim.js',
     createFilePattern(gulpConfig.tmpApp + '**/*.js', { included: false }),
     createFilePattern(gulpConfig.tmpTest + 'test-helpers/*.js', { included: false }),
     createFilePattern(gulpConfig.app + '**/*.html', { included: false }),

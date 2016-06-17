@@ -1,9 +1,9 @@
-var envConfig = require('../gulp.env');
+var envConfig = require('../env');
 
 if (envConfig.ENV === envConfig.ENVS.DEV)
 {
     var gulp = require('gulp');
-    var config = require('../gulp.config')();
+    var config = require('../config')();
     var bs = require("browser-sync");
 
     function startBrowsersync (config)
