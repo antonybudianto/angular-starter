@@ -11,7 +11,9 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li *ngFor="let route of routes"><a [routerLink]="[route.path]">{{route.name}}</a></li>
+        <li><a [routerLink]="['/']">Home</a></li>
+        <li><a [routerLink]="['/simplebind']">Simplebind</a></li>
+        <li><a [routerLink]="['/todolist']">Todolist</a></li>
       </ul>
     </div>
   </div>
