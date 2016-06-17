@@ -36,7 +36,7 @@ gulp.task('driver-update', gulpProtractor['webdriver_update']);
 gulp.task('e2e-test', ['driver-update', 'tsc-e2e'], function () {
     gulp.src(config.tmpE2E + '**/*.spec.js')
     .pipe(gulpProtractor.protractor({
-        configFile: 'protractor.conf.js',
+        configFile: 'config/test/protractor.conf.js',
         args: ['--baseUrl', config.e2eConfig.seleniumTarget]
     }))
     .on('error', function(e) {
