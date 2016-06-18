@@ -43,7 +43,7 @@
     "@angular/http": "2.0.0-rc.2",
     "@angular/platform-browser": "2.0.0-rc.2",
     "@angular/platform-browser-dynamic": "2.0.0-rc.2",
-    "@angular/router": "3.0.0-alpha.6",
+    "@angular/router": "3.0.0-alpha.7",
     "@ngstarter/systemjs-extension": "1.0.0-rc.3",
     "bootstrap-sass": "^3.3.6",
     "codelyzer": "0.0.23",

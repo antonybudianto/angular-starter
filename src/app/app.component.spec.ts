@@ -32,7 +32,7 @@ class TestComponent {
 }
 
 let config: RouterConfig = [
-    {path: '/', component: HomeComponent},
+    {path: '', component: HomeComponent},
 ];
 
 // TODO: Use ROUTER_FAKE_PROVIDERS when it's available
