@@ -28,7 +28,6 @@ module.exports = function(config) {
     },
 
     files: [
-      'node_modules/traceur/bin/traceur-runtime.js',
       'node_modules/core-js/client/shim.min.js',
       'node_modules/systemjs/dist/system-polyfills.js',
       'node_modules/zone.js/dist/zone.js',
