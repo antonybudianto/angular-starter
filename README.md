@@ -111,7 +111,7 @@ There is [Webpack extension](https://github.com/ngstarter/webpack-extension) ava
 You can extend this starter with many extensions built by the community. Browse the extensions [here](https://github.com/ngstarter)
 
 ## Contributing
-Feel free to submit a PR if there are any issues or new features, read [this](https://github.com/antonybudianto/angular2-starter/blob/master/CONTRIBUTING.md) before
+Feel free to submit a PR if there are any issues or new features, please read [this](https://github.com/antonybudianto/angular2-starter/wiki/Contributing) before
 
 ## Special thanks
 * For all contributors who have helped this starter improvement
