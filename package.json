@@ -1,6 +1,6 @@
 {
   "name": "angular2-starter",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0-rc.3",
   "author": "Antony Budianto",
   "description": "Angular 2 Starter with extensible features",
   "main": "src/tmp/app/main.js",
