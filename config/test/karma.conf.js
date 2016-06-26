@@ -33,7 +33,6 @@ module.exports = function(config) {
       'node_modules/zone.js/dist/zone.js',
       'node_modules/zone.js/dist/async-test.js',
       'node_modules/zone.js/dist/fake-async-test.js',
-      'node_modules/reflect-metadata/Reflect.js',
       'node_modules/systemjs/dist/system.src.js'
     ],
 
