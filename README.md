@@ -57,7 +57,7 @@ Then, install these packages globally:
 npm install -g gulp
 ```
 
-After that, just run:
+After that, go to the starter directory and just run:
 ```bash
 npm install
 ```
@@ -78,7 +78,7 @@ Just run
 ```bash
 gulp test
 ```
-and it'll compile all TypeScript files, start Karma, then remap Istanbul coverage so that it shows TypeScript coverage, not the transpiled Javascript coverage.
+and it'll compile all TypeScript files, start Karma, then remap Istanbul coverage so that it shows TypeScript coverage, not the transpiled JavaScript coverage.
 
 ![Coverage result](http://s33.postimg.org/w7m9ckdkf/Screen_Shot_2016_06_04_at_8_15_53_AM.png)
 
@@ -117,6 +117,7 @@ Feel free to submit a PR if there are any issues or new features, please read [t
 * For all contributors who have helped this starter improvement
 * John Papa for his awesome [angular-styleguide](https://github.com/johnpapa/angular-styleguide) and [Tour of Heroes](https://github.com/johnpapa/angular2-tour-of-heroes)
 * Julie Ralph for her [ng2-test-seed](https://github.com/juliemr/ng2-test-seed) which helped me a lot to get started with testing feature
+* Minko Gechev for his [angular2-seed](https://github.com/mgechev/angular2-seed) and [angular2-ngc-rollup-build](https://github.com/mgechev/angular2-ngc-rollup-build) which helped a lot
 
 ## License
 MIT
