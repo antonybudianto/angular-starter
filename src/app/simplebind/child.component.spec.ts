@@ -1,14 +1,9 @@
 import {
-    it,
-    inject,
     async,
-    describe,
-    expect
-} from '@angular/core/testing';
-import {
+    inject,
     TestComponentBuilder,
     ComponentFixture
-} from '@angular/compiler/testing';
+} from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { ChildComponent } from './child.component';
 
@@ -44,9 +39,9 @@ describe('ChildComponent', () => {
             expect(childCompiled).toBeDefined();
             expect(childCmp).toBeDefined();
             expect(childCompiled.querySelector('h6'))
-                .toHaveText('From parent');
+                .toContainText('From parent');
             expect(childCompiled.querySelector('h5'))
-                .toHaveText('Hello test');
+                .toContainText('Hello test');
         });
     })));
 
@@ -55,6 +50,6 @@ describe('ChildComponent', () => {
         testFixture.detectChanges();
         expect(childCmp.num).toEqual(1);
         expect(childCompiled.querySelector('h6'))
-            .toHaveText('Changed from child. Count: ' + childCmp.num);
+            .toContainText('Changed from child. Count: ' + childCmp.num);
     });
 });

@@ -1,10 +1,6 @@
 import {
-    it,
-    expect,
-    beforeEachProviders,
-    inject,
     async,
-    xdescribe,
+    inject
 } from '@angular/core/testing';
 
 import { TestComponentBuilder } from '@angular/compiler/testing';
@@ -21,7 +17,7 @@ class TestComponent {
 
 // TODO: Use ROUTER_FAKE_PROVIDERS when it's available
 xdescribe('AppComponent', () => {
-    beforeEachProviders(() => [
+    beforeEach(() => [
         // TODO
     ]);
 
@@ -32,7 +28,7 @@ xdescribe('AppComponent', () => {
                 let compiled = fixture.debugElement.nativeElement;
                 expect(compiled).toBeDefined();
                 expect(compiled.querySelector('a.navbar-brand'))
-                    .toHaveText('Angular 2 Starter');
+                    .toContainText('Angular 2 Starter');
             });
         })));
 });
