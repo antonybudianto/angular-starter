@@ -49,7 +49,6 @@ describe('AppComponent', () => {
                     location: Location,
                     injector: Injector) => {
                         const r = new Router(TestComponent, resolver, urlSerializer, outletMap, location, injector, config);
-                        // r.initialNavigation();
                         return r;
                 },
                 deps: [ComponentResolver, UrlSerializer, RouterOutletMap, Location, Injector]

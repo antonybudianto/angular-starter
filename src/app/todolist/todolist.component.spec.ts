@@ -54,7 +54,7 @@ describe('TodolistComponent', () => {
 
         let item = items[items.length - 1];
         expect(item.querySelector('label').textContent).toEqual(' test');
-        // expect(item.querySelector('input[type="checkbox"]').checked).toBeTruthy();
+        expect(item.querySelector('input[type="checkbox"]').value).toBeTruthy();
     });
 
     it('should delete todo successfully', () => {
