@@ -1,13 +1,4 @@
 import {
-    it,
-    expect,
-    beforeEachProviders,
-    inject,
-    async,
-    describe,
-} from '@angular/core/testing';
-
-import {
     Router,
     RouterConfig,
     ActivatedRoute,
@@ -16,9 +7,15 @@ import {
     DefaultUrlSerializer
 } from '@angular/router';
 
+import {
+    async,
+    inject,
+    addProviders
+} from '@angular/core/testing';
+
 import { TestComponentBuilder } from '@angular/compiler/testing';
 import { Component, ComponentResolver, Injector } from '@angular/core';
-import { Location } from '@angular/common';
+import { Location, LocationStrategy } from '@angular/common';
 import { SpyLocation } from '@angular/common/testing';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -37,26 +34,28 @@ let config: RouterConfig = [
 
 // TODO: Use ROUTER_FAKE_PROVIDERS when it's available
 describe('AppComponent', () => {
-    beforeEachProviders(() => [
-        RouterOutletMap,
-        {provide: UrlSerializer, useClass: DefaultUrlSerializer},
-        {provide: Location, useClass: SpyLocation},
-        {
-            provide: Router,
-            useFactory: (
-                resolver: ComponentResolver,
-                urlSerializer: UrlSerializer,
-                outletMap: RouterOutletMap,
-                location: Location,
-                injector: Injector) => {
-                    const r = new Router(TestComponent, resolver, urlSerializer, outletMap, location, injector, config);
-                    r.initialNavigation();
-                    return r;
+    beforeEach(() => {
+        addProviders([
+            RouterOutletMap,
+            {provide: LocationStrategy, useClass: SpyLocation},
+            {provide: UrlSerializer, useClass: DefaultUrlSerializer},
+            {provide: Location, useClass: SpyLocation},
+            {
+                provide: Router,
+                useFactory: (
+                    resolver: ComponentResolver,
+                    urlSerializer: UrlSerializer,
+                    outletMap: RouterOutletMap,
+                    location: Location,
+                    injector: Injector) => {
+                        const r = new Router(TestComponent, resolver, urlSerializer, outletMap, location, injector, config);
+                        return r;
+                },
+                deps: [ComponentResolver, UrlSerializer, RouterOutletMap, Location, Injector]
             },
-            deps: [ComponentResolver, UrlSerializer, RouterOutletMap, Location, Injector]
-        },
-        {provide: ActivatedRoute, useFactory: (r: Router) => r.routerState.root, deps: [Router]},
-    ]);
+            {provide: ActivatedRoute, useFactory: (r: Router) => r.routerState.root, deps: [Router]},
+        ]);
+    });
 
     it('should have brand Angular 2 Starter', async(inject([TestComponentBuilder],
         (tsb: TestComponentBuilder) => {
@@ -65,7 +64,7 @@ describe('AppComponent', () => {
                 let compiled = fixture.debugElement.nativeElement;
                 expect(compiled).toBeDefined();
                 expect(compiled.querySelector('a.navbar-brand'))
-                    .toHaveText('Angular 2 Starter');
+                    .toContainText('Angular 2 Starter');
             });
         })));
 });

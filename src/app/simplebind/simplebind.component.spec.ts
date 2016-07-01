@@ -1,13 +1,8 @@
 import {
-    it,
-    inject,
     async,
-    describe,
-    expect
-} from '@angular/core/testing';
-import {
+    inject,
     TestComponentBuilder
-} from '@angular/compiler/testing';
+} from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { SimplebindComponent } from './simplebind.component';
 
@@ -27,7 +22,7 @@ describe('SimplebindComponent', () => {
             let compiled = fixture.debugElement.nativeElement;
             expect(compiled).toBeDefined();
             expect(compiled.querySelector('p'))
-                .toHaveText('Simple');
+                .toContainText('Simple');
         });
     })));
 });
