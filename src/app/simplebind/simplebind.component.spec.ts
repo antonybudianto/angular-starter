@@ -1,6 +1,7 @@
 import {
     async,
     inject,
+    ComponentFixture,
     TestComponentBuilder
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
@@ -17,7 +18,7 @@ class TestComponent {
 describe('SimplebindComponent', () => {
     it('should have print "Simple" on template', async(inject([TestComponentBuilder],
     (tsb: TestComponentBuilder) => {
-        tsb.createAsync(TestComponent).then((fixture) => {
+        tsb.createAsync(TestComponent).then((fixture: ComponentFixture<TestComponent>) => {
             fixture.detectChanges();
             let compiled = fixture.debugElement.nativeElement;
             expect(compiled).toBeDefined();
