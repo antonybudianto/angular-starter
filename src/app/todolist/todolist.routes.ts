@@ -1,5 +1,6 @@
 import {TodolistComponent} from './todolist.component';
+import {RouterConfig} from '@angular/router';
 
-export const TodolistRoutes = [
-  { path: 'todolist',  component: TodolistComponent }
+export const TodolistRoutes: RouterConfig = [
+  { path: 'todolist', component: TodolistComponent }
 ];

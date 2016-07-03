@@ -22,14 +22,14 @@ class TestComponent {
     }
 }
 
-let testFixture: ComponentFixture<any>;
+let testFixture: ComponentFixture<TestComponent>;
 let childCompiled;
 let childCmp: ChildComponent;
 
 describe('ChildComponent', () => {
     it('should print inputs correctly', async(inject([TestComponentBuilder],
     (tsb: TestComponentBuilder) => {
-        tsb.createAsync(TestComponent).then((fixture) => {
+        tsb.createAsync(TestComponent).then((fixture: ComponentFixture<TestComponent>) => {
             testFixture = fixture;
             testFixture.detectChanges();
 

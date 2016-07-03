@@ -10,7 +10,8 @@ import {
 import {
     async,
     inject,
-    addProviders
+    addProviders,
+    ComponentFixture
 } from '@angular/core/testing';
 
 import { TestComponentBuilder } from '@angular/compiler/testing';
@@ -59,7 +60,7 @@ describe('AppComponent', () => {
 
     it('should have brand Angular 2 Starter', async(inject([TestComponentBuilder],
         (tsb: TestComponentBuilder) => {
-            tsb.createAsync(TestComponent).then((fixture) => {
+            tsb.createAsync(TestComponent).then((fixture: ComponentFixture<TestComponent>) => {
                 fixture.detectChanges();
                 let compiled = fixture.debugElement.nativeElement;
                 expect(compiled).toBeDefined();
