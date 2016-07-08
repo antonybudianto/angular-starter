@@ -5,6 +5,7 @@ import {
     TestComponentBuilder
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
+
 import { SimplebindComponent } from './simplebind.component';
 
 @Component({

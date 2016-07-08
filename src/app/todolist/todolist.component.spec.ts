@@ -5,11 +5,11 @@ import {
     TestComponentBuilder,
     ComponentFixture
 } from '@angular/core/testing';
-
 import { Component } from '@angular/core';
+import { disableDeprecatedForms, provideForms } from '@angular/forms';
+
 import { Todo } from './todo.model';
 import { TodolistComponent } from './todolist.component';
-import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
 @Component({
     selector: 'as-test',

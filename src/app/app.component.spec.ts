@@ -6,18 +6,17 @@ import {
     UrlSerializer,
     DefaultUrlSerializer
 } from '@angular/router';
-
 import {
     async,
     inject,
     addProviders,
     ComponentFixture
 } from '@angular/core/testing';
-
 import { TestComponentBuilder } from '@angular/compiler/testing';
 import { Component, ComponentResolver, Injector } from '@angular/core';
 import { Location, LocationStrategy } from '@angular/common';
 import { SpyLocation } from '@angular/common/testing';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 

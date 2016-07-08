@@ -5,6 +5,7 @@ import {
     ComponentFixture
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
+
 import { ChildComponent } from './child.component';
 
 @Component({

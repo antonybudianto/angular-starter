@@ -1,5 +1,6 @@
-import {HomeComponent} from './home.component';
-import {RouterConfig} from '@angular/router';
+import { RouterConfig } from '@angular/router';
+
+import { HomeComponent } from './home.component';
 
 export const HomeRoutes: RouterConfig = [
   { path: '',  component: HomeComponent }

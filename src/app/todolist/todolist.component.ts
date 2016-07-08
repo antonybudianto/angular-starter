@@ -1,7 +1,8 @@
-import {Component} from '@angular/core';
-import {CORE_DIRECTIVES} from '@angular/common';
-import {Todo} from './todo.model';
-import {CompletedFilterPipe} from './completed-filter.pipe';
+import { Component } from '@angular/core';
+import { CORE_DIRECTIVES } from '@angular/common';
+
+import { Todo } from './todo.model';
+import { CompletedFilterPipe } from './completed-filter.pipe';
 
 @Component({
     selector: 'as-todolist',
