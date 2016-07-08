@@ -1,9 +1,9 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
-import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
+import { VENDOR_PROVIDERS } from './provider/index';
+import { APP_PROVIDERS } from './app.providers';
 import { AppComponent } from './app.component';
-import { APP_ROUTER_PROVIDERS } from './app.routes';
 
 declare var ENV: string;
 
@@ -12,7 +12,6 @@ if (ENV === 'production') {
 }
 
 bootstrap(AppComponent, [
-    disableDeprecatedForms(),
-    provideForms(),
-    APP_ROUTER_PROVIDERS
+    VENDOR_PROVIDERS,
+    APP_PROVIDERS
 ]);
