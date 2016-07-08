@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
-import {ChildComponent} from './child.component';
+import { Component } from '@angular/core';
+
+import { ChildComponent } from './child.component';
 
 @Component({
     selector: 'as-simplebind',
