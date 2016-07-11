@@ -4,10 +4,9 @@ import { enableProdMode } from '@angular/core';
 import { VENDOR_PROVIDERS } from './provider/index';
 import { APP_PROVIDERS } from './app.providers';
 import { AppComponent } from './app.component';
+import { envUtil, CONSTANTS } from './shared';
 
-declare var ENV: string;
-
-if (ENV === 'production') {
+if (envUtil.isEnv(CONSTANTS.ENVS.PROD)) {
     enableProdMode();
 }
 
