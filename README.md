@@ -16,6 +16,7 @@
 
 ## Table of Content
 * [Introduction](#introduction)
+* [Prerequisites](#prerequisites)
 * [Installation](#installation)
 * [Start](#start)
 * [Testing](#testing)
@@ -43,29 +44,27 @@ This starter contains almost everything you need to start developing [Angular 2]
 
 Please visit the [wiki](https://github.com/antonybudianto/angular2-starter/wiki) for more details.
 
-## Installation
-Firstly, you need to have [Node.js](https://nodejs.org/en/)
+## Prerequisites
+You need to have [Node.js](https://nodejs.org/en/)
 - For v4, please use v4.3.x (LTS) or higher (**highly** recommended)
 - For v5, please use v5.6.x or higher, here is [why](https://nodejs.org/en/blog/vulnerability/february-2016-security-releases/)
 - Ready for v6
 
-> You need v4.x or higher for [Protractor](https://angular.github.io/protractor/#/)
+Global Gulp CLI is not required, since you can map them to npm scripts, but a nice to have for development purpose.
 
-Get the starter from [releases page](https://github.com/antonybudianto/angular2-starter/releases)
+## Installation
+Download the starter from [releases page](https://github.com/antonybudianto/angular2-starter/releases)
 
-Then, install these packages globally:
-```bash
-npm install -g gulp
-```
-
-After that, go to the starter directory and just run:
+Go to the starter directory and install the packages:
 ```bash
 npm install
 ```
 
 ## Start
 Let's start up the server, run:
-`gulp` or `gulp serve-dev`
+```bash
+npm start
+```
 
 and done! The browser will popup and you can start trying Angular 2!
 Every changes to the file will refresh the browser automatically
@@ -77,7 +76,7 @@ This starter comes with testing gulp workflow
 ### Unit testing
 Just run
 ```bash
-gulp test
+npm test
 ```
 and it'll compile all TypeScript files, start Karma, then remap Istanbul coverage so that it shows TypeScript coverage, not the transpiled JavaScript coverage.
 
@@ -85,12 +84,12 @@ and it'll compile all TypeScript files, start Karma, then remap Istanbul coverag
 
 ### E2E testing
 Firstly start the server:
-```
-gulp serve-dev
+```bash
+npm start
 ```
 To begin testing, run:
 ```bash
-gulp e2e
+npm test
 ```
 and it'll compile all E2E spec files in `/src/test/e2e/*.spec.ts`, boot up Selenium server then launches Chrome browser.
 
@@ -99,11 +98,11 @@ and it'll compile all E2E spec files in `/src/test/e2e/*.spec.ts`, boot up Selen
 
 You can create production build by running:
 ```bash
-gulp build
+npm run build
 ```
 or you can create production build and then serve it using Browsersync by running:
 ```bash
-gulp serve-build
+npm run serve-build
 ```
 The starter defaults to bundle using [SystemJS Builder extension](https://github.com/ngstarter/systemjs-extension).
 There is [Webpack extension](https://github.com/ngstarter/webpack-extension) available too, feel free to swap it as you like.
