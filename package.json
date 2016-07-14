@@ -19,7 +19,7 @@
     "build": "gulp build",
     "serve-build": "gulp serve-build",
     "clean": "gulp clean",
-    "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./report/remap/lcov.info"
+    "coverage": "coveralls < ./report/remap/lcov.info"
   },
   "keywords": [
     "angular2",
