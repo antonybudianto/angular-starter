@@ -13,9 +13,13 @@
   },
   "scripts": {
     "postinstall": "typings install",
-    "start": "gulp",
+    "start": "gulp serve-dev",
     "test": "gulp test",
-    "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./report/remap/lcov.info"
+    "e2e": "gulp e2e",
+    "build": "gulp build",
+    "serve-build": "gulp serve-build",
+    "clean": "gulp clean",
+    "coverage": "coveralls < ./report/remap/lcov.info"
   },
   "keywords": [
     "angular2",
