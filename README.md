@@ -50,7 +50,7 @@ You need to have [Node.js](https://nodejs.org/en/)
 - For v5, please use v5.6.x or higher, here is [why](https://nodejs.org/en/blog/vulnerability/february-2016-security-releases/)
 - Ready for v6
 
-Global Gulp CLI is not required, since you can map them to npm scripts, but a nice to have for development purpose.
+[Global Gulp CLI](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) is not required, since you can map them to npm scripts, but a nice to have for development purpose.
 
 ## Installation
 Download the starter from [releases page](https://github.com/antonybudianto/angular2-starter/releases)
