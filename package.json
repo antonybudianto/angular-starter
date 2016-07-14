@@ -15,6 +15,7 @@
     "postinstall": "typings install",
     "start": "gulp",
     "test": "gulp test",
+    "build": "gulp build",
     "coveralls": "node ./node_modules/coveralls/bin/coveralls.js < ./report/remap/lcov.info"
   },
   "keywords": [
