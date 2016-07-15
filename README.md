@@ -89,12 +89,13 @@ npm start
 ```
 To begin testing, run:
 ```bash
-npm test
+npm run e2e
 ```
 and it'll compile all E2E spec files in `/src/test/e2e/*.spec.ts`, boot up Selenium server then launches Chrome browser.
 
 ## Production
 > All build tasks will run the `gulp test`, the bundle will only be created if the test passed.
+> For more details, visit [Continuous Integration  wiki](https://github.com/antonybudianto/angular2-starter/wiki/Continuous-Integration)
 
 You can create production build by running:
 ```bash
