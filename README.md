@@ -10,26 +10,21 @@
 
 > Angular 2 is still in **Release Candidate** stage, please **don't** use this in production
 
-> Follow Angular 2 Changelog [here](https://github.com/angular/angular/blob/master/CHANGELOG.md)
-
 > Live Production Build [Demo](https://antonybudianto.github.io/angular2-starter/)
-
-## Table of Content
-* [Introduction](#introduction)
-* [Prerequisites](#prerequisites)
-* [Installation](#installation)
-* [Start](#start)
-* [Testing](#testing)
-* [Production](#production)
-* [Extension](#extension)
-* [Contributing](#contributing)
-* [Special thanks](#special-thanks)
-* [License](#license)
 
 ## Introduction
 Welcome to Angular 2 Starter!
-This starter contains almost everything you need to start developing [Angular 2](https://angular.io/):
-* [NPM](https://www.npmjs.com/) for package manager
+This starter contains almost everything you need to start developing [Angular 2](https://angular.io/).
+
+### Why choose this starter? 
+- Extensible via [ngstarter extensions](https://github.com/ngstarter)
+- Complete workflow from serve, lint, unit test, e2e test, to bundling
+- 100% code coverage
+- 100% CI/CD pipeline ready
+- No global package installation
+- No module bundler coupling
+
+* [npm](https://www.npmjs.com/) for package manager
 * [TypeScript](http://www.typescriptlang.org/) for the base language
   * with [Typings](https://github.com/typings/typings) for TypeScript definition manager
 * [Gulp](http://gulpjs.com/) for workflow (from *serve*, *watch*, *compile*, *test* to *build*)
