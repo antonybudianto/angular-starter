@@ -24,6 +24,7 @@ This starter contains almost everything you need to start developing [Angular 2]
 - No global package installation
 - No module bundler coupling
 
+### What's included?
 * [npm](https://www.npmjs.com/) for package manager
 * [TypeScript](http://www.typescriptlang.org/) for the base language
   * with [Typings](https://github.com/typings/typings) for TypeScript definition manager
