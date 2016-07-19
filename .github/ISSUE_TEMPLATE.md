@@ -1,7 +1,6 @@
-<GitHub issues are only for bug reports and feature requests,
-question, support, or help can be send to Stackoverflow>
-<Have you checked issues section which may have your similar issue?>
-<Please take your time filling these required information for posting issue>
+<GitHub issues are ONLY for BUG reports and FEATURE requests>
+<Questions or support can be send to StackOverflow>
+<PLEASE DO FOLLOW and fill the issue template below. Don't skip or remove any section>
 
 ## Issue Overview
 <Please explain the issue overview here, short but concise and to-the-point>
