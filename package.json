@@ -9,7 +9,8 @@
     "url": "https://github.com/antonybudianto/angular2-starter.git"
   },
   "engines": {
-    "node": ">=4.3"
+    "node": ">=4.3",
+    "npm": "~3.0.0"
   },
   "scripts": {
     "postinstall": "typings install",
