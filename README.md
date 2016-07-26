@@ -16,9 +16,10 @@
 Welcome to Angular 2 Starter!
 This starter contains almost everything you need to start developing [Angular 2](https://angular.io/).
 
-### Why choose this starter? 
+### Why choose this starter?
 - Extensible via [ngstarter extensions](https://github.com/ngstarter)
 - Complete workflow from serve, lint, unit test, e2e test, to bundling
+- Support file-based and strong-typed [Environment Variables](https://github.com/antonybudianto/angular2-starter/wiki/Environment-Variables)
 - 100% code coverage
 - 100% CI/CD pipeline ready
 - No global package installation
