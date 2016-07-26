@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var util = require('gulp-util');
 var config = require('../config')();
 var ts = require('gulp-typescript');
 var tslint = require('gulp-tslint');
@@ -17,17 +18,17 @@ var tsFiles = [].concat(config.tsFiles, tsUnitFiles, tsE2EFiles);
 /* Watch changed typescripts file and compile it */
 gulp.task('watch-ts', function () {
     return gulp.watch(tsFiles, function (file) {
-        console.log('Compiling ' + file.path + '...');
+        util.log('Compiling ' + file.path + '...');
         return compileTs(file.path, true);
     });
 });
 
 /* Compile typescripts */
-gulp.task('tsc', ['clean-ts'], function () {
+gulp.task('tsc', ['clean-ts', 'env'], function () {
     return compileTs(tsFiles);
 });
 
-gulp.task('tsc-app', ['clean-ts-app'], function () {
+gulp.task('tsc-app', ['clean-ts-app', 'env'], function () {
     return compileTs(config.tsFiles);
 });
 

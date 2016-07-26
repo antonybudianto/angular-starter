@@ -52,7 +52,11 @@ module.exports = function () {
             minify: true,
             mangle: true,
             runtime: false,
-            globalDefs: { DEBUG: false, ENV: 'production' }
+            globalDefs: {
+                DEBUG: false,
+                ENV: 'production',
+                APP_NAME: 'a'
+            }
         }
     };
 

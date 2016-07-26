@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var util = require('gulp-util');
 var runSequence = require('run-sequence');
 var config = require('../config')();
 var useref = require('gulp-useref');
@@ -7,6 +8,8 @@ var rev = require('gulp-rev');
 var revReplace = require('gulp-rev-replace');
 var uglify = require('gulp-uglify');
 var cssnano = require('gulp-cssnano');
+var gulpTemplate = require('gulp-template');
+var envVars = require('../env-vars');
 
 require('@ngstarter/systemjs-extension')(config);
 
@@ -58,4 +61,16 @@ gulp.task('fonts', function () {
         'node_modules/font-awesome/fonts/*.*'
     ])
     .pipe(gulp.dest(config.build.fonts));
+});
+
+gulp.task('env', function (done) {
+    gulp.src('config/env/env.ts')
+        .pipe(gulpTemplate({
+            env: envVars || {}
+        }))
+        .pipe(gulp.dest(config.app + 'shared/constant'))
+        .on('finish', function () {
+            util.log(config.app + 'shared/constant/env.ts is generated successfully');
+            done();
+        });
 });

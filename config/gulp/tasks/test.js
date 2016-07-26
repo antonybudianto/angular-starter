@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var util = require('gulp-util');
 var config = require('../config')();
 var Server = require('karma').Server;
 var gulpProtractor = require('gulp-protractor');
@@ -40,13 +41,13 @@ gulp.task('e2e-test', ['driver-update', 'tsc-e2e'], function () {
         args: ['--baseUrl', config.e2eConfig.seleniumTarget]
     }))
     .on('error', function(e) {
-        console.log('Error running E2E testing');
+        util.log('Error running E2E testing');
         process.exit(1);
     });
 });
 
 function remapCoverage (done, exitCode) {
-    console.log('Remapping coverage to TypeScript format...');
+    util.log('Remapping coverage to TypeScript format...');
     gulp.src(config.report.path + 'report-json/coverage-final.json')
         .pipe(remapIstanbul({
             basePath: config.src,
@@ -58,8 +59,8 @@ function remapCoverage (done, exitCode) {
             }
         }))
         .on('finish', function () {
-            console.log('Test Done with exit code: ' + exitCode);
+            util.log('Test Done with exit code: ' + exitCode);
             done(exitCode);
-            console.log('Remapping done! View the result in report/remap/html-report');
+            util.log('Remapping done! View the result in report/remap/html-report');
         });
 }
