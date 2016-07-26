@@ -54,8 +54,7 @@ module.exports = function () {
             runtime: false,
             globalDefs: {
                 DEBUG: false,
-                ENV: 'production',
-                APP_NAME: 'a'
+                ENV: 'production'
             }
         }
     };
