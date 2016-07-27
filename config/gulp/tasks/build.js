@@ -63,14 +63,13 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest(config.build.fonts));
 });
 
-gulp.task('env', function (done) {
-    gulp.src(config.config + 'env/env.ts')
+gulp.task('env', function () {
+    return gulp.src(config.config + 'env/env.ts')
         .pipe(gulpTemplate({
             env: envVars || {}
         }))
         .pipe(gulp.dest(config.app + 'shared/constant'))
         .on('finish', function () {
             util.log(config.app + 'shared/constant/env.ts is generated successfully');
-            done();
         });
 });
