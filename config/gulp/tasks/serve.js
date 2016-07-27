@@ -1,4 +1,4 @@
-var envConfig = require('../env');
+var envConfig = require('../utils/env');
 
 if (envConfig.ENV === envConfig.ENVS.DEV)
 {

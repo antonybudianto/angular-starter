@@ -9,7 +9,7 @@ var revReplace = require('gulp-rev-replace');
 var uglify = require('gulp-uglify');
 var cssnano = require('gulp-cssnano');
 var gulpTemplate = require('gulp-template');
-var envVars = require('../env-vars');
+var envVars = require('../utils/env-vars');
 
 require('@ngstarter/systemjs-extension')(config);
 
@@ -64,7 +64,7 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('env', function (done) {
-    gulp.src('config/env/env.ts')
+    gulp.src(config.config + 'env/env.ts')
         .pipe(gulpTemplate({
             env: envVars || {}
         }))

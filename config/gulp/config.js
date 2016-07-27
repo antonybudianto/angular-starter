@@ -1,8 +1,9 @@
-var envConfig = require('./env');
+var envConfig = require('./utils/env');
 
 module.exports = function () {
     var root = '',
         src = root + 'src/',
+        config = root + 'config/',
         app = src + 'app/',
         test = src + 'test/',
         tmp = src + 'tmp/',
@@ -59,8 +60,9 @@ module.exports = function () {
         }
     };
 
-    var config = {
+    var gulpConfig = {
         root: root,
+        config: config,
         src: src,
         app: app,
         test: test,
@@ -113,8 +115,8 @@ module.exports = function () {
             }
         };
 
-        config.browserSync = browserSync;
+        gulpConfig.browserSync = browserSync;
     }
 
-    return config;
+    return gulpConfig;
 };
