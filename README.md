@@ -16,11 +16,12 @@
 Welcome to Angular 2 Starter!
 This starter contains almost everything you need to start developing [Angular 2](https://angular.io/).
 
-### Why choose this starter? 
+### Why choose this starter?
 - Extensible via [ngstarter extensions](https://github.com/ngstarter)
 - Complete workflow from serve, lint, unit test, e2e test, to bundling
+- Support file-based and strong-typed [Environment Variables](https://github.com/antonybudianto/angular2-starter/wiki/Environment-Variables)
 - 100% code coverage
-- 100% CI/CD pipeline ready
+- 100% [CI/CD](https://github.com/antonybudianto/angular2-starter/wiki/Continuous-Integration) pipeline ready
 - No global package installation
 - No module bundler coupling
 
@@ -41,10 +42,9 @@ This starter contains almost everything you need to start developing [Angular 2]
 Please visit the [wiki](https://github.com/antonybudianto/angular2-starter/wiki) for more details.
 
 ## Prerequisites
-You need to have [Node.js](https://nodejs.org/en/)
-- For v4, please use v4.3.x (LTS) or higher (**highly** recommended)
-- For v5, please use v5.6.x or higher, here is [why](https://nodejs.org/en/blog/vulnerability/february-2016-security-releases/)
-- Ready for v6
+You need to have [Node.js and npm](https://nodejs.org/en/)
+- Support Node v4 - latest
+- Support npm v3 - latest
 
 [Global Gulp CLI](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) is not required, since you can map them to npm scripts, but a nice to have for development purpose.
 

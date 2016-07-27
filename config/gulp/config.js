@@ -1,8 +1,9 @@
-var envConfig = require('./env');
+var envConfig = require('./utils/env');
 
 module.exports = function () {
     var root = '',
         src = root + 'src/',
+        config = root + 'config/',
         app = src + 'app/',
         test = src + 'test/',
         tmp = src + 'tmp/',
@@ -52,12 +53,16 @@ module.exports = function () {
             minify: true,
             mangle: true,
             runtime: false,
-            globalDefs: { DEBUG: false, ENV: 'production' }
+            globalDefs: {
+                DEBUG: false,
+                ENV: 'production'
+            }
         }
     };
 
-    var config = {
+    var gulpConfig = {
         root: root,
+        config: config,
         src: src,
         app: app,
         test: test,
@@ -110,8 +115,8 @@ module.exports = function () {
             }
         };
 
-        config.browserSync = browserSync;
+        gulpConfig.browserSync = browserSync;
     }
 
-    return config;
+    return gulpConfig;
 };
