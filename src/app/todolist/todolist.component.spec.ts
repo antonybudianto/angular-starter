@@ -1,66 +1,74 @@
 import {
     async,
-    inject,
-    addProviders,
-    TestComponentBuilder,
-    ComponentFixture
+    TestBed
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
-import { Todo } from './todo.model';
-import { TodolistComponent } from './todolist.component';
+import { Todo, TodolistComponent, TodolistModule } from './index';
 
 @Component({
     selector: 'as-test',
-    template: '<as-todolist></as-todolist>',
-    directives: [TodolistComponent]
+    template: '<as-todolist></as-todolist>'
 })
 class TestComponent {
 }
 
-let testFixture: ComponentFixture<any>;
 let todoCompiled;
 let todolistCmp: TodolistComponent;
 
 describe('TodolistComponent', () => {
     beforeEach(() => {
-        addProviders([
-            disableDeprecatedForms(),
-            provideForms()
-        ]);
+        TestBed.configureTestingModule({
+            declarations: [ TestComponent ],
+            imports: [ TodolistModule ]
+        });
     });
 
-    it('should have been created successfully', async(inject([TestComponentBuilder],
-        (tcb: TestComponentBuilder) => {
-            tcb.createAsync(TestComponent).then((fixture: ComponentFixture<TestComponent>) => {
-                testFixture = fixture;
-                fixture.detectChanges();
+    it('should have been created successfully', async(() => {
+        TestBed.compileComponents().then(() => {
+            let fixture = TestBed.createComponent(TestComponent);
+            fixture.detectChanges();
 
-                todoCompiled = fixture.nativeElement;
-                todolistCmp = fixture.debugElement
-                    .children[0].componentInstance;
-                expect(todoCompiled).toBeDefined();
-            });
-    })));
+            todoCompiled = fixture.nativeElement;
+            todolistCmp = fixture.debugElement
+                .children[0].componentInstance;
+            expect(todoCompiled).toBeDefined();
+        });
+    }));
 
-    it('should add todo successfully', () => {
-        todolistCmp.todo = new Todo('test', true);
-        todolistCmp.addTodo();
-        testFixture.detectChanges();
+    it('should add todo successfully', async(() => {
+        TestBed.compileComponents().then(() => {
+            let fixture = TestBed.createComponent(TestComponent);
+            fixture.detectChanges();
+            todoCompiled = fixture.nativeElement;
+            todolistCmp = fixture.debugElement
+                .children[0].componentInstance;
+            todolistCmp.todo = new Todo('test', true);
+            todolistCmp.addTodo();
+            fixture.detectChanges();
 
-        let items = todoCompiled.querySelectorAll('.list-group-item');
-        expect(items.length).toEqual(3);
+            let items = todoCompiled.querySelectorAll('.list-group-item');
+            expect(items.length).toEqual(3);
 
-        let item = items[items.length - 1];
-        expect(item.querySelector('label').textContent).toEqual(' test');
-        expect(item.querySelector('input[type="checkbox"]').value).toBeTruthy();
-    });
+            let item = items[items.length - 1];
+            expect(item.querySelector('label').textContent).toEqual(' test');
+            expect(item.querySelector('input[type="checkbox"]').value).toBeTruthy();
+        });
+    }));
 
-    it('should delete todo successfully', () => {
-        todolistCmp.delTodo(0);
-        testFixture.detectChanges();
-        expect(todoCompiled.querySelectorAll('.list-group-item').length)
-            .toEqual(2);
-    });
+    it('should delete todo successfully', async(() => {
+        TestBed.compileComponents().then(() => {
+            let fixture = TestBed.createComponent(TestComponent);
+            fixture.detectChanges();
+
+            todoCompiled = fixture.nativeElement;
+            todolistCmp = fixture.debugElement
+                .children[0].componentInstance;
+
+            todolistCmp.delTodo(0);
+            fixture.detectChanges();
+            expect(todoCompiled.querySelectorAll('.list-group-item').length)
+                .toEqual(1);
+        });
+    }));
 });
