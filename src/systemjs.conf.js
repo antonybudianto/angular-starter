@@ -64,7 +64,6 @@
     });
 
     ngPackageNames.forEach(function(pkgName) {
-        var main = 'bundles/' + pkgName + '.umd.js';
         map['@angular/' + pkgName] = 'node_modules/@angular/' + pkgName +
             '/bundles/' + pkgName + '.umd.js';
         map['@angular/' + pkgName+'/testing'] = 'node_modules/@angular/' + pkgName +
