@@ -7,9 +7,6 @@
 [![devDependency Status](https://david-dm.org/antonybudianto/angular2-starter/dev-status.svg)](https://david-dm.org/antonybudianto/angular2-starter#info=devDependencies)
 [![Dependency Status](https://dependencyci.com/github/antonybudianto/angular2-starter/badge)](https://dependencyci.com/github/antonybudianto/angular2-starter)
 
-
-> Angular 2 is still in **Release Candidate** stage, please **don't** use this in production
-
 > Live Production Build [Demo](https://antonybudianto.github.io/angular2-starter/)
 
 ## Introduction
