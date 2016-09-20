@@ -9,7 +9,7 @@
 
 > Live Production Build [Demo](https://antonybudianto.github.io/angular2-starter/)    
 
-> [Angular Webpack Starter](github.com/antonybudianto/angular-webpack-starter) is out! Featuring [AoT compilation](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html), [Lazy loaded module](https://angular.io/docs/ts/latest/api/router/index/Routes-type-alias.html#!#sts=Lazy%20Loading), [Tree-shaking](https://medium.com/@Rich_Harris/tree-shaking-versus-dead-code-elimination-d3765df85c80#.103r6vl29) with [Webpack 2](https://webpack.github.io/docs/roadmap.html#2)
+> [Angular Webpack Starter](https://github.com/antonybudianto/angular-webpack-starter) is out! Featuring [AoT compilation](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html), [Lazy loaded module](https://angular.io/docs/ts/latest/api/router/index/Routes-type-alias.html#!#sts=Lazy%20Loading), [Tree-shaking](https://medium.com/@Rich_Harris/tree-shaking-versus-dead-code-elimination-d3765df85c80#.103r6vl29) with [Webpack 2](https://webpack.github.io/docs/roadmap.html#2)
 
 ## Introduction
 Welcome to Angular 2 Starter!
