@@ -8,7 +8,6 @@ var argv = require('yargs').argv;
 
 /* Initialize TS Project */
 var typingFiles = [
-    // 'typings/index.d.ts',
     config.src + 'manual_typings/**/*.d.ts'
 ];
 var tsUnitFiles = [].concat(config.tsTestFiles.unit, config.tsTestFiles.helper);
