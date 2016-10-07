@@ -34,8 +34,8 @@ gulp.task('unit-test', ['tsc'], function (done) {
 
 gulp.task('e2e', ['e2e-test']);
 gulp.task('driver-update', gulpProtractor['webdriver_update']);
-gulp.task('e2e-test', ['driver-update', 'tsc-e2e'], function () {
-    gulp.src(config.tmpE2E + '**/*.spec.js')
+gulp.task('e2e-test', ['driver-update'], function () {
+    gulp.src(config.e2e + '**/*.spec.ts')
     .pipe(gulpProtractor.protractor({
         configFile: 'config/test/protractor.conf.js',
         args: ['--baseUrl', config.e2eConfig.seleniumTarget]

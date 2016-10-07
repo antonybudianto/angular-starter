@@ -10,8 +10,7 @@ module.exports = function () {
         tmpApp = tmp + 'app/',
         tmpTest = tmp + 'test/',
         testHelper = test + 'test-helpers/',
-        e2e = test + 'e2e/',
-        tmpE2E = tmpTest + 'e2e/',
+        e2e = root + 'e2e/',
         assets = src + 'assets/',
         assetsPath = {
             styles: assets + 'styles/',
@@ -69,7 +68,6 @@ module.exports = function () {
         tmp: tmp,
         tmpApp: tmpApp,
         tmpTest: tmpTest,
-        tmpE2E: tmpE2E,
         testHelper: testHelper,
         e2e: e2e,
         e2eConfig: e2eConfig,
