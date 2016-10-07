@@ -8,12 +8,10 @@ var argv = require('yargs').argv;
 
 /* Initialize TS Project */
 var typingFiles = [
-    'typings/index.d.ts',
     config.src + 'manual_typings/**/*.d.ts'
 ];
 var tsUnitFiles = [].concat(config.tsTestFiles.unit, config.tsTestFiles.helper);
-var tsE2EFiles = [].concat(config.tsTestFiles.e2e, config.tsTestFiles.helper);
-var tsFiles = [].concat(config.tsFiles, tsUnitFiles, tsE2EFiles);
+var tsFiles = [].concat(config.tsFiles, tsUnitFiles);
 
 /* Watch changed typescripts file and compile it */
 gulp.task('watch-ts', function () {
@@ -36,10 +34,6 @@ gulp.task('tsc-unit', ['clean-ts-test'], function () {
     return compileTs(tsUnitFiles);
 });
 
-gulp.task('tsc-e2e', ['clean-ts-test'], function () {
-    return compileTs(tsE2EFiles);
-});
-
 /* Lint typescripts */
 gulp.task('tslint', function () {
     return lintTs(tsFiles);
@@ -51,10 +45,6 @@ gulp.task('tslint-app', function () {
 
 gulp.task('tslint-unit', function () {
     return lintTs(tsUnitFiles);
-});
-
-gulp.task('tslint-e2e', function () {
-    return lintTs(tsE2EFiles);
 });
 
 function lintTs(files) {
@@ -80,7 +70,7 @@ function compileTs(files, watchMode) {
         }))
         .pipe(tslint.report())
         .pipe(sourcemaps.init())
-        .pipe(ts(tsProject))
+        .pipe(tsProject())
         .on('error', function () {
             if (watchMode) {
                 return;

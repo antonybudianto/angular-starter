@@ -73,7 +73,7 @@ module.exports = function(config) {
 
   dependencies.forEach(function(key) {
     configuration.files.push({
-        pattern: 'node_modules/' + key + '/**/*.js',
+        pattern: 'node_modules/' + key + '/**/!(*.spec)+(.js)',
         included: false,
         watched: false
     });

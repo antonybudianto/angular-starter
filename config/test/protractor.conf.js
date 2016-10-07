@@ -1,3 +1,5 @@
+require('ts-node/register');
+
 var glob = require('glob');
 var seleniumPath = '../node_modules/gulp-protractor/node_modules/protractor/selenium/';
 var seleniumJarPath = '';
