@@ -28,7 +28,7 @@ gulp.task('build-assets', function (done) {
         gulp.src(config.app + '**/*.css', {
             base: config.app
         })
-        .pipe(cssnano())
+        .pipe(cssnano({zindex: false}))
         .pipe(gulp.dest(config.build.app));
 
         gulp.src(config.src + 'favicon.ico')
