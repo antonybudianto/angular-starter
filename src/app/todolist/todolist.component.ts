@@ -3,8 +3,9 @@ import { Component } from '@angular/core';
 import { Todo } from './todo.model';
 
 @Component({
+    moduleId: module.id,
     selector: 'as-todolist',
-    templateUrl: 'app/todolist/todolist.html'
+    templateUrl: 'todolist.html'
 })
 export class TodolistComponent {
     public todo: Todo;
