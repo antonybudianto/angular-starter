@@ -1,3 +1,5 @@
+var runSequence = require('run-sequence');
+
 var envConfig = require('../utils/env');
 
 if (envConfig.ENV === envConfig.ENVS.DEV)
@@ -14,12 +16,15 @@ if (envConfig.ENV === envConfig.ENVS.DEV)
     }
 
     /* Start live server dev mode */
-    gulp.task('serve-dev',
-              ['sass', 'tsc-app', 'html', 'watch-sass', 'watch-ts', 'watch-html'],
-              function ()
-              {
-                  startBrowsersync(config.browserSync.dev);
-              });
+    gulp.task('serve-dev', function ()
+    {
+        runSequence(
+            ['sass', 'tsc-app'],
+            ['html', 'css'],
+            ['watch-sass', 'watch-ts', 'watch-html', 'watch-css'], function() {
+            startBrowsersync(config.browserSync.dev);
+        });
+    });
 
     /* Start live server production mode */
     gulp.task('serve-build', ['build'], function ()
