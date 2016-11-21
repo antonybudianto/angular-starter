@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
+    moduleId: module.id,
     selector: 'as-home',
-    templateUrl: 'app/home/home.html',
+    templateUrl: 'home.html',
     styleUrls: [
-        'app/home/home.css'
+        'home.css'
     ]
 })
 export class HomeComponent {

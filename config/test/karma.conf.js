@@ -44,6 +44,7 @@ module.exports = function(config) {
       // required for component assests fetched by Angular's compiler
       "/src/": "/base/src/",
       "/app/": "/base/src/app/",
+      "/tmp/": "/base/src/tmp/",
       "/node_modules/": "/base/node_modules/"
     },
 
@@ -64,6 +65,7 @@ module.exports = function(config) {
     createFilePattern(gulpConfig.tmpApp + '**/*.js', { included: false }),
     createFilePattern(gulpConfig.tmpTest + 'test-helpers/*.js', { included: false }),
     createFilePattern(gulpConfig.app + '**/*.html', { included: false }),
+    createFilePattern(gulpConfig.tmpApp + '**/*.html', { included: false }),
     createFilePattern(gulpConfig.app + '**/*.css', { included: false }),
     createFilePattern(gulpConfig.app + '**/*.ts', { included: false, watched: false }),
     createFilePattern(gulpConfig.tmpApp + '**/*.js.map', { included: false, watched: false })
