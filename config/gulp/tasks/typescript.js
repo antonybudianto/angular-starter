@@ -26,7 +26,7 @@ gulp.task('tsc', ['clean-ts', 'env'], function () {
     return compileTs(tsFiles);
 });
 
-gulp.task('tsc-app', ['clean-ts-app', 'env'], function () {
+gulp.task('tsc-app', ['env'], function () {
     return compileTs(config.tsFiles);
 });
 

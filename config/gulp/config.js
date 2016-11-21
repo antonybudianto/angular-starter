@@ -87,6 +87,7 @@ module.exports = function () {
         var browserSync = {
             dev: {
                 port: 3000,
+                injectChanges: false,
                 server: {
                     baseDir: './src/',
                     middleware: [historyApiFallback()],

@@ -14,18 +14,22 @@ gulp.task('test', ['clean-report', 'unit-test']);
 gulp.task('unit-test', ['tsc'], function (done) {
     var watch = argv.watch || false;
 
+    runSequence(['html', 'css'], copyComponentFilesDone);
+
     if (watch) {
-        runSequence('watch-ts');
+        runSequence(['watch-ts', 'watch-html', 'watch-css']);
         console.log('=== Unit Test Watch Mode ===');
         console.log('- It will autowatch the changed files and re-run the test');
         console.log('- Press Cmd/Ctrl + C to exit and get the coverage result');
         console.log('- Press Cmd/Ctrl + C again to close the TSC watch.');
     }
 
-    new Server({
-        configFile: __dirname + '/../../test/karma.conf.js',
-        singleRun: !watch
-    }, karmaDone).start();
+    function copyComponentFilesDone() {
+        new Server({
+            configFile: __dirname + '/../../test/karma.conf.js',
+            singleRun: !watch
+        }, karmaDone).start();
+    }
 
     function karmaDone (exitCode) {
     	remapCoverage(done, exitCode);
