@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { APP_PROVIDERS } from './app.providers';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { TodolistModule } from './todolist/todolist.module';
         AppComponent
     ],
     imports: [
+        BrowserModule,
         NavbarModule,
         HomeModule,
         TodolistModule,
