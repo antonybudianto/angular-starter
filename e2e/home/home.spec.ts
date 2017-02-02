@@ -1,3 +1,5 @@
+import { browser, by, element } from 'protractor';
+
 describe('Home page', () => {
     beforeAll(done => {
         browser.get('/')
