@@ -81,7 +81,7 @@
     "component-class-suffix": [true, "Component"],
     "directive-class-suffix": [true, "Directive"],
     "import-destructuring-spacing": true,
-    "templates-use-public": true,
+    "templates-use-public": false,
     "no-access-missing-member": true,
     "invoke-injectable": true
   }
