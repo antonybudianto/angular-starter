@@ -1,12 +1,12 @@
 {
-  "name": "angular2-starter",
-  "version": "1.0.1",
+  "name": "angular-starter",
+  "version": "1.1.0",
   "author": "Antony Budianto",
-  "description": "Angular 2 Starter with extensible features",
+  "description": "Angular Starter with extensible features",
   "main": "src/tmp/app/main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/antonybudianto/angular2-starter.git"
+    "url": "https://github.com/antonybudianto/angular-starter.git"
   },
   "engines": {
     "node": ">=4.3",
@@ -23,7 +23,7 @@
     "coverage": "coveralls < ./report/remap/lcov.info"
   },
   "keywords": [
-    "angular2",
+    "angular",
     "starter",
     "seed",
     "gulp",
@@ -38,24 +38,24 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/antonybudianto/angular2-starter/issues"
+    "url": "https://github.com/antonybudianto/angular-starter/issues"
   },
   "dependencies": {
-    "@angular/common": "~2.4.10",
-    "@angular/compiler": "~2.4.10",
-    "@angular/core": "~2.4.10",
-    "@angular/forms": "~2.4.10",
-    "@angular/http": "~2.4.10",
-    "@angular/platform-browser": "~2.4.10",
-    "@angular/platform-browser-dynamic": "~2.4.10",
-    "@angular/router": "~3.4.10",
+    "@angular/common": "~4.0.0",
+    "@angular/compiler": "~4.0.0",
+    "@angular/core": "~4.0.0",
+    "@angular/forms": "~4.0.0",
+    "@angular/http": "~4.0.0",
+    "@angular/platform-browser": "~4.0.0",
+    "@angular/platform-browser-dynamic": "~4.0.0",
+    "@angular/router": "~4.0.0",
     "@ngstarter/systemjs-extension": "1.0.0-rc.4",
     "@types/core-js": "0.9.35",
     "@types/jasmine": "2.5.40",
     "@types/lodash": "4.14.50",
     "@types/selenium-webdriver": "^2.44.28",
     "bootstrap-sass": "^3.3.7",
-    "codelyzer": "2.0.0-beta.4",
+    "codelyzer": "2.0.0",
     "core-js": "^2.4.1",
     "del": "~2.2.2",
     "font-awesome": "^4.7.0",
@@ -92,7 +92,7 @@
     "tslint": "~4.5.1",
     "typescript": "~2.1.5",
     "yargs": "^7.0.2",
-    "zone.js": "^0.7.5"
+    "zone.js": "^0.8.5"
   },
   "devDependencies": {
     "browser-sync": "^2.18.6",
