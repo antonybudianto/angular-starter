@@ -40,7 +40,7 @@ Please visit the [wiki](https://github.com/antonybudianto/angular2-starter/wiki)
 
 ## Prerequisites
 You need to have [Node.js and npm](https://nodejs.org/en/)
-- Support Node v4 - latest
+- Support Node v6.9 - latest
 - Support npm v3 - latest
 
 [Global Gulp CLI](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) is not required, since you can map them to npm scripts, but a nice to have for development purpose.

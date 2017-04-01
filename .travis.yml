@@ -1,10 +1,7 @@
-before_install:
-  - npm i -g npm@3
 language: node_js
 node_js:
-  - "6.0"
-  - "5.6"
-  - "4.3"
+  - "7.0"
+  - "6.9"
 script: npm run build -- --exclude-source
 after_script:
   - npm install coveralls

@@ -9,7 +9,7 @@
     "url": "https://github.com/antonybudianto/angular-starter.git"
   },
   "engines": {
-    "node": ">=4.3",
+    "node": ">=6.9",
     "npm": "~3.0.0"
   },
   "scripts": {
