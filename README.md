@@ -1,11 +1,9 @@
 # Angular Starter
 
 [![Build Status](https://travis-ci.org/antonybudianto/angular-starter.svg?branch=master)](https://travis-ci.org/antonybudianto/angular-starter)
-[![Build status](https://ci.appveyor.com/api/projects/status/d5b3a9nnxnv5bxa5/branch/master?svg=true)](https://ci.appveyor.com/project/antonybudianto/angular-starter/branch/master)
 [![Coverage Status](https://coveralls.io/repos/github/antonybudianto/angular-starter/badge.svg?branch=master)](https://coveralls.io/github/antonybudianto/angular-starter?branch=master)
 [![Dependency Status](https://david-dm.org/antonybudianto/angular-starter.svg)](https://david-dm.org/antonybudianto/angular-starter)
 [![devDependency Status](https://david-dm.org/antonybudianto/angular-starter/dev-status.svg)](https://david-dm.org/antonybudianto/angular-starter#info=devDependencies)
-[![Dependency Status](https://dependencyci.com/github/antonybudianto/angular-starter/badge)](https://dependencyci.com/github/antonybudianto/angular-starter)
 
 > Live Production Build [Demo](https://antonybudianto.github.io/angular-starter/)
 
@@ -42,7 +40,7 @@ Please visit the [wiki](https://github.com/antonybudianto/angular2-starter/wiki)
 
 ## Prerequisites
 You need to have [Node.js and npm](https://nodejs.org/en/)
-- Support Node v4 - latest
+- Support Node v6.9 - latest
 - Support npm v3 - latest
 
 [Global Gulp CLI](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) is not required, since you can map them to npm scripts, but a nice to have for development purpose.
