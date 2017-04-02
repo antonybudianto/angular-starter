@@ -56,7 +56,6 @@ function lintTs(files) {
 }
 
 function compileTs(files, watchMode) {
-    var inline = !argv.excludeSource;
     watchMode = watchMode || false;
 
     var tsProject = ts.createProject('tsconfig.json');
@@ -79,7 +78,7 @@ function compileTs(files, watchMode) {
         });
     return res.js
         .pipe(sourcemaps.write('.', {
-            includeContent: inline
+            includeContent: false
         }))
         .pipe(gulp.dest(config.tmp));
 }
