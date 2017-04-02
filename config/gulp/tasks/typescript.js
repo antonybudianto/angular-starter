@@ -78,7 +78,7 @@ function compileTs(files, watchMode) {
         });
     return res.js
         .pipe(sourcemaps.write('.', {
-            includeContent: true
+            includeContent: false
         }))
         .pipe(gulp.dest(config.tmp));
 }

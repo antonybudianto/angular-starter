@@ -54,6 +54,7 @@ function remapCoverage (done, exitCode) {
     util.log('Remapping coverage to TypeScript format...');
     gulp.src(config.report.path + 'report-json/coverage-final.json')
         .pipe(remapIstanbul({
+            basePath: config.src,
             reports: {
                 'lcovonly': config.report.path + 'remap/lcov.info',
                 'json': config.report.path + 'remap/coverage.json',
