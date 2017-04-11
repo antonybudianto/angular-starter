@@ -1,7 +1,7 @@
 # Angular Starter
 
 [![Build Status](https://travis-ci.org/antonybudianto/angular-starter.svg?branch=master)](https://travis-ci.org/antonybudianto/angular-starter)
-[![Coverage Status](https://coveralls.io/repos/github/antonybudianto/angular-starter/badge.svg?branch=master)](https://coveralls.io/github/antonybudianto/angular-starter?branch=master)
+[![codecov](https://codecov.io/gh/antonybudianto/angular-starter/branch/master/graph/badge.svg)](https://codecov.io/gh/antonybudianto/angular-starter)
 [![Dependency Status](https://david-dm.org/antonybudianto/angular-starter.svg)](https://david-dm.org/antonybudianto/angular-starter)
 [![devDependency Status](https://david-dm.org/antonybudianto/angular-starter/dev-status.svg)](https://david-dm.org/antonybudianto/angular-starter#info=devDependencies)
 
