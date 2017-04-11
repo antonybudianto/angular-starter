@@ -4,5 +4,5 @@ node_js:
   - "6.9"
 script: npm run build
 after_script:
-  - npm install coveralls
-  - npm run coverage
+  - npm install -g codecov
+  - codecov
